@@ -3574,9 +3574,9 @@
 <td>Receive direct messages</td>
 </tr>
 <tr>
-<td>Read group <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/bot" title="GitHub User: bot">@bot</a> messages</td>
-<td><code>im:message.group_at_msg:readonly</code></td>
-<td>Receive <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/bot" title="GitHub User: bot">@bot</a> messages in group chats</td>
+<td>Read group messages</td>
+<td><code>im:message.group_msg:readonly</code></td>
+<td>Receive all group messages (required for thread replies without <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/bot" title="GitHub User: bot">@bot</a>)</td>
 </tr>
 <tr>
 <td>Send messages as the bot</td>
@@ -3605,6 +3605,10 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Group message permission</p>
+<p><code>im:message.group_msg:readonly</code> allows the bot to receive <strong>all</strong> group messages, including thread replies without <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/bot" title="GitHub User: bot">@bot</a>. The bot automatically filters out irrelevant messages — only <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/bot" title="GitHub User: bot">@bot</a> messages and replies within an existing bot thread are processed. If you prefer a more restrictive scope, you can use <code>im:message.group_at_msg:readonly</code> instead, but thread replies without <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/bot" title="GitHub User: bot">@bot</a> will not be received.</p>
+</div>
 <ol>
 <li>Click <strong>Save</strong>.</li>
 </ol>
@@ -3619,7 +3623,7 @@
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="s2">&quot;contact:user.base:readonly&quot;</span><span class="p">,</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="s2">&quot;im:chat:readonly&quot;</span><span class="p">,</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="s2">&quot;im:message&quot;</span><span class="p">,</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="s2">&quot;im:message.group_at_msg:readonly&quot;</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="s2">&quot;im:message.group_msg:readonly&quot;</span><span class="p">,</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">      </span><span class="s2">&quot;im:message:send_as_bot&quot;</span><span class="p">,</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span><span class="s2">&quot;im:resource&quot;</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="p">]</span>
@@ -3629,7 +3633,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Required vs Optional</p>
-<p><code>im:message</code>, <code>im:message.group_at_msg:readonly</code>, <code>im:message:send_as_bot</code>, <code>cardkit:card:read</code>, and <code>cardkit:card:write</code> are required for full functionality (including group <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/bot" title="GitHub User: bot">@bot</a> messages and streaming card responses). The other permissions are optional and depend on your use case. Without CardKit permissions, the bot falls back to sending separate messages for each response chunk.</p>
+<p><code>im:message</code>, <code>im:message.group_msg:readonly</code>, <code>im:message:send_as_bot</code>, <code>cardkit:card:read</code>, and <code>cardkit:card:write</code> are required for full functionality (including group <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/bot" title="GitHub User: bot">@bot</a> messages, thread replies, and streaming card responses). The other permissions are optional and depend on your use case. Without CardKit permissions, the bot falls back to sending separate messages for each response chunk.</p>
 </div>
 <h2 id="step-7-publish-the-app">Step 7: Publish the App<a class="headerlink" href="#step-7-publish-the-app" title="Permanent link">&para;</a></h2>
 <ol>
