@@ -43,6 +43,13 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/API/introduction/"/>
     </url>
     <url>
+        <loc>https://docs.datus.ai/dev/API/knowledge_base/</loc>
+        <lastmod>2026-04-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/dev/API/knowledge_base/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/API/knowledge_base/"/>
+    </url>
+    <url>
         <loc>https://docs.datus.ai/dev/adapters/db_adapters/</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>daily</changefreq>
@@ -454,6 +461,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/API/introduction/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devAPI/introduction/"/>
+    </url>
+    <url>
+        <loc>https://docs.datus.ai/dev/zh/API/knowledge_base/</loc>
+        <lastmod>2026-04-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/API/knowledge_base/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devAPI/knowledge_base/"/>
     </url>
     <url>
         <loc>https://docs.datus.ai/dev/zh/adapters/db_adapters/</loc>

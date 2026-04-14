@@ -1711,6 +1711,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#notes-and-troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3351,6 +3362,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#notes-and-troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3610,6 +3632,23 @@
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>!search_document
 </span></code></pre></div>
 <p>This runs <code>search_document</code> interactively and shows matched chunks.</p>
+<h2 id="rest-api">REST API<a class="headerlink" href="#rest-api" title="Permanent link">&para;</a></h2>
+<p>Platform documentation can also be bootstrapped via the REST API with real-time SSE progress streaming. This is the
+recommended approach for web frontends and automation.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>curl<span class="w"> </span>-N<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8000/api/v1/kb/bootstrap-docs<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="s1">    &quot;platform&quot;: &quot;starrocks&quot;,</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="s1">    &quot;source&quot;: &quot;StarRocks/starrocks&quot;,</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="s1">    &quot;source_type&quot;: &quot;github&quot;,</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="s1">    &quot;paths&quot;: [&quot;docs/en&quot;],</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="s1">    &quot;build_mode&quot;: &quot;overwrite&quot;</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="s1">  }&#39;</span>
+</span></code></pre></div>
+<p>The API accepts the same parameters as the CLI (mapped to JSON fields) and streams progress events as SSE. If a
+field is omitted, the value from <code>agent.yml</code> is used.</p>
+<p>See <a href="../../API/knowledge_base/#platform-documentation-bootstrap">Knowledge Base API</a> for the full endpoint reference,
+request/response schema, and SSE event format.</p>
 <h2 id="notes-and-troubleshooting">Notes and Troubleshooting<a class="headerlink" href="#notes-and-troubleshooting" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>GitHub API limits</strong>: set <code>GITHUB_TOKEN</code> (or <code>github_token</code> in config) to avoid rate limiting.</li>

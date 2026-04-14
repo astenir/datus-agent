@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="zh" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -8,35 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://docs.datus.ai/dev/zh/API/introduction/">
+        <link rel="canonical" href="https://docs.datus.ai/dev/API/knowledge_base/">
       
       
-        <link rel="prev" href="../../workflow/api/">
-      
-      
-        <link rel="next" href="../deployment/">
       
       
         
-          <link rel="alternate" href="../../../API/introduction/" hreflang="en">
+          <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="./" hreflang="zh">
+          <link rel="alternate" href="../../zh/API/knowledge_base/" hreflang="zh">
         
       
       
-      <link rel="icon" href="../../../assets/logo-light.png">
+      <link rel="icon" href="../../assets/logo-light.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>介绍 - Datus Docs</title>
+        <title>Knowledge Base API - Datus Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,9 +45,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -86,8 +82,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#api" class="md-skip">
-          跳转至
+        <a href="#knowledge-base-api" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -103,10 +99,10 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../" title="Datus Docs" class="md-header__button md-logo" aria-label="Datus Docs" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Datus Docs" class="md-header__button md-logo" aria-label="Datus Docs" data-md-component="logo">
       
-  <img src="../../../assets/logo-light.png" alt="logo">
+  <img src="../../assets/logo-light.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -123,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              介绍
+              Knowledge Base API
             
           </span>
         </div>
@@ -173,20 +169,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="选择当前语言">
+    <button class="md-header__button md-icon" aria-label="Select language">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../API/introduction/" hreflang="en" class="md-select__link">
+            <a href="./" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="./" hreflang="zh" class="md-select__link">
+            <a href="../../zh/API/knowledge_base/" hreflang="zh" class="md-select__link">
               中文
             </a>
           </li>
@@ -207,16 +203,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="查找">
+      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -227,7 +223,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            正在初始化搜索引擎
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -239,7 +235,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/Datus-ai/Datus-agent" title="前往仓库" class="md-source" data-md-component="source">
+        <a href="https://github.com/Datus-ai/Datus-agent" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -260,7 +256,7 @@
         
           
             
-<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -268,19 +264,17 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
           
   
   
     
   
-  首页
+  Home
 
         </a>
       </li>
@@ -300,7 +294,7 @@
   
     
   
-  发布说明
+  Release Notes
 
       </a>
     </li>
@@ -327,18 +321,18 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../" title="Datus Docs" class="md-nav__button md-logo" aria-label="Datus Docs" data-md-component="logo">
+    <a href="../.." title="Datus Docs" class="md-nav__button md-logo" aria-label="Datus Docs" data-md-component="logo">
       
-  <img src="../../../assets/logo-light.png" alt="logo">
+  <img src="../../assets/logo-light.png" alt="logo">
 
     </a>
     Datus Docs
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/Datus-ai/Datus-agent" title="前往仓库" class="md-source" data-md-component="source">
+      <a href="https://github.com/Datus-ai/Datus-agent" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -355,8 +349,6 @@
       
   
   
-    
-  
   
   
     
@@ -400,28 +392,25 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
     
   
-    首页
+    Home
   
 
     
@@ -432,18 +421,18 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
   
-    首页
+    Home
   
 
           </label>
@@ -489,7 +478,7 @@
   <span class="md-ellipsis">
     
   
-    入门指南
+    Getting Started
   
 
     
@@ -505,7 +494,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    入门指南
+    Getting Started
   
 
           </label>
@@ -525,7 +514,7 @@
   <span class="md-ellipsis">
     
   
-    快速开始
+    Quickstart
   
 
     
@@ -553,7 +542,7 @@
   <span class="md-ellipsis">
     
   
-    上下文数据工程
+    Contextual Data Engineering
   
 
     
@@ -581,7 +570,7 @@
   <span class="md-ellipsis">
     
   
-    教程
+    Tutorial
   
 
     
@@ -679,7 +668,7 @@
   <span class="md-ellipsis">
     
   
-    命令行
+    CLI
   
 
     
@@ -695,7 +684,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    命令行
+    CLI
   
 
           </label>
@@ -715,7 +704,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -743,7 +732,7 @@
   <span class="md-ellipsis">
     
   
-    聊天命令
+    Chat Command
   
 
     
@@ -771,7 +760,7 @@
   <span class="md-ellipsis">
     
   
-    上下文命令
+    Context Command
   
 
     
@@ -799,7 +788,7 @@
   <span class="md-ellipsis">
     
   
-    执行命令
+    Execution Command
   
 
     
@@ -827,7 +816,7 @@
   <span class="md-ellipsis">
     
   
-    MCP 扩展
+    MCP Extensions
   
 
     
@@ -855,7 +844,7 @@
   <span class="md-ellipsis">
     
   
-    SQL 执行
+    SQL Execution
   
 
     
@@ -883,7 +872,7 @@
   <span class="md-ellipsis">
     
   
-    技能命令
+    Skill Command
   
 
     
@@ -911,7 +900,7 @@
   <span class="md-ellipsis">
     
   
-    参考
+    Reference
   
 
     
@@ -939,7 +928,7 @@
   <span class="md-ellipsis">
     
   
-    计划模式
+    Plan Mode
   
 
     
@@ -1039,7 +1028,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -1067,7 +1056,7 @@
   <span class="md-ellipsis">
     
   
-    内置 subagent
+    Built-in subagents
   
 
     
@@ -1095,7 +1084,7 @@
   <span class="md-ellipsis">
     
   
-    自定义 subagent
+    Customized subagents
   
 
     
@@ -1215,7 +1204,7 @@
   <span class="md-ellipsis">
     
   
-    chatbot
+    Chatbot
   
 
     
@@ -1265,7 +1254,7 @@
   <span class="md-ellipsis">
     
   
-    IM 网关 (Claw)
+    IM Gateway (Claw)
   
 
     
@@ -1281,7 +1270,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    IM 网关 (Claw)
+    IM Gateway (Claw)
   
 
           </label>
@@ -1301,7 +1290,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -1357,7 +1346,7 @@
   <span class="md-ellipsis">
     
   
-    飞书
+    Feishu
   
 
     
@@ -1425,7 +1414,7 @@
   <span class="md-ellipsis">
     
   
-    知识库
+    Knowledge Base
   
 
     
@@ -1441,7 +1430,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    知识库
+    Knowledge Base
   
 
           </label>
@@ -1461,7 +1450,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -1489,7 +1478,7 @@
   <span class="md-ellipsis">
     
   
-    外部知识
+    External Knowledge
   
 
     
@@ -1517,7 +1506,7 @@
   <span class="md-ellipsis">
     
   
-    平台文档
+    Platform Documentation
   
 
     
@@ -1545,7 +1534,7 @@
   <span class="md-ellipsis">
     
   
-    元数据
+    Metadata
   
 
     
@@ -1573,7 +1562,7 @@
   <span class="md-ellipsis">
     
   
-    语义模型
+    Semantic Models
   
 
     
@@ -1601,7 +1590,7 @@
   <span class="md-ellipsis">
     
   
-    指标
+    Metrics
   
 
     
@@ -1657,7 +1646,7 @@
   <span class="md-ellipsis">
     
   
-    SQL模板
+    Reference Template
   
 
     
@@ -1717,7 +1706,7 @@
   <span class="md-ellipsis">
     
   
-    工作流
+    Workflow
   
 
     
@@ -1733,7 +1722,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    工作流
+    Workflow
   
 
           </label>
@@ -1753,7 +1742,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -1781,7 +1770,7 @@
   <span class="md-ellipsis">
     
   
-    节点
+    Nodes
   
 
     
@@ -1809,7 +1798,7 @@
   <span class="md-ellipsis">
     
   
-    编排
+    Orchestration
   
 
     
@@ -1863,10 +1852,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1883,11 +1870,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_9" >
         
           
           <label class="md-nav__link" for="__nav_1_9" id="__nav_1_9_label" tabindex="0">
@@ -1908,7 +1895,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1923,44 +1910,17 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    介绍
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -1969,70 +1929,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        鉴权模型
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-envelope" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        响应封装
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#url" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        全局 URL 前缀
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        下一步
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2052,7 +1948,7 @@
   <span class="md-ellipsis">
     
   
-    部署
+    Deployment
   
 
     
@@ -2146,7 +2042,7 @@
   <span class="md-ellipsis">
     
   
-    配置
+    Configuration
   
 
     
@@ -2162,7 +2058,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    配置
+    Configuration
   
 
           </label>
@@ -2182,7 +2078,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -2238,7 +2134,7 @@
   <span class="md-ellipsis">
     
   
-    工作流
+    Workflow
   
 
     
@@ -2266,7 +2162,7 @@
   <span class="md-ellipsis">
     
   
-    基准测试
+    Benchmark
   
 
     
@@ -2350,7 +2246,7 @@
   <span class="md-ellipsis">
     
   
-    节点
+    Nodes
   
 
     
@@ -2406,7 +2302,7 @@
   <span class="md-ellipsis">
     
   
-    适配器
+    Adapters
   
 
     
@@ -2422,7 +2318,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    适配器
+    Adapters
   
 
           </label>
@@ -2442,7 +2338,7 @@
   <span class="md-ellipsis">
     
   
-    数据库适配器
+    Database Adapters
   
 
     
@@ -2470,7 +2366,7 @@
   <span class="md-ellipsis">
     
   
-    语义层适配器
+    Semantic Adapters
   
 
     
@@ -2524,7 +2420,7 @@
   <span class="md-ellipsis">
     
   
-    基准测试
+    Benchmark
   
 
     
@@ -2540,7 +2436,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    基准测试
+    Benchmark
   
 
           </label>
@@ -2560,7 +2456,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -2614,7 +2510,7 @@
   <span class="md-ellipsis">
     
   
-    MetricFlow
+    Metricflow
   
 
     
@@ -2630,7 +2526,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    MetricFlow
+    Metricflow
   
 
           </label>
@@ -2650,7 +2546,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -2708,7 +2604,7 @@
   <span class="md-ellipsis">
     
   
-    集成
+    Integration
   
 
     
@@ -2724,7 +2620,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    集成
+    Integration
   
 
           </label>
@@ -2800,7 +2696,7 @@
   <span class="md-ellipsis">
     
   
-    自动记忆
+    Auto Memory
   
 
     
@@ -3066,7 +2962,7 @@
   <span class="md-ellipsis">
     
   
-    发布说明
+    Release Notes
   
 
     
@@ -3092,7 +2988,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -3101,51 +2997,146 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      目录
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#kb-component-bootstrap" class="md-nav__link">
     <span class="md-ellipsis">
       
-        鉴权模型
+        KB Component Bootstrap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KB Component Bootstrap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1kbbootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/kb/bootstrap
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#response-envelope" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1kbbootstrapstream_idcancel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        响应封装
+        POST /api/v1/kb/bootstrap/{stream_id}/cancel
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#url" class="md-nav__link">
+  <a href="#platform-documentation-bootstrap" class="md-nav__link">
     <span class="md-ellipsis">
       
-        全局 URL 前缀
+        Platform Documentation Bootstrap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform Documentation Bootstrap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1kbbootstrap-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/kb/bootstrap-docs
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1kbbootstrap-docsstream_idcancel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        下一步
+        POST /api/v1/kb/bootstrap-docs/{stream_id}/cancel
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sse-event-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSE Event Format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSE Event Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lifecycle-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle Stages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-sse-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example SSE Stream
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consuming-sse-in-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consuming SSE in JavaScript
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancellation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3166,7 +3157,7 @@
 
 
   
-    <a href="https://github.com/Datus-ai/Datus-agent/edit/main/docs/API/introduction.zh.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/Datus-ai/Datus-agent/edit/main/docs/API/knowledge_base.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3174,90 +3165,346 @@
   
 
 
-<h1 id="api">API 介绍<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
-<p>Datus REST API 将 Agent 的 chat 循环、知识库 explorer、数据库 catalog 与语义模型管理以 HTTP 接口的形式
-对外暴露。通过 <code>datus-api</code> 命令启动。</p>
-<p>API 服务与 <code>datus</code> CLI、<code>datus-mcp</code> MCP 服务共享同一套配置、知识库与 Agent 能力 — 三种入口,同一个引擎。</p>
+<h1 id="knowledge-base-api">Knowledge Base API<a class="headerlink" href="#knowledge-base-api" title="Permanent link">&para;</a></h1>
+<p>The knowledge base endpoints manage KB bootstrap operations with real-time progress streaming via Server-Sent Events
+(SSE). All endpoints live under <code>/api/v1/kb</code>.</p>
+<h2 id="kb-component-bootstrap">KB Component Bootstrap<a class="headerlink" href="#kb-component-bootstrap" title="Permanent link">&para;</a></h2>
+<h3 id="post-apiv1kbbootstrap"><code>POST /api/v1/kb/bootstrap</code><a class="headerlink" href="#post-apiv1kbbootstrap" title="Permanent link">&para;</a></h3>
+<p>Start a knowledge base component bootstrap with SSE progress streaming. Components include metadata, semantic model,
+metrics, external knowledge, and reference SQL.</p>
+<p><strong>Body</strong>:</p>
 <table>
 <thead>
 <tr>
-<th>入口</th>
-<th>适用场景</th>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>CLI</strong>(<code>datus</code>)</td>
-<td>本地交互式开发</td>
+<td><code>components</code></td>
+<td>string[]</td>
+<td><em>(required)</em></td>
+<td>Components to bootstrap: <code>metadata</code>, <code>semantic_model</code>, <code>metrics</code>, <code>ext_knowledge</code>, <code>reference_sql</code></td>
 </tr>
 <tr>
-<td><strong>MCP</strong>(<code>datus-mcp</code>)</td>
-<td>嵌入到其他 Agent 中</td>
+<td><code>strategy</code></td>
+<td>string</td>
+<td><code>incremental</code></td>
+<td><code>check</code> (inspect only), <code>overwrite</code> (rebuild), or <code>incremental</code> (append/update)</td>
 </tr>
 <tr>
-<td><strong>REST API</strong>(<code>datus-api</code>)</td>
-<td>Web 前端、服务化、自动化</td>
+<td><code>schema_linking_type</code></td>
+<td>string</td>
+<td><code>full</code></td>
+<td>Metadata only: <code>table</code>, <code>view</code>, <code>mv</code>, or <code>full</code></td>
+</tr>
+<tr>
+<td><code>catalog</code></td>
+<td>string</td>
+<td><code>""</code></td>
+<td>Metadata catalog filter (Snowflake, StarRocks)</td>
+</tr>
+<tr>
+<td><code>database_name</code></td>
+<td>string</td>
+<td><code>""</code></td>
+<td>Metadata database filter</td>
+</tr>
+<tr>
+<td><code>success_story</code></td>
+<td>string?</td>
+<td><code>null</code></td>
+<td>Project-root-relative path to success-story CSV</td>
+</tr>
+<tr>
+<td><code>subject_tree</code></td>
+<td>string[]?</td>
+<td><code>null</code></td>
+<td>Predefined hierarchical categories</td>
+</tr>
+<tr>
+<td><code>sql_dir</code></td>
+<td>string?</td>
+<td><code>null</code></td>
+<td>Project-root-relative directory with <code>.sql</code> files</td>
+</tr>
+<tr>
+<td><code>ext_knowledge</code></td>
+<td>string?</td>
+<td><code>null</code></td>
+<td>Project-root-relative CSV for external knowledge</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_1">鉴权模型<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>开源版本采用基于请求头的身份识别方案,无 token 概念。调用方通过 <code>X-Datus-User-Id</code> 请求头标识自己,值需匹配
-<code>^[A-Za-z0-9_-]+$</code>。未提供时请求落入默认未隔离的会话;提供时,该 user id 用于隔离各用户的会话与工具状态。</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>X-Datus-User-Id: alice
-</span></code></pre></div>
-<p>Namespace 隔离由 <code>--namespace</code> CLI 参数(或 <code>DATUS_NAMESPACE</code> 环境变量)单独控制,决定加载 <code>agent.yml</code>
-中的哪个 namespace 的数据库与知识库。</p>
-<h2 id="response-envelope">响应封装<a class="headerlink" href="#response-envelope" title="Permanent link">&para;</a></h2>
-<p>绝大多数 JSON 响应都包裹在统一的 <code>Result[T]</code> 结构中:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;errorCode&quot;</span><span class="p">:</span><span class="w">    </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;errorMessage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
-</span></code></pre></div>
+<p><strong>Response</strong>: <code>text/event-stream</code>. See <a href="#sse-event-format">SSE event format</a> below.</p>
+<h3 id="post-apiv1kbbootstrapstream_idcancel"><code>POST /api/v1/kb/bootstrap/{stream_id}/cancel</code><a class="headerlink" href="#post-apiv1kbbootstrapstream_idcancel" title="Permanent link">&para;</a></h3>
+<p>Cancel a running KB bootstrap stream.</p>
+<p><strong>Response</strong>: <code>Result[dict]</code> with <code>data = { stream_id, cancelled: true|false }</code>.</p>
+<hr />
+<h2 id="platform-documentation-bootstrap">Platform Documentation Bootstrap<a class="headerlink" href="#platform-documentation-bootstrap" title="Permanent link">&para;</a></h2>
+<h3 id="post-apiv1kbbootstrap-docs"><code>POST /api/v1/kb/bootstrap-docs</code><a class="headerlink" href="#post-apiv1kbbootstrap-docs" title="Permanent link">&para;</a></h3>
+<p>Start a platform documentation bootstrap with SSE progress streaming. Ingests documentation from GitHub repos, websites,
+or local directories into the platform doc vector store.</p>
+<p><strong>Body</strong>:</p>
 <table>
 <thead>
 <tr>
-<th>字段</th>
-<th>类型</th>
-<th>说明</th>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>success</code></td>
-<td>bool</td>
-<td>成功为 <code>true</code>,失败为 <code>false</code></td>
-</tr>
-<tr>
-<td><code>data</code></td>
-<td>object</td>
-<td>接口专属业务数据,失败时为 <code>null</code></td>
-</tr>
-<tr>
-<td><code>errorCode</code></td>
+<td><code>platform</code></td>
 <td>string</td>
-<td>稳定的机器可读错误码</td>
+<td><em>(required)</em></td>
+<td>Platform name (e.g. <code>snowflake</code>, <code>duckdb</code>, <code>starrocks</code>)</td>
 </tr>
 <tr>
-<td><code>errorMessage</code></td>
+<td><code>build_mode</code></td>
 <td>string</td>
-<td>人类可读错误描述</td>
+<td><code>overwrite</code></td>
+<td><code>check</code> (status only) or <code>overwrite</code> (rebuild)</td>
+</tr>
+<tr>
+<td><code>pool_size</code></td>
+<td>int</td>
+<td><code>4</code></td>
+<td>Thread pool size (1–16)</td>
+</tr>
+<tr>
+<td><code>source_type</code></td>
+<td>string?</td>
+<td><code>null</code></td>
+<td><code>github</code>, <code>website</code>, or <code>local</code></td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td>string?</td>
+<td><code>null</code></td>
+<td>GitHub repo <code>owner/repo</code>, URL, or local path</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td>string?</td>
+<td><code>null</code></td>
+<td>Document version (auto-detected if omitted)</td>
+</tr>
+<tr>
+<td><code>github_ref</code></td>
+<td>string?</td>
+<td><code>null</code></td>
+<td>Git branch / tag / commit for GitHub sources</td>
+</tr>
+<tr>
+<td><code>github_token</code></td>
+<td>string?</td>
+<td><code>null</code></td>
+<td>GitHub API token for authenticated access</td>
+</tr>
+<tr>
+<td><code>paths</code></td>
+<td>string[]?</td>
+<td><code>null</code></td>
+<td>File/directory paths to include (GitHub only)</td>
+</tr>
+<tr>
+<td><code>chunk_size</code></td>
+<td>int?</td>
+<td><code>null</code></td>
+<td>Target chunk size in characters</td>
+</tr>
+<tr>
+<td><code>max_depth</code></td>
+<td>int?</td>
+<td><code>null</code></td>
+<td>Max crawl depth for website sources</td>
+</tr>
+<tr>
+<td><code>include_patterns</code></td>
+<td>string[]?</td>
+<td><code>null</code></td>
+<td>File/URL patterns to include (regex)</td>
+</tr>
+<tr>
+<td><code>exclude_patterns</code></td>
+<td>string[]?</td>
+<td><code>null</code></td>
+<td>File/URL patterns to exclude (regex)</td>
 </tr>
 </tbody>
 </table>
-<p>流式接口(<code>/chat/stream</code>、<code>/chat/resume</code>)返回 <code>text/event-stream</code>,不使用 <code>Result</code> 包装,详见
-<a href="../chat/">Chat</a>。</p>
-<h2 id="url">全局 URL 前缀<a class="headerlink" href="#url" title="Permanent link">&para;</a></h2>
-<p>所有 v1 接口位于 <code>/api/v1</code> 前缀下;健康检查 <code>/health</code> 与 OpenAPI/Swagger UI(<code>/docs</code>、<code>/openapi.json</code>)
-位于应用根路径。</p>
-<h2 id="_2">下一步<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../deployment/">部署</a> — 安装并启动 API 服务</li>
-<li><a href="../chat/">Chat</a> — Chat 接口与 SSE 流式协议</li>
-<li><a href="../knowledge_base/">知识库</a> — 知识库构建与平台文档接口（SSE 流式）</li>
-</ul>
+<p>Only <code>platform</code> is required. All other fields fall back to the matching <code>DocumentConfig</code> in <code>agent.yml</code>
+(<code>agent.document.&lt;platform&gt;</code>). See <a href="../../knowledge_base/platform_doc/#configure-in-agentyml-optional">Platform Documentation — Configure in agent.yml</a> for YAML configuration.</p>
+<p><strong>Response</strong>: <code>text/event-stream</code>. See <a href="#sse-event-format">SSE event format</a> below.</p>
+<p><strong>Example</strong>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Check existing store stats</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-N<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8000/api/v1/kb/bootstrap-docs<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;platform&quot;: &quot;starrocks&quot;, &quot;build_mode&quot;: &quot;check&quot;}&#39;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Full rebuild from GitHub</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>curl<span class="w"> </span>-N<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8000/api/v1/kb/bootstrap-docs<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="s1">    &quot;platform&quot;: &quot;starrocks&quot;,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="s1">    &quot;source&quot;: &quot;StarRocks/starrocks&quot;,</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="s1">    &quot;source_type&quot;: &quot;github&quot;,</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="s1">    &quot;github_ref&quot;: &quot;main&quot;,</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="s1">    &quot;paths&quot;: [&quot;docs/en&quot;],</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="s1">    &quot;build_mode&quot;: &quot;overwrite&quot;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="s1">  }&#39;</span>
+</span></code></pre></div>
+<h3 id="post-apiv1kbbootstrap-docsstream_idcancel"><code>POST /api/v1/kb/bootstrap-docs/{stream_id}/cancel</code><a class="headerlink" href="#post-apiv1kbbootstrap-docsstream_idcancel" title="Permanent link">&para;</a></h3>
+<p>Cancel a running platform doc bootstrap stream.</p>
+<p><strong>Response</strong>: <code>Result[dict]</code> with <code>data = { stream_id, cancelled: true|false }</code>.</p>
+<hr />
+<h2 id="sse-event-format">SSE Event Format<a class="headerlink" href="#sse-event-format" title="Permanent link">&para;</a></h2>
+<p>Both bootstrap endpoints stream progress as Server-Sent Events. Each event has the form:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>id: &lt;stream_id&gt;
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>event: &lt;stage&gt;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>data: &lt;json&gt;
+</span></code></pre></div>
+<p>The JSON payload is a <code>BootstrapKbEvent</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>stream_id</code></td>
+<td>string</td>
+<td>Unique stream identifier</td>
+</tr>
+<tr>
+<td><code>component</code></td>
+<td>string</td>
+<td>Component name (<code>metadata</code>, <code>semantic_model</code>, <code>platform_doc</code>, <code>all</code>, etc.)</td>
+</tr>
+<tr>
+<td><code>stage</code></td>
+<td>string</td>
+<td>Lifecycle stage (see below)</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>string?</td>
+<td>Human-readable status message</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td>string?</td>
+<td>Error message if failed</td>
+</tr>
+<tr>
+<td><code>progress</code></td>
+<td>object?</td>
+<td><code>{ total, completed, failed }</code> counters</td>
+</tr>
+<tr>
+<td><code>payload</code></td>
+<td>object?</td>
+<td>Additional data (component-specific results)</td>
+</tr>
+<tr>
+<td><code>timestamp</code></td>
+<td>string</td>
+<td>ISO-format timestamp</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lifecycle-stages">Lifecycle Stages<a class="headerlink" href="#lifecycle-stages" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>task_started</code></td>
+<td>Component bootstrap has started</td>
+</tr>
+<tr>
+<td><code>task_validated</code></td>
+<td>Items validated, total count confirmed</td>
+</tr>
+<tr>
+<td><code>task_processing</code></td>
+<td>Component is processing items</td>
+</tr>
+<tr>
+<td><code>task_completed</code></td>
+<td>Component completed successfully</td>
+</tr>
+<tr>
+<td><code>task_failed</code></td>
+<td>Component failed</td>
+</tr>
+<tr>
+<td><code>item_started</code></td>
+<td>Single item processing started</td>
+</tr>
+<tr>
+<td><code>item_completed</code></td>
+<td>Single item completed</td>
+</tr>
+<tr>
+<td><code>item_failed</code></td>
+<td>Single item failed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-sse-stream">Example SSE Stream<a class="headerlink" href="#example-sse-stream" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>id: abc-123
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>event: task_started
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>data: {&quot;stream_id&quot;:&quot;abc-123&quot;,&quot;component&quot;:&quot;platform_doc&quot;,&quot;stage&quot;:&quot;task_started&quot;,&quot;timestamp&quot;:&quot;2025-01-01T00:00:00&quot;}
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>id: abc-123
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>event: task_validated
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>data: {&quot;stream_id&quot;:&quot;abc-123&quot;,&quot;component&quot;:&quot;platform_doc&quot;,&quot;stage&quot;:&quot;task_validated&quot;,&quot;progress&quot;:{&quot;total&quot;:1036,&quot;completed&quot;:0,&quot;failed&quot;:0},&quot;timestamp&quot;:&quot;2025-01-01T00:00:01&quot;}
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>id: abc-123
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>event: item_completed
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>data: {&quot;stream_id&quot;:&quot;abc-123&quot;,&quot;component&quot;:&quot;platform_doc&quot;,&quot;stage&quot;:&quot;item_completed&quot;,&quot;message&quot;:&quot;docs/en/intro.md&quot;,&quot;timestamp&quot;:&quot;2025-01-01T00:00:02&quot;}
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>id: abc-123
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>event: task_completed
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>data: {&quot;stream_id&quot;:&quot;abc-123&quot;,&quot;component&quot;:&quot;platform_doc&quot;,&quot;stage&quot;:&quot;task_completed&quot;,&quot;message&quot;:&quot;Processed 1036 docs, 5200 chunks&quot;,&quot;payload&quot;:{&quot;platform&quot;:&quot;starrocks&quot;,&quot;version&quot;:&quot;3.5.15&quot;,&quot;total_docs&quot;:1036,&quot;total_chunks&quot;:5200},&quot;timestamp&quot;:&quot;2025-01-01T00:01:30&quot;}
+</span></code></pre></div>
+<h3 id="consuming-sse-in-javascript">Consuming SSE in JavaScript<a class="headerlink" href="#consuming-sse-in-javascript" title="Permanent link">&para;</a></h3>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">evtSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">EventSource</span><span class="p">(</span><span class="s1">&#39;/api/v1/kb/bootstrap-docs&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="w"> </span><span class="nx">platform</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;starrocks&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">build_mode</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;overwrite&#39;</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">});</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nx">evtSource</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;task_completed&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Done: </span><span class="si">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">total_docs</span><span class="si">}</span><span class="sb"> docs, </span><span class="si">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">total_chunks</span><span class="si">}</span><span class="sb"> chunks`</span><span class="p">);</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nx">evtSource</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">});</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="nx">evtSource</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;task_failed&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="sb">`Failed: </span><span class="si">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">error</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="nx">evtSource</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="p">});</span>
+</span></code></pre></div>
+<h3 id="cancellation">Cancellation<a class="headerlink" href="#cancellation" title="Permanent link">&para;</a></h3>
+<p>To cancel a running bootstrap, POST to the cancel endpoint with the <code>stream_id</code> from the SSE events:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8000/api/v1/kb/bootstrap-docs/abc-123/cancel
+</span></code></pre></div>
 
 
 
@@ -3284,44 +3531,6 @@
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="页脚" >
-        
-          
-          <a href="../../workflow/api/" class="md-footer__link md-footer__link--prev" aria-label="上一页: API">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              <div class="md-ellipsis">
-                API
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../deployment/" class="md-footer__link md-footer__link--next" aria-label="下一页: 部署">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              <div class="md-ellipsis">
-                部署
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -3402,10 +3611,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tracking", "navigation.indexes", "content.code.copy", "content.code.select", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tracking", "navigation.indexes", "content.code.copy", "content.code.select", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

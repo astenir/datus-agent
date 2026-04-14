@@ -1711,6 +1711,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3351,6 +3362,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3610,6 +3632,20 @@
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>!search_document
 </span></code></pre></div>
 <p>用于交互式执行 <code>search_document</code> 并查看命中文档片段。</p>
+<h2 id="rest-api">REST API<a class="headerlink" href="#rest-api" title="Permanent link">&para;</a></h2>
+<p>平台文档也可以通过 REST API 构建，支持 SSE 实时进度推送。这是 Web 前端和自动化场景下的推荐方式。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>curl<span class="w"> </span>-N<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8000/api/v1/kb/bootstrap-docs<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="s1">    &quot;platform&quot;: &quot;starrocks&quot;,</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="s1">    &quot;source&quot;: &quot;StarRocks/starrocks&quot;,</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="s1">    &quot;source_type&quot;: &quot;github&quot;,</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="s1">    &quot;paths&quot;: [&quot;docs/en&quot;],</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="s1">    &quot;build_mode&quot;: &quot;overwrite&quot;</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="s1">  }&#39;</span>
+</span></code></pre></div>
+<p>API 接受与 CLI 相同的参数（映射为 JSON 字段），并以 SSE 事件流推送进度。未提供的字段从 <code>agent.yml</code> 中读取。</p>
+<p>完整的接口定义、请求/响应格式和 SSE 事件说明请参见 <a href="../../API/knowledge_base/#平台文档构建">知识库 API</a>。</p>
 <h2 id="_9">注意事项与排错<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>GitHub 速率限制</strong>：建议设置 <code>GITHUB_TOKEN</code>（或在配置里写 <code>github_token</code>）。</li>
