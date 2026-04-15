@@ -351,6 +351,13 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/subagent/customized_subagent/"/>
     </url>
     <url>
+        <loc>https://docs.datus.ai/dev/subagent/gen_dashboard/</loc>
+        <lastmod>2026-04-15</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/dev/subagent/gen_dashboard/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/subagent/gen_dashboard/"/>
+    </url>
+    <url>
         <loc>https://docs.datus.ai/dev/subagent/gen_metrics/</loc>
         <lastmod>2026-04-15</lastmod>
         <changefreq>daily</changefreq>
@@ -377,6 +384,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/dev/subagent/introduction/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/subagent/introduction/"/>
+    </url>
+    <url>
+        <loc>https://docs.datus.ai/dev/subagent/scheduler/</loc>
+        <lastmod>2026-04-15</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/dev/subagent/scheduler/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/subagent/scheduler/"/>
     </url>
     <url>
         <loc>https://docs.datus.ai/dev/training/llm_trace_usage/</loc>
@@ -771,6 +785,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devsubagent/customized_subagent/"/>
     </url>
     <url>
+        <loc>https://docs.datus.ai/dev/zh/subagent/gen_dashboard/</loc>
+        <lastmod>2026-04-15</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/subagent/gen_dashboard/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devsubagent/gen_dashboard/"/>
+    </url>
+    <url>
         <loc>https://docs.datus.ai/dev/zh/subagent/gen_metrics/</loc>
         <lastmod>2026-04-15</lastmod>
         <changefreq>daily</changefreq>
@@ -797,6 +818,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/subagent/introduction/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devsubagent/introduction/"/>
+    </url>
+    <url>
+        <loc>https://docs.datus.ai/dev/zh/subagent/scheduler/</loc>
+        <lastmod>2026-04-15</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/subagent/scheduler/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devsubagent/scheduler/"/>
     </url>
     <url>
         <loc>https://docs.datus.ai/dev/zh/training/llm_trace_usage/</loc>
