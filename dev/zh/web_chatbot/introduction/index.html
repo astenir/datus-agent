@@ -1452,17 +1452,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#5-report-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. 问题反馈（Report Issues）
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3366,17 +3355,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#5-report-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. 问题反馈（Report Issues）
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3479,16 +3457,14 @@
 <p><strong>查看会话历史</strong>：</p>
 <p>侧边栏显示最近的会话信息，包括：</p>
 <ul>
-<li>会话 ID（截断显示）</li>
+<li>会话名称</li>
 <li>创建时间</li>
-<li>消息数量</li>
-<li>最新用户消息预览</li>
 </ul>
 <p><strong>加载历史会话</strong>：</p>
 <ol>
 <li>在侧边栏找到目标会话</li>
-<li>点击 "🔗 Load Session"</li>
-<li>以只读方式查看会话内容</li>
+<li>点击对应的会话名称</li>
+<li>即可进入会话详情，查看历史消息或者你可以继续进行对话</li>
 </ol>
 <p><strong>会话分享</strong>：</p>
 <p>每个会话都有唯一可分享的链接：</p>
@@ -3499,7 +3475,7 @@
 <p>当 AI 生成的 SQL 工作良好时：</p>
 <ol>
 <li>先审阅生成的 SQL</li>
-<li>点击 "👍 Success" 按钮</li>
+<li>点击 "Save to success story" 按钮</li>
 <li>查询会保存到 <code>~/.datus/benchmark/[subagent]/success_story.csv</code></li>
 </ol>
 <p><img alt="Save Generated SQL" src="../../../assets/geneated_sql_save.png" /></p>
@@ -3508,15 +3484,6 @@
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>http://localhost:8501?session=...,abc123...,chatbot,&quot;Show revenue by category&quot;,SELECT ...,2025-01-15 10:30:00
 </span></code></pre></div>
 <p>这有助于沉淀有效查询用于基准评测与持续改进。</p>
-<h3 id="5-report-issues">5. 问题反馈（Report Issues）<a class="headerlink" href="#5-report-issues" title="Permanent link">&para;</a></h3>
-<p><strong>便捷分享问题</strong>：</p>
-<ol>
-<li>在侧边栏点击 "🐛 Report Issue"</li>
-<li>系统会自动将会话链接复制到剪贴板</li>
-<li>将链接粘贴给开发者即可定位问题</li>
-</ol>
-<p>会话链接包含完整的对话上下文，便于排查与复现。</p>
-<p><img alt="Report Issue" src="../../../assets/report_issue_sessionid_copied.png" width="50%" /></p>
 <h2 id="_5">总结<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>Datus Web chatbot 提供：</p>
 <ul>

@@ -1442,21 +1442,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-success-story-tracking" class="md-nav__link">
+  <a href="#4-success-story-archive" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Success Story Tracking
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-report-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Report Issues
+        4. Success Story Archive
       
     </span>
   </a>
@@ -3356,21 +3345,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-success-story-tracking" class="md-nav__link">
+  <a href="#4-success-story-archive" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Success Story Tracking
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-report-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Report Issues
+        4. Success Story Archive
       
     </span>
   </a>
@@ -3479,27 +3457,25 @@
 <p><strong>View Session History</strong>:</p>
 <p>The sidebar shows your recent chat sessions with:</p>
 <ul>
-<li>Session ID (shortened)</li>
+<li>Session name</li>
 <li>Creation time</li>
-<li>Message count</li>
-<li>Latest user message preview</li>
 </ul>
 <p><strong>Load Previous Sessions</strong>:</p>
 <ol>
 <li>Find the session in the sidebar</li>
-<li>Click "🔗 Load Session"</li>
-<li>View the conversation in read-only mode</li>
+<li>Click the session name</li>
+<li>Open the session to review its history or continue the conversation</li>
 </ol>
 <p><strong>Session Sharing</strong>:</p>
 <p>Each session has a unique URL that can be shared:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>http://localhost:8501?session=abc123def456...
 </span></code></pre></div>
-<h3 id="4-success-story-tracking">4. Success Story Tracking<a class="headerlink" href="#4-success-story-tracking" title="Permanent link">&para;</a></h3>
+<h3 id="4-success-story-archive">4. Success Story Archive<a class="headerlink" href="#4-success-story-archive" title="Permanent link">&para;</a></h3>
 <p><strong>Mark Successful Queries</strong>:</p>
 <p>When the AI generates a SQL query that works well:</p>
 <ol>
 <li>Review the generated SQL</li>
-<li>Click the "👍 Success" button</li>
+<li>Click the "Save to success story" button</li>
 <li>The query is saved to <code>~/.datus/benchmark/[subagent]/success_story.csv</code></li>
 </ol>
 <p><img alt="Save Generated SQL" src="../../assets/geneated_sql_save.png" /></p>
@@ -3508,15 +3484,6 @@
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>http://localhost:8501?session=...,abc123...,chatbot,&quot;Show revenue by category&quot;,SELECT ...,2025-01-15 10:30:00
 </span></code></pre></div>
 <p>This helps track effective queries for benchmarking and improvement.</p>
-<h3 id="5-report-issues">5. Report Issues<a class="headerlink" href="#5-report-issues" title="Permanent link">&para;</a></h3>
-<p><strong>Share Problems Easily</strong>:</p>
-<ol>
-<li>Click "🐛 Report Issue" in the sidebar</li>
-<li>Session link is automatically copied to clipboard</li>
-<li>Paste the link when reporting issues to developers</li>
-</ol>
-<p>The session link includes full conversation context, making debugging easier.</p>
-<p><img alt="Report Issue" src="../../assets/report_issue_sessionid_copied.png" width="50%" /></p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>The Datus Web Chatbot provides:</p>
 <ul>
