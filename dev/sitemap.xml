@@ -176,11 +176,11 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/configuration/bi_platforms/"/>
     </url>
     <url>
-        <loc>https://docs.datus.ai/dev/configuration/databases/</loc>
+        <loc>https://docs.datus.ai/dev/configuration/datasources/</loc>
         <lastmod>2026-04-21</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/dev/configuration/databases/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/configuration/databases/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/dev/configuration/datasources/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/configuration/datasources/"/>
     </url>
     <url>
         <loc>https://docs.datus.ai/dev/configuration/introduction/</loc>
@@ -701,11 +701,11 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devconfiguration/bi_platforms/"/>
     </url>
     <url>
-        <loc>https://docs.datus.ai/dev/zh/configuration/databases/</loc>
+        <loc>https://docs.datus.ai/dev/zh/configuration/datasources/</loc>
         <lastmod>2026-04-21</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/configuration/databases/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devconfiguration/databases/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/configuration/datasources/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devconfiguration/datasources/"/>
     </url>
     <url>
         <loc>https://docs.datus.ai/dev/zh/configuration/introduction/</loc>

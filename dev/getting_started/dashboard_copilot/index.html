@@ -2796,14 +2796,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/databases/" class="md-nav__link">
+      <a href="../../configuration/datasources/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Databases
+    Datasources
   
 
     
@@ -4171,7 +4171,7 @@
 <p>Add the following configuration to your <code>~/.datus/agent.yml</code>:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">agent</span><span class="p">:</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">databases</span><span class="p">:</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">datasources</span><span class="p">:</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">      </span><span class="nt">superset</span><span class="p">:</span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql</span>
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span>
@@ -4193,7 +4193,7 @@
 <div class="admonition note">
 <p class="admonition-title">Configuration Sections</p>
 <ul>
-<li><strong>services.databases</strong>: Defines database connections for SQL execution</li>
+<li><strong>services.datasources</strong>: Defines datasource connections for SQL execution</li>
 <li><strong>services.semantic_layer</strong>: Registers the semantic adapter used by metric and semantic-model workflows</li>
 <li><strong>services.bi_platforms</strong>: Defines the BI platform credentials for dashboard access</li>
 </ul>
