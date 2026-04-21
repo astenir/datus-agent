@@ -1288,7 +1288,7 @@
   <a href="#subagent-add" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent add
+        /subagent add
       
     </span>
   </a>
@@ -1299,7 +1299,7 @@
   <a href="#subagent-list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent list
+        /subagent list
       
     </span>
   </a>
@@ -1310,7 +1310,7 @@
   <a href="#subagent-update-agent_name" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent update &lt;agent_name&gt;
+        /subagent update &lt;agent_name&gt;
       
     </span>
   </a>
@@ -1321,7 +1321,7 @@
   <a href="#subagent-remove-agent_name" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent remove &lt;agent_name&gt;
+        /subagent remove &lt;agent_name&gt;
       
     </span>
   </a>
@@ -3759,7 +3759,7 @@
   <a href="#subagent-add" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent add
+        /subagent add
       
     </span>
   </a>
@@ -3770,7 +3770,7 @@
   <a href="#subagent-list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent list
+        /subagent list
       
     </span>
   </a>
@@ -3781,7 +3781,7 @@
   <a href="#subagent-update-agent_name" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent update &lt;agent_name&gt;
+        /subagent update &lt;agent_name&gt;
       
     </span>
   </a>
@@ -3792,7 +3792,7 @@
   <a href="#subagent-remove-agent_name" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent remove &lt;agent_name&gt;
+        /subagent remove &lt;agent_name&gt;
       
     </span>
   </a>
@@ -3864,7 +3864,7 @@
 
 <h1 id="subagent">自定义 Subagent<a class="headerlink" href="#subagent" title="Permanent link">&para;</a></h1>
 <h2 id="_1">概览<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><code>.subagent</code> 用于管理保存在 <code>agent.yml</code> 的 <code>agent.agentic_nodes</code> 下的自定义 subagent。</p>
+<p><code>/subagent</code> 用于管理保存在 <code>agent.yml</code> 的 <code>agent.agentic_nodes</code> 下的自定义 subagent。</p>
 <p>当前 CLI 支持：</p>
 <ul>
 <li><code>add</code>：通过交互式向导创建自定义 subagent</li>
@@ -3872,7 +3872,7 @@
 <li><code>update &lt;agent_name&gt;</code>：编辑已有自定义 subagent</li>
 <li><code>remove &lt;agent_name&gt;</code>：删除自定义 subagent</li>
 </ul>
-<p>来自 <code>SYS_SUB_AGENTS</code> 的内置系统 subagent 是保留名称，不能通过 <code>.subagent</code> 删除或修改。</p>
+<p>来自 <code>SYS_SUB_AGENTS</code> 的内置系统 subagent 是保留名称，不能通过 <code>/subagent</code> 删除或修改。</p>
 <h2 id="_2">向导会生成什么<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>向导会写入两部分内容：</p>
 <ol>
@@ -3909,14 +3909,14 @@
 <h3 id="4-rules">第 4 步：Rules<a class="headerlink" href="#4-rules" title="Permanent link">&para;</a></h3>
 <p>Rules 会以字符串列表形式保存在 <code>rules</code> 中，并追加到最终系统提示词里。</p>
 <h2 id="_4">命令说明<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h3 id="subagent-add"><code>.subagent add</code><a class="headerlink" href="#subagent-add" title="Permanent link">&para;</a></h3>
+<h3 id="subagent-add"><code>/subagent add</code><a class="headerlink" href="#subagent-add" title="Permanent link">&para;</a></h3>
 <p>启动交互式向导并创建新的自定义 subagent。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>.subagent<span class="w"> </span>add
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/subagent<span class="w"> </span>add
 </span></code></pre></div>
 <p><img alt="Add subagent" src="../../../assets/add_subagent.png" /></p>
-<h3 id="subagent-list"><code>.subagent list</code><a class="headerlink" href="#subagent-list" title="Permanent link">&para;</a></h3>
+<h3 id="subagent-list"><code>/subagent list</code><a class="headerlink" href="#subagent-list" title="Permanent link">&para;</a></h3>
 <p>列出已配置的自定义 subagent。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>.subagent<span class="w"> </span>list
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/subagent<span class="w"> </span>list
 </span></code></pre></div>
 <p>当前表格会显示：</p>
 <ul>
@@ -3930,14 +3930,14 @@
 <p>其中 <code>Scoped KB</code> 是遗留展示列，对新配置通常显示为 <code>—</code>。</p>
 <p>当 subagent 配置了 scoped context 时，列表会按当前数据库进行过滤。</p>
 <p><img alt="List subagent" src="../../../assets/list_subagents.png" /></p>
-<h3 id="subagent-update-agent_name"><code>.subagent update &lt;agent_name&gt;</code><a class="headerlink" href="#subagent-update-agent_name" title="Permanent link">&para;</a></h3>
+<h3 id="subagent-update-agent_name"><code>/subagent update &lt;agent_name&gt;</code><a class="headerlink" href="#subagent-update-agent_name" title="Permanent link">&para;</a></h3>
 <p>把现有配置加载到向导中，修改后再写回 <code>agent.yml</code>。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.subagent<span class="w"> </span>update<span class="w"> </span>finance_report
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/subagent<span class="w"> </span>update<span class="w"> </span>finance_report
 </span></code></pre></div>
 <p><img alt="Update subagent" src="../../../assets/update_subagent.png" /></p>
-<h3 id="subagent-remove-agent_name"><code>.subagent remove &lt;agent_name&gt;</code><a class="headerlink" href="#subagent-remove-agent_name" title="Permanent link">&para;</a></h3>
+<h3 id="subagent-remove-agent_name"><code>/subagent remove &lt;agent_name&gt;</code><a class="headerlink" href="#subagent-remove-agent_name" title="Permanent link">&para;</a></h3>
 <p>删除配置项以及对应生成的提示词模板。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>.subagent<span class="w"> </span>remove<span class="w"> </span>finance_report
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/subagent<span class="w"> </span>remove<span class="w"> </span>finance_report
 </span></code></pre></div>
 <h2 id="_5">配置示例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>生成后的配置通常类似这样：</p>
@@ -3969,7 +3969,7 @@
 </ul>
 <p>这意味着：</p>
 <ul>
-<li>当前 CLI 没有 <code>.subagent bootstrap</code> 子命令</li>
+<li>当前 CLI 没有 <code>/subagent bootstrap</code> 子命令</li>
 <li><code>scoped_kb_path</code> 已废弃，新保存的配置不会持久化该字段</li>
 <li>全局知识仍然需要通过 <code>datus-agent bootstrap-kb</code> 单独构建</li>
 </ul>

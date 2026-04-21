@@ -4842,11 +4842,11 @@
 </span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="nt">created_at</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-01-15T10:00:00Z&quot;</span>
 </span></code></pre></div>
 <h4 id="5">步骤 5：验证结果<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
-<p>启动 CLI，先用 <code>@subject</code> 浏览生成的知识条目，然后用原始问题测试：</p>
+<p>启动 CLI，先用 <code>/subject</code> 浏览生成的知识条目，然后用原始问题测试：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>datus-agent<span class="w"> </span>--namespace<span class="w"> </span>california_schools
 </span></code></pre></div>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a># 浏览知识树和条目
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Datus&gt; @subject
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Datus&gt; /subject
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a># 应显示 Education/SAT/Administrators 和 Education/SAT/Scores 及其生成的知识条目
 </span></code></pre></div>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a># 用原始问题测试
@@ -4925,7 +4925,7 @@
 <h3 id="_18">使用技巧<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>验证时强调使用知识库</strong>：在 CLI 中测试时，在问题中加上"请先搜索知识库"，确保 Agent 使用已存储的知识而非仅依赖自身推理。</li>
-<li><strong>预构建主题树</strong>：通过 <code>@subject</code> 提前创建主题树结构。后续不指定 <code>--subject_tree</code> 运行时，系统会自动复用已有分类（学习模式），无需在每行 CSV 中都指定 <code>subject_path</code>。</li>
+<li><strong>预构建主题树</strong>：通过 <code>/subject</code> 提前创建主题树结构。后续不指定 <code>--subject_tree</code> 运行时，系统会自动复用已有分类（学习模式），无需在每行 CSV 中都指定 <code>subject_path</code>。</li>
 <li><strong>多次迭代提升稳定性</strong>：使用 <code>incremental</code> 模式多次运行 bootstrap。每次运行可能生成更优的知识条目，upsert 机制确保已有条目以更好的内容更新。</li>
 </ol>
 

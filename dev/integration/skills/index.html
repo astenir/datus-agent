@@ -4810,7 +4810,7 @@
 </span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>datus<span class="w"> </span>skill<span class="w"> </span><span class="nb">logout</span><span class="w"> </span>--marketplace<span class="w"> </span>http://datus-marketplace:9000
 </span></code></pre></div>
 <p>In the REPL:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>datus&gt; .skill login http://datus-marketplace:9000
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>datus&gt; /skill login http://datus-marketplace:9000
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Email: user@example.com
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Password: ****
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Login successful! Token saved for http://datus-marketplace:9000
@@ -4930,13 +4930,13 @@
 </span></code></pre></div>
 <h3 id="repl-commands">REPL Commands<a class="headerlink" href="#repl-commands" title="Permanent link">&para;</a></h3>
 <p>The same skill operations are available inside the interactive REPL session:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>datus&gt; .skill list                          # List local skills
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>datus&gt; .skill search sql                    # Search marketplace
-</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>datus&gt; .skill install sql-optimization      # Install from marketplace
-</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>datus&gt; .skill publish ./skills/my-skill     # Publish to marketplace
-</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>datus&gt; .skill info sql-optimization         # Show skill details
-</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>datus&gt; .skill update                        # Update marketplace skills
-</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>datus&gt; .skill remove sql-optimization       # Remove local skill
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>datus&gt; /skill list                          # List local skills
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>datus&gt; /skill search sql                    # Search marketplace
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>datus&gt; /skill install sql-optimization      # Install from marketplace
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>datus&gt; /skill publish ./skills/my-skill     # Publish to marketplace
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>datus&gt; /skill info sql-optimization         # Show skill details
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>datus&gt; /skill update                        # Update marketplace skills
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>datus&gt; /skill remove sql-optimization       # Remove local skill
 </span></code></pre></div>
 <h3 id="end-to-end-workflow-example">End-to-End Workflow Example<a class="headerlink" href="#end-to-end-workflow-example" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1"># 1. Create a skill locally</span>

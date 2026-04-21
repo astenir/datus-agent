@@ -3890,7 +3890,7 @@
 <p>We model <strong>Data Engineering Context (Long-Term Memory)</strong> as <strong>two trees</strong>:</p>
 <p><img alt="Context Tree Structure" src="../../assets/context_tree.png" /></p>
 <ul>
-<li>In <a href="../../cli/introduction/">Datus CLI</a>, you can browse and edit them via <code>@catalog</code> and <code>@subject</code></li>
+<li>In <a href="../../cli/introduction/">Datus CLI</a>, you can browse and edit them via <code>/catalog</code> and <code>/subject</code></li>
 <li>Use <code>datus-agent bootstrap-kb</code> to batch-initialize and cold-start the knowledge base</li>
 <li>With subagents, you can define a <strong>scoped context</strong> — a curated subset of the global store that enables precise, domain-aware delivery</li>
 </ul>
@@ -3898,7 +3898,7 @@
 <p><strong>Co-authored context</strong></p>
 <p>LLMs draft semantic models and metrics from tables and reference SQL, while engineers refine labels, metadata, and the subject tree.</p>
 <p><strong>Command-driven iteration</strong></p>
-<p>Commands like <code>/gen_semantic_model</code>, <code>/gen_metrics</code>, and <code>/gen_sql_summary</code> create and update assets. The <code>@catalog</code> and <code>@subject</code> screens support in-place edits.</p>
+<p>Commands like <code>/gen_semantic_model</code>, <code>/gen_metrics</code>, and <code>/gen_sql_summary</code> create and update assets. The <code>/catalog</code> and <code>/subject</code> screens support in-place edits.</p>
 <p><strong>Feedback drives continuous improvement</strong></p>
 <p>Exploration with <code>/chat</code>, success-story writebacks, and issue/benchmark loops convert usage into durable, reusable knowledge.</p>
 <h3 id="subagent-system">Subagent System<a class="headerlink" href="#subagent-system" title="Permanent link">&para;</a></h3>
@@ -3952,20 +3952,20 @@
 <li><code>/gen_sql_summary @file ./sql/</code> — summarize intent and dependencies</li>
 </ul>
 <p><strong>Human-in-the-loop curation</strong></p>
-<p>Refine domain → layer_1 → layer_2 descriptions, align naming conventions, and edit <a href="../../knowledge_base/metadata/">metadata</a> directly in <code>@catalog</code> / <code>@subject</code>.</p>
+<p>Refine domain → layer_1 → layer_2 descriptions, align naming conventions, and edit <a href="../../knowledge_base/metadata/">metadata</a> directly in <code>/catalog</code> / <code>/subject</code>.</p>
 <p><strong>Example:</strong></p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/gen_semantic_model<span class="w"> </span>@table<span class="w"> </span>fact_orders<span class="w"> </span>dim_users
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/gen_metrics<span class="w"> </span>@sql<span class="w"> </span>./sql/retention.sql<span class="w"> </span>@semantic_model<span class="w"> </span>./models/game.yaml<span class="w"> </span><span class="s2">&quot;30-day retention&quot;</span>
 </span></code></pre></div>
 <h3 id="creating-a-subagent">Creating a Subagent<a class="headerlink" href="#creating-a-subagent" title="Permanent link">&para;</a></h3>
 <p><strong>Define a domain-aware chatbot</strong></p>
-<p>Use <code>.subagent add &lt;name&gt;</code> for a specific scenario (e.g., "commercialization analytics").</p>
+<p>Use <code>/subagent add &lt;name&gt;</code> for a specific scenario (e.g., "commercialization analytics").</p>
 <p><strong>Package the essentials</strong></p>
 <p>Include description, rules (join keys, filters, calculation rules), scoped context (tables, SQL snippets, metrics), and allowed tools.</p>
 <p><strong>Constrain the search space</strong></p>
 <p>Limit to selected catalogs/tables and enable only relevant tools/MCPs (DB tools, context search, filesystem where needed).</p>
 <p><strong>Example:</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.subagent<span class="w"> </span>add<span class="w"> </span>california_schools
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/subagent<span class="w"> </span>add<span class="w"> </span>california_schools
 </span></code></pre></div>
 <h3 id="delivering-and-iterating">Delivering and Iterating<a class="headerlink" href="#delivering-and-iterating" title="Permanent link">&para;</a></h3>
 <p><strong>Ship to the web</strong></p>

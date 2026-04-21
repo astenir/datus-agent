@@ -1288,7 +1288,7 @@
   <a href="#subagent-add" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent add
+        /subagent add
       
     </span>
   </a>
@@ -1299,7 +1299,7 @@
   <a href="#subagent-list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent list
+        /subagent list
       
     </span>
   </a>
@@ -1310,7 +1310,7 @@
   <a href="#subagent-update-agent_name" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent update &lt;agent_name&gt;
+        /subagent update &lt;agent_name&gt;
       
     </span>
   </a>
@@ -1321,7 +1321,7 @@
   <a href="#subagent-remove-agent_name" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent remove &lt;agent_name&gt;
+        /subagent remove &lt;agent_name&gt;
       
     </span>
   </a>
@@ -3759,7 +3759,7 @@
   <a href="#subagent-add" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent add
+        /subagent add
       
     </span>
   </a>
@@ -3770,7 +3770,7 @@
   <a href="#subagent-list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent list
+        /subagent list
       
     </span>
   </a>
@@ -3781,7 +3781,7 @@
   <a href="#subagent-update-agent_name" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent update &lt;agent_name&gt;
+        /subagent update &lt;agent_name&gt;
       
     </span>
   </a>
@@ -3792,7 +3792,7 @@
   <a href="#subagent-remove-agent_name" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .subagent remove &lt;agent_name&gt;
+        /subagent remove &lt;agent_name&gt;
       
     </span>
   </a>
@@ -3864,7 +3864,7 @@
 
 <h1 id="customized-subagents">Customized Subagents<a class="headerlink" href="#customized-subagents" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Use <code>.subagent</code> to manage custom subagents stored under <code>agent.agentic_nodes</code> in <code>agent.yml</code>.</p>
+<p>Use <code>/subagent</code> to manage custom subagents stored under <code>agent.agentic_nodes</code> in <code>agent.yml</code>.</p>
 <p>The current CLI supports:</p>
 <ul>
 <li><code>add</code>: create a custom subagent with the interactive wizard</li>
@@ -3872,7 +3872,7 @@
 <li><code>update &lt;agent_name&gt;</code>: edit an existing custom subagent</li>
 <li><code>remove &lt;agent_name&gt;</code>: delete a custom subagent</li>
 </ul>
-<p>Built-in system subagents from <code>SYS_SUB_AGENTS</code> are reserved and cannot be removed or edited with <code>.subagent</code>.</p>
+<p>Built-in system subagents from <code>SYS_SUB_AGENTS</code> are reserved and cannot be removed or edited with <code>/subagent</code>.</p>
 <h2 id="what-the-wizard-creates">What the Wizard Creates<a class="headerlink" href="#what-the-wizard-creates" title="Permanent link">&para;</a></h2>
 <p>The wizard writes two things:</p>
 <ol>
@@ -3909,14 +3909,14 @@
 <h3 id="step-4-rules">Step 4: Rules<a class="headerlink" href="#step-4-rules" title="Permanent link">&para;</a></h3>
 <p>Rules are stored as a string list under <code>rules</code> and appended to the final system prompt.</p>
 <h2 id="command-reference">Command Reference<a class="headerlink" href="#command-reference" title="Permanent link">&para;</a></h2>
-<h3 id="subagent-add"><code>.subagent add</code><a class="headerlink" href="#subagent-add" title="Permanent link">&para;</a></h3>
+<h3 id="subagent-add"><code>/subagent add</code><a class="headerlink" href="#subagent-add" title="Permanent link">&para;</a></h3>
 <p>Starts the interactive wizard and creates a new custom subagent.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>.subagent<span class="w"> </span>add
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/subagent<span class="w"> </span>add
 </span></code></pre></div>
 <p><img alt="Add subagent" src="../../assets/add_subagent.png" /></p>
-<h3 id="subagent-list"><code>.subagent list</code><a class="headerlink" href="#subagent-list" title="Permanent link">&para;</a></h3>
+<h3 id="subagent-list"><code>/subagent list</code><a class="headerlink" href="#subagent-list" title="Permanent link">&para;</a></h3>
 <p>Lists configured custom subagents.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>.subagent<span class="w"> </span>list
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/subagent<span class="w"> </span>list
 </span></code></pre></div>
 <p>The table currently shows:</p>
 <ul>
@@ -3930,14 +3930,14 @@
 <p><code>Scoped KB</code> is a legacy display column and is usually <code>—</code> for new configurations.</p>
 <p>The list is filtered by the current database when a subagent has scoped context.</p>
 <p><img alt="List subagent" src="../../assets/list_subagents.png" /></p>
-<h3 id="subagent-update-agent_name"><code>.subagent update &lt;agent_name&gt;</code><a class="headerlink" href="#subagent-update-agent_name" title="Permanent link">&para;</a></h3>
+<h3 id="subagent-update-agent_name"><code>/subagent update &lt;agent_name&gt;</code><a class="headerlink" href="#subagent-update-agent_name" title="Permanent link">&para;</a></h3>
 <p>Loads the existing config into the wizard and saves changes back to <code>agent.yml</code>.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.subagent<span class="w"> </span>update<span class="w"> </span>finance_report
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/subagent<span class="w"> </span>update<span class="w"> </span>finance_report
 </span></code></pre></div>
 <p><img alt="Update subagent" src="../../assets/update_subagent.png" /></p>
-<h3 id="subagent-remove-agent_name"><code>.subagent remove &lt;agent_name&gt;</code><a class="headerlink" href="#subagent-remove-agent_name" title="Permanent link">&para;</a></h3>
+<h3 id="subagent-remove-agent_name"><code>/subagent remove &lt;agent_name&gt;</code><a class="headerlink" href="#subagent-remove-agent_name" title="Permanent link">&para;</a></h3>
 <p>Deletes the config entry and its generated prompt template.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>.subagent<span class="w"> </span>remove<span class="w"> </span>finance_report
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/subagent<span class="w"> </span>remove<span class="w"> </span>finance_report
 </span></code></pre></div>
 <h2 id="example-output">Example Output<a class="headerlink" href="#example-output" title="Permanent link">&para;</a></h2>
 <p>A generated config typically looks like this:</p>
@@ -3969,7 +3969,7 @@
 </ul>
 <p>That means:</p>
 <ul>
-<li>there is no <code>.subagent bootstrap</code> command in the current CLI</li>
+<li>there is no <code>/subagent bootstrap</code> command in the current CLI</li>
 <li><code>scoped_kb_path</code> is deprecated and not persisted for newly saved configs</li>
 <li>global knowledge still needs to be populated separately with <code>datus-agent bootstrap-kb</code></li>
 </ul>

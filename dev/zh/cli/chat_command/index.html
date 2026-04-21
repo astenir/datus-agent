@@ -3769,16 +3769,16 @@
 <p>在智能体运行过程中，按 <strong>Ctrl+O</strong> 可以在 <strong>compact</strong>（仅显示进度）和 <strong>verbose</strong>（显示完整步骤详情）之间切换 trace 显示模式。这让你在不中断执行的情况下控制输出的详细程度。</p>
 <h3 id="session-commands">会话命令<a class="headerlink" href="#session-commands" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>.clear</code>：清空当前会话上下文，从头开始</li>
-<li><code>.compact</code>：压缩历史对话，减少上下文占用同时保留关键信息</li>
-<li>自动触发：当模型上下文使用率超过 90% 时，会自动执行 <code>.compact</code>，确保聊天不中断</li>
-<li><code>.chat_info</code>：查看当前激活的上下文（消息、数据表、指标）</li>
-<li><code>.resume [session_id]</code>：恢复之前的聊天会话</li>
+<li><code>/clear</code>：清空当前会话上下文，从头开始</li>
+<li><code>/compact</code>：压缩历史对话，减少上下文占用同时保留关键信息</li>
+<li>自动触发：当模型上下文使用率超过 90% 时，会自动执行 <code>/compact</code>，确保聊天不中断</li>
+<li><code>/chat_info</code>：查看当前激活的上下文（消息、数据表、指标）</li>
+<li><code>/resume [session_id]</code>：恢复之前的聊天会话</li>
 <li>不带参数：展示所有可用会话的列表（按最后修改时间排序），然后提示你输入编号选择</li>
 <li>带 session ID：直接恢复指定的会话</li>
 <li>恢复后会回放完整的对话历史，方便你回顾之前的讨论内容，然后从中断处继续聊天</li>
-<li>如果会话的 token 用量较高（&gt;50k），会提示使用 <code>.compact</code> 压缩上下文</li>
-<li><code>.rewind [turn_number]</code>：将当前会话回退到指定的用户轮次，创建一个新的分支会话</li>
+<li>如果会话的 token 用量较高（&gt;50k），会提示使用 <code>/compact</code> 压缩上下文</li>
+<li><code>/rewind [turn_number]</code>：将当前会话回退到指定的用户轮次，创建一个新的分支会话</li>
 <li>展示当前会话中所有用户轮次的编号列表</li>
 <li>选择一个轮次编号后，会将会话克隆到该轮次（含对应的助手回复），生成一个新会话</li>
 <li>原始会话保持不变；回退后的副本成为当前活跃会话</li>

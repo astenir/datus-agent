@@ -3943,7 +3943,7 @@
 <h1 id="mcp-extensions">MCP Extensions<a class="headerlink" href="#mcp-extensions" title="Permanent link">&para;</a></h1>
 <h2 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
 <p>MCP (Model Context Protocol) is how Datus-CLI connects to external tool servers — enabling your agent to gain new capabilities beyond what's built in.</p>
-<p>With <code>.mcp</code>, you can:</p>
+<p>With <code>/mcp</code>, you can:</p>
 <ul>
 <li>Add local or remote MCP servers (stdio, HTTP, SSE)</li>
 <li>List all available servers and their status</li>
@@ -3953,22 +3953,22 @@
 <p>This makes Datus-CLI infinitely extensible: you can plug in SQLite, Snowflake, MetricFlow, Filesystem, or even your own custom MCP server without changing the Datus core.</p>
 <h2 id="2-basic-usage">2. Basic Usage<a class="headerlink" href="#2-basic-usage" title="Permanent link">&para;</a></h2>
 <h3 id="add-a-new-mcp-server">Add a New MCP Server<a class="headerlink" href="#add-a-new-mcp-server" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>.mcp<span class="w"> </span>add<span class="w"> </span>&lt;name&gt;<span class="w"> </span>&lt;command&gt;<span class="w"> </span><span class="o">[</span>args...<span class="o">]</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/mcp<span class="w"> </span>add<span class="w"> </span>&lt;name&gt;<span class="w"> </span>&lt;command&gt;<span class="w"> </span><span class="o">[</span>args...<span class="o">]</span>
 </span></code></pre></div>
 <p><strong>Examples:</strong></p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Local stdio-based server</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>.mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>stdio<span class="w"> </span>sqlite<span class="w"> </span>/Users/me/bin/uv<span class="w"> </span>--<span class="w"> </span>-m<span class="w"> </span>mcp_sqlite_server
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>stdio<span class="w"> </span>sqlite<span class="w"> </span>/Users/me/bin/uv<span class="w"> </span>--<span class="w"> </span>-m<span class="w"> </span>mcp_sqlite_server
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># SSE server with authentication header</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>.mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>api-server<span class="w"> </span>https://api.example.com/mcp/sse<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>/mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>api-server<span class="w"> </span>https://api.example.com/mcp/sse<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span>--header<span class="w"> </span><span class="s2">&quot;Authorization: Bearer token&quot;</span><span class="w"> </span>--timeout<span class="w"> </span><span class="m">30</span>.0
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># HTTP stream server</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>.mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>metricflow<span class="w"> </span>https://localhost:9000/mcp
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>/mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>metricflow<span class="w"> </span>https://localhost:9000/mcp
 </span></code></pre></div>
 <hr />
 <h3 id="list-existing-servers">List Existing Servers<a class="headerlink" href="#list-existing-servers" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.mcp<span class="w"> </span>list
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/mcp<span class="w"> </span>list
 </span></code></pre></div>
 <p>Shows all configured MCP servers and their status:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>1. duckdb-mftutorial  ✘ failed
@@ -3980,36 +3980,36 @@
 <p>You can press Enter to view server details, such as command, args, environment, and available tools.</p>
 <hr />
 <h3 id="check-a-specific-server">Check a Specific Server<a class="headerlink" href="#check-a-specific-server" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>.mcp<span class="w"> </span>check<span class="w"> </span>&lt;mcp_name&gt;
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/mcp<span class="w"> </span>check<span class="w"> </span>&lt;mcp_name&gt;
 </span></code></pre></div>
 <p>Verifies connectivity and prints available tools from that server.</p>
 <hr />
 <h3 id="call-a-tool-from-a-server">Call a Tool from a Server<a class="headerlink" href="#call-a-tool-from-a-server" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>.mcp<span class="w"> </span>call<span class="w"> </span>&lt;mcp_name&gt;.&lt;tool_name&gt;<span class="w"> </span>&lt;args&gt;
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>/mcp<span class="w"> </span>call<span class="w"> </span>&lt;mcp_name&gt;.&lt;tool_name&gt;<span class="w"> </span>&lt;args&gt;
 </span></code></pre></div>
 <p><strong>Examples:</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>.mcp<span class="w"> </span>call<span class="w"> </span>sqlite.list_tables
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>.mcp<span class="w"> </span>call<span class="w"> </span>metricflow.query_metrics<span class="w"> </span><span class="s1">&#39;{&quot;metrics&quot;: &quot;revenue&quot;}&#39;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>/mcp<span class="w"> </span>call<span class="w"> </span>sqlite.list_tables
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>/mcp<span class="w"> </span>call<span class="w"> </span>metricflow.query_metrics<span class="w"> </span><span class="s1">&#39;{&quot;metrics&quot;: &quot;revenue&quot;}&#39;</span>
 </span></code></pre></div>
 <hr />
 <h3 id="remove-a-server">Remove a Server<a class="headerlink" href="#remove-a-server" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>.mcp<span class="w"> </span>remove<span class="w"> </span>&lt;name&gt;
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>/mcp<span class="w"> </span>remove<span class="w"> </span>&lt;name&gt;
 </span></code></pre></div>
 <p>Removes an existing MCP server configuration from your <code>~/.datus/conf/.mcp.json</code>.</p>
 <hr />
 <h3 id="tool-filtering">Tool Filtering<a class="headerlink" href="#tool-filtering" title="Permanent link">&para;</a></h3>
 <p>Allows you to explicitly include or exclude specific tools exposed by a server.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Allow only specific tools</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>.mcp<span class="w"> </span>filter<span class="w"> </span><span class="nb">set</span><span class="w"> </span>&lt;mcp_name&gt;<span class="w"> </span>include<span class="w"> </span>read_query,list_tables
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>/mcp<span class="w"> </span>filter<span class="w"> </span><span class="nb">set</span><span class="w"> </span>&lt;mcp_name&gt;<span class="w"> </span>include<span class="w"> </span>read_query,list_tables
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Reject specific tools (all others allowed)</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>.mcp<span class="w"> </span>filter<span class="w"> </span><span class="nb">set</span><span class="w"> </span>&lt;mcp_name&gt;<span class="w"> </span>exclude<span class="w"> </span>write_query,drop_table
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>/mcp<span class="w"> </span>filter<span class="w"> </span><span class="nb">set</span><span class="w"> </span>&lt;mcp_name&gt;<span class="w"> </span>exclude<span class="w"> </span>write_query,drop_table
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># Check current filters</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>.mcp<span class="w"> </span>filter<span class="w"> </span>get<span class="w"> </span>&lt;mcp_name&gt;
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>/mcp<span class="w"> </span>filter<span class="w"> </span>get<span class="w"> </span>&lt;mcp_name&gt;
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
 </span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1"># Remove all filters for a server</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>.mcp<span class="w"> </span>filter<span class="w"> </span>remove<span class="w"> </span>&lt;mcp_name&gt;
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>/mcp<span class="w"> </span>filter<span class="w"> </span>remove<span class="w"> </span>&lt;mcp_name&gt;
 </span></code></pre></div>
 <hr />
 <h2 id="3-advanced-features">3. Advanced Features<a class="headerlink" href="#3-advanced-features" title="Permanent link">&para;</a></h2>
@@ -4076,27 +4076,27 @@
 <h2 id="integration-examples">Integration Examples<a class="headerlink" href="#integration-examples" title="Permanent link">&para;</a></h2>
 <h3 id="database-integration">Database Integration<a class="headerlink" href="#database-integration" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Add SQLite server for local development</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>.mcp<span class="w"> </span>add<span class="w"> </span>sqlite<span class="w"> </span>uvx<span class="w"> </span>mcp-server-sqlite<span class="w"> </span>--db-path<span class="w"> </span>./data/sample.db
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>/mcp<span class="w"> </span>add<span class="w"> </span>sqlite<span class="w"> </span>uvx<span class="w"> </span>mcp-server-sqlite<span class="w"> </span>--db-path<span class="w"> </span>./data/sample.db
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Query tables through MCP</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>.mcp<span class="w"> </span>call<span class="w"> </span>sqlite.list_tables
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>.mcp<span class="w"> </span>call<span class="w"> </span>sqlite.read_query<span class="w"> </span><span class="s2">&quot;SELECT * FROM customers LIMIT 5&quot;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>/mcp<span class="w"> </span>call<span class="w"> </span>sqlite.list_tables
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>/mcp<span class="w"> </span>call<span class="w"> </span>sqlite.read_query<span class="w"> </span><span class="s2">&quot;SELECT * FROM customers LIMIT 5&quot;</span>
 </span></code></pre></div>
 <h3 id="metricflow-integration">MetricFlow Integration<a class="headerlink" href="#metricflow-integration" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Add MetricFlow server for semantic layer</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>.mcp<span class="w"> </span>add<span class="w"> </span>metricflow<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>mcp_metricflow_server
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>/mcp<span class="w"> </span>add<span class="w"> </span>metricflow<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>mcp_metricflow_server
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Access business metrics</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>.mcp<span class="w"> </span>call<span class="w"> </span>metricflow.list_metrics
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>.mcp<span class="w"> </span>call<span class="w"> </span>metricflow.query_metrics<span class="w"> </span><span class="s1">&#39;{&quot;metrics&quot;: [&quot;revenue&quot;], &quot;dimensions&quot;: [&quot;customer_segment&quot;]}&#39;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>/mcp<span class="w"> </span>call<span class="w"> </span>metricflow.list_metrics
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>/mcp<span class="w"> </span>call<span class="w"> </span>metricflow.query_metrics<span class="w"> </span><span class="s1">&#39;{&quot;metrics&quot;: [&quot;revenue&quot;], &quot;dimensions&quot;: [&quot;customer_segment&quot;]}&#39;</span>
 </span></code></pre></div>
 <h3 id="filesystem-integration">Filesystem Integration<a class="headerlink" href="#filesystem-integration" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Add filesystem server for file operations</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>.mcp<span class="w"> </span>add<span class="w"> </span>filesystem<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>mcp_filesystem_server<span class="w"> </span>--base-path<span class="w"> </span>/project/data
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>/mcp<span class="w"> </span>add<span class="w"> </span>filesystem<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>mcp_filesystem_server<span class="w"> </span>--base-path<span class="w"> </span>/project/data
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># File operations through MCP</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>.mcp<span class="w"> </span>call<span class="w"> </span>filesystem.list_directory<span class="w"> </span>/reports
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>.mcp<span class="w"> </span>call<span class="w"> </span>filesystem.read_file<span class="w"> </span>/reports/summary.md
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>/mcp<span class="w"> </span>call<span class="w"> </span>filesystem.list_directory<span class="w"> </span>/reports
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>/mcp<span class="w"> </span>call<span class="w"> </span>filesystem.read_file<span class="w"> </span>/reports/summary.md
 </span></code></pre></div>
 
 

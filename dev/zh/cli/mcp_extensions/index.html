@@ -3943,7 +3943,7 @@
 <h1 id="mcp">MCP 扩展<a class="headerlink" href="#mcp" title="Permanent link">&para;</a></h1>
 <h2 id="1">1. 概览<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>MCP（Model Context Protocol）是 Datus-CLI 连接外部工具服务器的方式，让你的智能体能力超越内置功能。</p>
-<p>通过 <code>.mcp</code>，你可以：</p>
+<p>通过 <code>/mcp</code>，你可以：</p>
 <ul>
 <li>添加本地或远程 MCP 服务器（stdio、HTTP、SSE）</li>
 <li>列出所有可用服务器及其状态</li>
@@ -3953,22 +3953,22 @@
 <p>这让 Datus-CLI 拥有无限扩展性：无需改动核心即可接入 SQLite、Snowflake、MetricFlow、文件系统，甚至自建的 MCP 服务器。</p>
 <h2 id="2">2. 基础用法<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h3 id="mcp_1">添加新的 MCP 服务器<a class="headerlink" href="#mcp_1" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>.mcp<span class="w"> </span>add<span class="w"> </span>&lt;name&gt;<span class="w"> </span>&lt;command&gt;<span class="w"> </span><span class="o">[</span>args...<span class="o">]</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/mcp<span class="w"> </span>add<span class="w"> </span>&lt;name&gt;<span class="w"> </span>&lt;command&gt;<span class="w"> </span><span class="o">[</span>args...<span class="o">]</span>
 </span></code></pre></div>
 <p><strong>示例：</strong></p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 本地 stdio 服务器</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>.mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>stdio<span class="w"> </span>sqlite<span class="w"> </span>/Users/me/bin/uv<span class="w"> </span>--<span class="w"> </span>-m<span class="w"> </span>mcp_sqlite_server
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>stdio<span class="w"> </span>sqlite<span class="w"> </span>/Users/me/bin/uv<span class="w"> </span>--<span class="w"> </span>-m<span class="w"> </span>mcp_sqlite_server
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># 携带认证头的 SSE 服务器</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>.mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>api-server<span class="w"> </span>https://api.example.com/mcp/sse<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>/mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>api-server<span class="w"> </span>https://api.example.com/mcp/sse<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span>--header<span class="w"> </span><span class="s2">&quot;Authorization: Bearer token&quot;</span><span class="w"> </span>--timeout<span class="w"> </span><span class="m">30</span>.0
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># HTTP 流式服务器</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>.mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>metricflow<span class="w"> </span>https://localhost:9000/mcp
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>/mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>metricflow<span class="w"> </span>https://localhost:9000/mcp
 </span></code></pre></div>
 <hr />
 <h3 id="_1">查看已有服务器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.mcp<span class="w"> </span>list
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/mcp<span class="w"> </span>list
 </span></code></pre></div>
 <p>展示所有已配置的 MCP 服务器及其状态：</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>1. duckdb-mftutorial  ✘ failed
@@ -3980,36 +3980,36 @@
 <p>按 Enter 可查看详情，包括命令、参数、环境变量与可用工具。</p>
 <hr />
 <h3 id="_2">检查指定服务器<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>.mcp<span class="w"> </span>check<span class="w"> </span>&lt;mcp_name&gt;
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/mcp<span class="w"> </span>check<span class="w"> </span>&lt;mcp_name&gt;
 </span></code></pre></div>
 <p>验证连接状况并打印该服务器提供的工具列表。</p>
 <hr />
 <h3 id="_3">调用服务器工具<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>.mcp<span class="w"> </span>call<span class="w"> </span>&lt;mcp_name&gt;.&lt;tool_name&gt;<span class="w"> </span>&lt;args&gt;
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>/mcp<span class="w"> </span>call<span class="w"> </span>&lt;mcp_name&gt;.&lt;tool_name&gt;<span class="w"> </span>&lt;args&gt;
 </span></code></pre></div>
 <p><strong>示例：</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>.mcp<span class="w"> </span>call<span class="w"> </span>sqlite.list_tables
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>.mcp<span class="w"> </span>call<span class="w"> </span>metricflow.query_metrics<span class="w"> </span><span class="s1">&#39;{&quot;metrics&quot;: &quot;revenue&quot;}&#39;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>/mcp<span class="w"> </span>call<span class="w"> </span>sqlite.list_tables
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>/mcp<span class="w"> </span>call<span class="w"> </span>metricflow.query_metrics<span class="w"> </span><span class="s1">&#39;{&quot;metrics&quot;: &quot;revenue&quot;}&#39;</span>
 </span></code></pre></div>
 <hr />
 <h3 id="_4">移除服务器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>.mcp<span class="w"> </span>remove<span class="w"> </span>&lt;name&gt;
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>/mcp<span class="w"> </span>remove<span class="w"> </span>&lt;name&gt;
 </span></code></pre></div>
 <p>从你的 <code>~/.datus/conf/.mcp.json</code> 中移除已有的 MCP 服务器配置。</p>
 <hr />
 <h3 id="_5">工具过滤<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>允许你显式包含或排除服务器暴露的特定工具。</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 只允许特定工具（排除其他所有工具）</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>.mcp<span class="w"> </span>filter<span class="w"> </span><span class="nb">set</span><span class="w"> </span>&lt;mcp_name&gt;<span class="w"> </span>include<span class="w"> </span>read_query,list_tables
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>/mcp<span class="w"> </span>filter<span class="w"> </span><span class="nb">set</span><span class="w"> </span>&lt;mcp_name&gt;<span class="w"> </span>include<span class="w"> </span>read_query,list_tables
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># 拒绝特定工具（允许其他所有工具）</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>.mcp<span class="w"> </span>filter<span class="w"> </span><span class="nb">set</span><span class="w"> </span>&lt;mcp_name&gt;<span class="w"> </span>exclude<span class="w"> </span>write_query,drop_table
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>/mcp<span class="w"> </span>filter<span class="w"> </span><span class="nb">set</span><span class="w"> </span>&lt;mcp_name&gt;<span class="w"> </span>exclude<span class="w"> </span>write_query,drop_table
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># 查看当前的过滤配置</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>.mcp<span class="w"> </span>filter<span class="w"> </span>get<span class="w"> </span>&lt;mcp_name&gt;
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>/mcp<span class="w"> </span>filter<span class="w"> </span>get<span class="w"> </span>&lt;mcp_name&gt;
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
 </span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1"># 移除该服务器的所有过滤配置</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>.mcp<span class="w"> </span>filter<span class="w"> </span>remove<span class="w"> </span>&lt;mcp_name&gt;
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>/mcp<span class="w"> </span>filter<span class="w"> </span>remove<span class="w"> </span>&lt;mcp_name&gt;
 </span></code></pre></div>
 <hr />
 <h2 id="3">3. 高级特性<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
@@ -4076,27 +4076,27 @@
 <h2 id="_11">集成示例<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <h3 id="_12">数据库集成<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># 为本地开发添加 SQLite 服务器</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>.mcp<span class="w"> </span>add<span class="w"> </span>sqlite<span class="w"> </span>uvx<span class="w"> </span>mcp-server-sqlite<span class="w"> </span>--db-path<span class="w"> </span>./data/sample.db
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>/mcp<span class="w"> </span>add<span class="w"> </span>sqlite<span class="w"> </span>uvx<span class="w"> </span>mcp-server-sqlite<span class="w"> </span>--db-path<span class="w"> </span>./data/sample.db
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># 通过 MCP 查询数据表</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>.mcp<span class="w"> </span>call<span class="w"> </span>sqlite.list_tables
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>.mcp<span class="w"> </span>call<span class="w"> </span>sqlite.read_query<span class="w"> </span><span class="s2">&quot;SELECT * FROM customers LIMIT 5&quot;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>/mcp<span class="w"> </span>call<span class="w"> </span>sqlite.list_tables
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>/mcp<span class="w"> </span>call<span class="w"> </span>sqlite.read_query<span class="w"> </span><span class="s2">&quot;SELECT * FROM customers LIMIT 5&quot;</span>
 </span></code></pre></div>
 <h3 id="metricflow">MetricFlow 集成<a class="headerlink" href="#metricflow" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># 添加 MetricFlow 服务器以访问语义层</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>.mcp<span class="w"> </span>add<span class="w"> </span>metricflow<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>mcp_metricflow_server
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>/mcp<span class="w"> </span>add<span class="w"> </span>metricflow<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>mcp_metricflow_server
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># 调用业务指标</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>.mcp<span class="w"> </span>call<span class="w"> </span>metricflow.list_metrics
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>.mcp<span class="w"> </span>call<span class="w"> </span>metricflow.query_metrics<span class="w"> </span><span class="s1">&#39;{&quot;metrics&quot;: [&quot;revenue&quot;], &quot;dimensions&quot;: [&quot;customer_segment&quot;]}&#39;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>/mcp<span class="w"> </span>call<span class="w"> </span>metricflow.list_metrics
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>/mcp<span class="w"> </span>call<span class="w"> </span>metricflow.query_metrics<span class="w"> </span><span class="s1">&#39;{&quot;metrics&quot;: [&quot;revenue&quot;], &quot;dimensions&quot;: [&quot;customer_segment&quot;]}&#39;</span>
 </span></code></pre></div>
 <h3 id="_13">文件系统集成<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># 添加文件系统服务器以执行文件操作</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>.mcp<span class="w"> </span>add<span class="w"> </span>filesystem<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>mcp_filesystem_server<span class="w"> </span>--base-path<span class="w"> </span>/project/data
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>/mcp<span class="w"> </span>add<span class="w"> </span>filesystem<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>mcp_filesystem_server<span class="w"> </span>--base-path<span class="w"> </span>/project/data
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># 通过 MCP 执行文件操作</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>.mcp<span class="w"> </span>call<span class="w"> </span>filesystem.list_directory<span class="w"> </span>/reports
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>.mcp<span class="w"> </span>call<span class="w"> </span>filesystem.read_file<span class="w"> </span>/reports/summary.md
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>/mcp<span class="w"> </span>call<span class="w"> </span>filesystem.list_directory<span class="w"> </span>/reports
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>/mcp<span class="w"> </span>call<span class="w"> </span>filesystem.read_file<span class="w"> </span>/reports/summary.md
 </span></code></pre></div>
 
 

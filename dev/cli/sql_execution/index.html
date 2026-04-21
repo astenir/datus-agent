@@ -3832,7 +3832,7 @@
 
 <h1 id="sql-execution">SQL Execution<a class="headerlink" href="#sql-execution" title="Permanent link">&para;</a></h1>
 <h2 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
-<p>Besides the magic commands (<code>/</code>, <code>@</code>, <code>!</code>), Datus-CLI can also act as a traditional SQL client. You can directly run SQL queries and explore database metadata with built-in metadata commands (<code>.tables</code>, <code>.databases</code>, <code>.schemas</code>, etc.).</p>
+<p>Besides the magic commands (<code>/</code>, <code>@</code>, <code>!</code>), Datus-CLI can also act as a traditional SQL client. You can directly run SQL queries and explore database metadata with built-in metadata commands (<code>/tables</code>, <code>/databases</code>, <code>/schemas</code>, etc.).</p>
 <p>We use a set of built-in Metadata Commands to provide a unified way to access metadata across all databases — but the native commands like <code>SHOW DATABASES</code> or <code>DESCRIBE TABLES</code> are still available and can be used as well.</p>
 <hr />
 <h2 id="2-basic-usage">2. Basic Usage<a class="headerlink" href="#2-basic-usage" title="Permanent link">&para;</a></h2>
@@ -3854,13 +3854,13 @@
 </span></code></pre></div></p>
 <h3 id="explore-metadata">Explore Metadata<a class="headerlink" href="#explore-metadata" title="Permanent link">&para;</a></h3>
 <p>Use the built-in metadata commands to explore your database structure:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.databases<span class="w">                       </span><span class="c1"># List all databases</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>.database<span class="w"> </span>&lt;database_name&gt;<span class="w">        </span><span class="c1"># Switch current database</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>.schemas<span class="w">                         </span><span class="c1"># List all schemas (or show details)</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>.schema<span class="w"> </span>&lt;schema_name&gt;<span class="w">            </span><span class="c1"># Switch current schema</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>.tables<span class="w">                          </span><span class="c1"># List all tables in current schema</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>.table_schema<span class="w"> </span>&lt;table_name&gt;<span class="w">       </span><span class="c1"># Show table structure</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>.indexes<span class="w"> </span>&lt;table_name&gt;<span class="w">            </span><span class="c1"># Show table indexes</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/databases<span class="w">                       </span><span class="c1"># List all databases</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>/database<span class="w"> </span>&lt;database_name&gt;<span class="w">        </span><span class="c1"># Switch current database</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>/schemas<span class="w">                         </span><span class="c1"># List all schemas (or show details)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>/schema<span class="w"> </span>&lt;schema_name&gt;<span class="w">            </span><span class="c1"># Switch current schema</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>/tables<span class="w">                          </span><span class="c1"># List all tables in current schema</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>/table_schema<span class="w"> </span>&lt;table_name&gt;<span class="w">       </span><span class="c1"># Show table structure</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>/indexes<span class="w"> </span>&lt;table_name&gt;<span class="w">            </span><span class="c1"># Show table indexes</span>
 </span></code></pre></div>
 <p>Use these commands to quickly inspect your data environment while chatting or debugging SQL.</p>
 <h2 id="3-advanced-features">3. Advanced Features<a class="headerlink" href="#3-advanced-features" title="Permanent link">&para;</a></h2>
@@ -3899,18 +3899,18 @@
 <h3 id="query-optimization">Query Optimization<a class="headerlink" href="#query-optimization" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Use LIMIT</strong> for exploratory queries on large tables</li>
-<li><strong>Index awareness</strong>: Check <code>.indexes</code> before writing complex JOINs</li>
-<li><strong>Schema understanding</strong>: Use <code>.table_schema</code> to understand data types</li>
+<li><strong>Index awareness</strong>: Check <code>/indexes</code> before writing complex JOINs</li>
+<li><strong>Schema understanding</strong>: Use <code>/table_schema</code> to understand data types</li>
 <li><strong>Performance monitoring</strong>: Pay attention to execution times</li>
 </ol>
 <h3 id="metadata-exploration-workflow">Metadata Exploration Workflow<a class="headerlink" href="#metadata-exploration-workflow" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Start with <code>.databases</code> to see available databases</li>
-<li>Switch to target database with <code>.database &lt;name&gt;</code></li>
-<li>Explore schemas with <code>.schemas</code></li>
-<li>List tables with <code>.tables</code></li>
-<li>Examine specific table structure with <code>.table_schema &lt;table&gt;</code></li>
-<li>Check indexes for performance with <code>.indexes &lt;table&gt;</code></li>
+<li>Start with <code>/databases</code> to see available databases</li>
+<li>Switch to target database with <code>/database &lt;name&gt;</code></li>
+<li>Explore schemas with <code>/schemas</code></li>
+<li>List tables with <code>/tables</code></li>
+<li>Examine specific table structure with <code>/table_schema &lt;table&gt;</code></li>
+<li>Check indexes for performance with <code>/indexes &lt;table&gt;</code></li>
 </ol>
 <h3 id="integration-with-chat">Integration with Chat<a class="headerlink" href="#integration-with-chat" title="Permanent link">&para;</a></h3>
 <p>Combine SQL execution with chat commands for maximum productivity:</p>
@@ -3925,7 +3925,7 @@
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>LIMIT<span class="w"> </span><span class="m">10</span><span class="p">;</span>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1"># Follow up with context injection</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>@catalog<span class="w"> </span>customers
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>/catalog<span class="w"> </span>customers
 </span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>/<span class="w"> </span>Now<span class="w"> </span>show<span class="w"> </span>me<span class="w"> </span>their<span class="w"> </span>contact<span class="w"> </span>information
 </span></code></pre></div>
 

@@ -3890,7 +3890,7 @@
 <p>我们将 <strong>数据工程上下文（长期记忆）</strong> 建模为 <strong>两棵树</strong> ：</p>
 <p><img alt="Context Tree Structure" src="../../../assets/context_tree.png" /></p>
 <ul>
-<li>在 <a href="../../cli/introduction/">Datus CLI</a> 中，可以通过 <code>@catalog</code> 与 <code>@subject</code> 浏览和编辑</li>
+<li>在 <a href="../../cli/introduction/">Datus CLI</a> 中，可以通过 <code>/catalog</code> 与 <code>/subject</code> 浏览和编辑</li>
 <li>使用 <code>datus-agent bootstrap-kb</code> 批量初始化并冷启动知识库</li>
 <li>借助子代理（Subagent），你可以定义**范围化上下文**——从全局存储中挑选一个精心整理的子集，实现精准、具领域感知的交付</li>
 </ul>
@@ -3898,7 +3898,7 @@
 <p><strong>协同创作的上下文</strong></p>
 <p>大模型从数据表和Reference SQL 起草语义模型与指标，工程师负责完善标签、元数据和主题树。</p>
 <p><strong>命令驱动的迭代</strong></p>
-<p>使用 <code>/gen_semantic_model</code>、<code>/gen_metrics</code>、<code>/gen_sql_summary</code> 等命令创建或更新资产；<code>@catalog</code> 和 <code>@subject</code> 页面支持就地编辑。</p>
+<p>使用 <code>/gen_semantic_model</code>、<code>/gen_metrics</code>、<code>/gen_sql_summary</code> 等命令创建或更新资产；<code>/catalog</code> 和 <code>/subject</code> 页面支持就地编辑。</p>
 <p><strong>反馈驱动持续改进</strong></p>
 <p>通过 <code>/chat</code> 探索、成功案例回写、问题与基准循环，将使用过程转化为可复用的长期知识。</p>
 <h3 id="_7">子代理系统<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
@@ -3952,20 +3952,20 @@
 <li><code>/gen_sql_summary @file ./sql/</code> —— 总结意图与依赖</li>
 </ul>
 <p><strong>人工在环的策划</strong></p>
-<p>完善 domain → layer_1 → layer_2 描述；统一命名规范；在 <code>@catalog</code> / <code>@subject</code> 中直接编辑<a href="../../knowledge_base/metadata/">元数据</a>。</p>
+<p>完善 domain → layer_1 → layer_2 描述；统一命名规范；在 <code>/catalog</code> / <code>/subject</code> 中直接编辑<a href="../../knowledge_base/metadata/">元数据</a>。</p>
 <p><strong>示例：</strong></p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/gen_semantic_model<span class="w"> </span>@table<span class="w"> </span>fact_orders<span class="w"> </span>dim_users
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/gen_metrics<span class="w"> </span>@sql<span class="w"> </span>./sql/retention.sql<span class="w"> </span>@semantic_model<span class="w"> </span>./models/game.yaml<span class="w"> </span><span class="s2">&quot;30-day retention&quot;</span>
 </span></code></pre></div>
 <h3 id="_12">创建子代理<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p><strong>定义具领域感知的聊天机器人</strong></p>
-<p>使用 <code>.subagent add &lt;name&gt;</code> 为特定场景（如“商业化分析”）创建子代理。</p>
+<p>使用 <code>/subagent add &lt;name&gt;</code> 为特定场景（如“商业化分析”）创建子代理。</p>
 <p><strong>打包核心要素</strong></p>
 <p>包含描述、规则（联接键、过滤条件、计算规则）、范围化上下文（数据表、SQL 片段、指标）及可用工具。</p>
 <p><strong>约束搜索空间</strong></p>
 <p>限制可用的目录/数据表，仅启用相关工具或 MCP（数据库、上下文搜索、必要时的文件系统）。</p>
 <p><strong>示例：</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.subagent<span class="w"> </span>add<span class="w"> </span>california_schools
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/subagent<span class="w"> </span>add<span class="w"> </span>california_schools
 </span></code></pre></div>
 <h3 id="_13">交付与迭代<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <p><strong>上线到 Web</strong></p>

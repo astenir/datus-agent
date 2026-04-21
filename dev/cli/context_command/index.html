@@ -882,7 +882,7 @@
   <a href="#catalog" class="md-nav__link">
     <span class="md-ellipsis">
       
-        @catalog
+        /catalog
       
     </span>
   </a>
@@ -893,12 +893,12 @@
   <a href="#subject" class="md-nav__link">
     <span class="md-ellipsis">
       
-        @subject
+        /subject
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="@subject">
+    <nav class="md-nav" aria-label="/subject">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1022,7 +1022,7 @@
   <a href="#physical-data-catalog" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Physical Data (@catalog)
+        Physical Data (/catalog)
       
     </span>
   </a>
@@ -1033,7 +1033,7 @@
   <a href="#business-context-subject" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Business Context (@subject)
+        Business Context (/subject)
       
     </span>
   </a>
@@ -3727,7 +3727,7 @@
   <a href="#catalog" class="md-nav__link">
     <span class="md-ellipsis">
       
-        @catalog
+        /catalog
       
     </span>
   </a>
@@ -3738,12 +3738,12 @@
   <a href="#subject" class="md-nav__link">
     <span class="md-ellipsis">
       
-        @subject
+        /subject
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="@subject">
+    <nav class="md-nav" aria-label="/subject">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3867,7 +3867,7 @@
   <a href="#physical-data-catalog" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Physical Data (@catalog)
+        Physical Data (/catalog)
       
     </span>
   </a>
@@ -3878,7 +3878,7 @@
   <a href="#business-context-subject" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Business Context (@subject)
+        Business Context (/subject)
       
     </span>
   </a>
@@ -3947,14 +3947,14 @@
 <p>The Context Command <code>@</code> allows you to inject rich contextual knowledge directly into your chat session. Instead of asking the model to guess your data structure, you can explicitly point it to the tables, metrics, or SQL snippets you want it to use — dramatically improving the accuracy of generated SQL.</p>
 <p>Context items are organized into three separate trees:</p>
 <ul>
-<li><code>@catalog</code> — your physical data structure (databases, schemas, tables)</li>
-<li><code>@subject</code> — your semantic/business layer (domains, layers, semantic models, metrics)</li>
+<li><code>/catalog</code> — your physical data structure (databases, schemas, tables)</li>
+<li><code>/subject</code> — your semantic/business layer (domains, layers, semantic models, metrics)</li>
 </ul>
 <p>By combining these, you give Datus the same mental model you have — so it can reason with your data instead of guessing.</p>
 <hr />
 <h2 id="2-basic-usage">2. Basic Usage<a class="headerlink" href="#2-basic-usage" title="Permanent link">&para;</a></h2>
 <p>You can summon the context browser by typing <code>@</code> and pressing Tab. Depending on which command you choose, you'll see a tree view you can drill down:</p>
-<h3 id="catalog"><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/catalog" title="GitHub User: catalog">@catalog</a><a class="headerlink" href="#catalog" title="Permanent link">&para;</a></h3>
+<h3 id="catalog">/catalog<a class="headerlink" href="#catalog" title="Permanent link">&para;</a></h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>catalog
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  └── database
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>      └── schema
@@ -3963,7 +3963,7 @@
 <p><img alt="Catalog Screen" src="../../assets/catalog_screen.png" /></p>
 <p>When your focus is on the panel where the <strong>semantic model</strong> is located and modify it via <code>Ctrl+e</code>.</p>
 <p><img alt="Catalog Screen_Edit_Semantic" src="../../assets/catalog_screen_edit_semantic.png" /></p>
-<h3 id="subject"><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/subject" title="GitHub User: subject">@subject</a><a class="headerlink" href="#subject" title="Permanent link">&para;</a></h3>
+<h3 id="subject">/subject<a class="headerlink" href="#subject" title="Permanent link">&para;</a></h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>domain
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  └── layer1
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>      └── layer2
@@ -3987,12 +3987,12 @@
 <h3 id="context-injection-modes">Context Injection Modes<a class="headerlink" href="#context-injection-modes" title="Permanent link">&para;</a></h3>
 <p>There are two ways to inject context in chat commands:</p>
 <h4 id="browse-mode">Browse Mode<a class="headerlink" href="#browse-mode" title="Permanent link">&para;</a></h4>
-<p>Type <code>@</code> (or <code>@catalog</code>, <code>@subject</code>, <code>@sql</code>) and press Tab to open the tree browser, navigating node by node until you reach the desired table, metric, or SQL.</p>
+<p>Type <code>@</code> (or <code>/catalog</code>, <code>/subject</code>, <code>@sql</code>) and press Tab to open the tree browser, navigating node by node until you reach the desired table, metric, or SQL.</p>
 <h4 id="fuzzy-search-mode">Fuzzy Search Mode<a class="headerlink" href="#fuzzy-search-mode" title="Permanent link">&para;</a></h4>
 <p>Type <code>@</code> (or <code>@any_text</code>) followed by any text, then press Tab. Datus will fuzzy search across all context trees and suggest the best matches, so you don't need to remember exact paths. Recent tables, metrics, and SQL searched in the <a href="../execution_command/">!execution command</a> will appear at the top of the results.</p>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Browse mode - navigate step by step</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>/<span class="w"> </span>pay<span class="w"> </span>attention<span class="w"> </span>to<span class="w"> </span>@catalog<span class="w"> </span>&lt;Tab&gt;
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>/<span class="w"> </span>pay<span class="w"> </span>attention<span class="w"> </span>to<span class="w"> </span>/catalog<span class="w"> </span>&lt;Tab&gt;
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Select catalog &gt; my_database &gt; public &gt; customers step by step</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Fuzzy search mode - quick keyword search</span>
@@ -4000,14 +4000,14 @@
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Shows all revenue-related metrics across all domains</span>
 </span></code></pre></div>
 <h3 id="context-types">Context Types<a class="headerlink" href="#context-types" title="Permanent link">&para;</a></h3>
-<h4 id="physical-data-catalog">Physical Data (<code>@catalog</code>)<a class="headerlink" href="#physical-data-catalog" title="Permanent link">&para;</a></h4>
+<h4 id="physical-data-catalog">Physical Data (<code>/catalog</code>)<a class="headerlink" href="#physical-data-catalog" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Databases and schemas</li>
 <li>Table structures and column definitions</li>
 <li>Data types and constraints</li>
 <li>Foreign key relationships</li>
 </ul>
-<h4 id="business-context-subject">Business Context (<code>@subject</code>)<a class="headerlink" href="#business-context-subject" title="Permanent link">&para;</a></h4>
+<h4 id="business-context-subject">Business Context (<code>/subject</code>)<a class="headerlink" href="#business-context-subject" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Business domains and data layers</li>
 <li>Semantic models and business logic</li>
@@ -4022,7 +4022,7 @@
 <li>Optimization examples</li>
 </ul>
 <h3 id="inline-context-injection">Inline Context Injection<a class="headerlink" href="#inline-context-injection" title="Permanent link">&para;</a></h3>
-<p>In addition to the standalone UI commands (<code>@catalog</code> and <code>@subject</code>), you can explicitly reference entities <em>inline</em> within a chat command simply by typing <code>@</code> followed by the entity type or name. The autocomplete (<code>AtReferenceCompleter</code>) will help you inject:
+<p>In addition to the standalone UI commands (<code>/catalog</code> and <code>/subject</code>), you can explicitly reference entities <em>inline</em> within a chat command simply by typing <code>@</code> followed by the entity type or name. The autocomplete (<code>AtReferenceCompleter</code>) will help you inject:
 - <code>@Table</code>
 - <code>@Metrics</code>
 - <code>@Sql</code>

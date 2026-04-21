@@ -3963,9 +3963,9 @@
 </span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>   GROUP BY c.status
 </span></code></pre></div>
 <h2 id="integration-with-context-search">Integration with Context Search<a class="headerlink" href="#integration-with-context-search" title="Permanent link">&para;</a></h2>
-<p>Semantic models are searchable via <code>@subject</code> context command:</p>
+<p>Semantic models are searchable via <code>/subject</code> context command:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># In CLI chat mode</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>@subject<span class="w"> </span>&lt;domain&gt;/&lt;layer1&gt;/&lt;layer2&gt;
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>/subject<span class="w"> </span>&lt;domain&gt;/&lt;layer1&gt;/&lt;layer2&gt;
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Search for semantic objects</span>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>search_semantic_objects<span class="o">(</span><span class="nv">query</span><span class="o">=</span><span class="s2">&quot;customer revenue&quot;</span>,<span class="w"> </span><span class="nv">kinds</span><span class="o">=[</span><span class="s2">&quot;table&quot;</span>,<span class="w"> </span><span class="s2">&quot;column&quot;</span><span class="o">])</span>

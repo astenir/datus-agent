@@ -3965,9 +3965,9 @@
 </span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>   GROUP BY c.status
 </span></code></pre></div>
 <h2 id="_9">与上下文搜索集成<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<p>语义模型可通过 <code>@subject</code> 上下文命令搜索：</p>
+<p>语义模型可通过 <code>/subject</code> 上下文命令搜索：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 在 CLI 聊天模式中</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>@subject<span class="w"> </span>&lt;domain&gt;/&lt;layer1&gt;/&lt;layer2&gt;
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>/subject<span class="w"> </span>&lt;domain&gt;/&lt;layer1&gt;/&lt;layer2&gt;
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># 搜索语义对象</span>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>search_semantic_objects<span class="o">(</span><span class="nv">query</span><span class="o">=</span><span class="s2">&quot;customer revenue&quot;</span>,<span class="w"> </span><span class="nv">kinds</span><span class="o">=[</span><span class="s2">&quot;table&quot;</span>,<span class="w"> </span><span class="s2">&quot;column&quot;</span><span class="o">])</span>

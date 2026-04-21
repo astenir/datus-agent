@@ -3769,16 +3769,16 @@
 <p>Press <strong>Ctrl+O</strong> while the agent is running to toggle the trace display mode between <strong>compact</strong> (progress only) and <strong>verbose</strong> (full step details). This lets you control how much detail you see during execution without interrupting the agent.</p>
 <h3 id="session-commands">Session Commands<a class="headerlink" href="#session-commands" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>.clear</code>: Clear the current session context and start fresh</li>
-<li><code>.compact</code>: Compress previous turns to reduce memory usage while preserving context</li>
-<li>Auto-trigger: <code>.compact</code> will run automatically when the model context usage exceeds 90%, so you can continue chatting without hitting limits</li>
-<li><code>.chat_info</code>: Show the current active context (messages, tables, metrics)</li>
-<li><code>.resume [session_id]</code>: Resume a previous chat session</li>
+<li><code>/clear</code>: Clear the current session context and start fresh</li>
+<li><code>/compact</code>: Compress previous turns to reduce memory usage while preserving context</li>
+<li>Auto-trigger: <code>/compact</code> will run automatically when the model context usage exceeds 90%, so you can continue chatting without hitting limits</li>
+<li><code>/chat_info</code>: Show the current active context (messages, tables, metrics)</li>
+<li><code>/resume [session_id]</code>: Resume a previous chat session</li>
 <li>Without arguments: displays a table of all available sessions (sorted by last modified time), then prompts you to pick one by number</li>
 <li>With a session ID: directly resumes that specific session</li>
 <li>After resuming, the full conversation history is replayed so you can see what was discussed, and you can continue chatting from where you left off</li>
-<li>If the session has high token usage (&gt;50k tokens), a hint is shown suggesting <code>.compact</code> to reduce context size</li>
-<li><code>.rewind [turn_number]</code>: Rewind the current session to a specific user turn, creating a new branched session</li>
+<li>If the session has high token usage (&gt;50k tokens), a hint is shown suggesting <code>/compact</code> to reduce context size</li>
+<li><code>/rewind [turn_number]</code>: Rewind the current session to a specific user turn, creating a new branched session</li>
 <li>Displays a numbered table of all user turns in the current session</li>
 <li>You select a turn number — the session is cloned up to (and including) that turn's assistant response, producing a new session</li>
 <li>The original session is preserved; the rewound copy becomes your active session</li>
