@@ -484,13 +484,6 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/subagent/introduction/"/>
     </url>
     <url>
-        <loc>https://docs.datus.ai/dev/subagent/migration/</loc>
-        <lastmod>2026-04-22</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/dev/subagent/migration/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/subagent/migration/"/>
-    </url>
-    <url>
         <loc>https://docs.datus.ai/dev/subagent/scheduler/</loc>
         <lastmod>2026-04-22</lastmod>
         <changefreq>daily</changefreq>
@@ -1021,13 +1014,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/subagent/introduction/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devsubagent/introduction/"/>
-    </url>
-    <url>
-        <loc>https://docs.datus.ai/dev/zh/subagent/migration/</loc>
-        <lastmod>2026-04-22</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/subagent/migration/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devsubagent/migration/"/>
     </url>
     <url>
         <loc>https://docs.datus.ai/dev/zh/subagent/scheduler/</loc>

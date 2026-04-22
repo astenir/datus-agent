@@ -14,7 +14,7 @@
         <link rel="prev" href="../gen_table/">
       
       
-        <link rel="next" href="../migration/">
+        <link rel="next" href="../../web_chatbot/introduction/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>ETL Job - Datus Docs</title>
+        <title>Data Pipeline (ETL + Migration) - Datus Docs</title>
       
     
     
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#etl-job-gen_job" class="md-skip">
+        <a href="#data-pipeline-gen_job" class="md-skip">
           Skip to content
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ETL Job
+              Data Pipeline (ETL + Migration)
             
           </span>
         </div>
@@ -1022,8 +1022,6 @@
       
         
       
-        
-      
     
     
     
@@ -1342,7 +1340,7 @@
   <span class="md-ellipsis">
     
   
-    ETL Job
+    Data Pipeline (ETL + Migration)
   
 
     
@@ -1360,7 +1358,7 @@
   <span class="md-ellipsis">
     
   
-    ETL Job
+    Data Pipeline (ETL + Migration)
   
 
     
@@ -1520,10 +1518,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#type-mapping" class="md-nav__link">
+  <a href="#dialect-hints-adapter-driven" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Type Mapping
+        Dialect Hints (adapter-driven)
       
     </span>
   </a>
@@ -1613,6 +1611,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#example-3-migrate-mysql-to-starrocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Migrate MySQL to StarRocks
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1622,34 +1631,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../migration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Migration
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -3851,10 +3832,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#type-mapping" class="md-nav__link">
+  <a href="#dialect-hints-adapter-driven" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Type Mapping
+        Dialect Hints (adapter-driven)
       
     </span>
   </a>
@@ -3944,6 +3925,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#example-3-migrate-mysql-to-starrocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Migrate MySQL to StarRocks
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3974,10 +3966,10 @@
   
 
 
-<h1 id="etl-job-gen_job">ETL Job (gen_job)<a class="headerlink" href="#etl-job-gen_job" title="Permanent link">&para;</a></h1>
+<h1 id="data-pipeline-gen_job">Data Pipeline (gen_job)<a class="headerlink" href="#data-pipeline-gen_job" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The <code>gen_job</code> subagent is a built-in data engineering agent for single-database ETL. It builds target tables from source tables within the same database using SQL (CREATE TABLE AS SELECT, INSERT from SELECT, etc.).</p>
-<p>For cross-database migration, use the <a href="../migration/">migration</a> subagent instead.</p>
+<p>The <code>gen_job</code> subagent is a built-in data engineering agent that covers BOTH single-database ETL and cross-database migration. It builds or updates target tables from one or more source tables, transferring data across database engines when the source and target differ, and validates the result.</p>
+<p>The agent auto-detects the path based on the user's prompt: if the source and target are the same database, it runs intra-DB ETL (CREATE TABLE AS SELECT / INSERT from SELECT). If they differ, it runs cross-DB migration (via <code>transfer_query_result</code>) and activates the <code>data-migration</code> skill for mandatory reconciliation.</p>
 <h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
 <p>Start Datus CLI and use the gen_job subagent via natural language:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Single-database ETL</span>
@@ -4065,6 +4057,18 @@
 <td>Transfer data between databases</td>
 </tr>
 <tr>
+<td><code>get_migration_capabilities</code></td>
+<td>Read target dialect's requires/forbids/type_hints from adapter's <code>MigrationTargetMixin</code> (see Cross-DB section)</td>
+</tr>
+<tr>
+<td><code>suggest_table_layout</code></td>
+<td>Ask target adapter to suggest distribution/partition/order keys based on source columns</td>
+</tr>
+<tr>
+<td><code>validate_ddl</code></td>
+<td>Run target-dialect static validation (and optionally dry-run CREATE+DROP) before executing DDL</td>
+</tr>
+<tr>
 <td><code>read_file</code> / <code>write_file</code></td>
 <td>Read/write SQL artifact files</td>
 </tr>
@@ -4084,10 +4088,12 @@
 </span></code></pre></div>
 <h3 id="cross-database-migration">Cross-database Migration<a class="headerlink" href="#cross-database-migration" title="Permanent link">&para;</a></h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Phase 1: Discover databases (list_databases) and inspect source
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Phase 2: Generate target DDL with cross-database type mapping
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Phase 3: Transfer data (transfer_query_result)
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Phase 4: Reconcile source vs target (7 checks)
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Phase 5: Summarize with reconciliation report
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Phase 2: Call get_migration_capabilities() on target for dialect hints
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>         + suggest_table_layout() for OLAP targets
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Phase 3: Draft target DDL → validate_ddl() → execute_ddl()
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Phase 4: Transfer data (transfer_query_result)
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Phase 5: Reconcile source vs target (7 checks)
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Phase 6: Summarize with reconciliation report
 </span></code></pre></div>
 <h2 id="cross-database-migration-details">Cross-database Migration Details<a class="headerlink" href="#cross-database-migration-details" title="Permanent link">&para;</a></h2>
 <h3 id="database-discovery">Database Discovery<a class="headerlink" href="#database-discovery" title="Permanent link">&para;</a></h3>
@@ -4098,70 +4104,15 @@
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;starrocks&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;starrocks&quot;</span><span class="p">}</span>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">]</span>
 </span></code></pre></div>
-<h3 id="type-mapping">Type Mapping<a class="headerlink" href="#type-mapping" title="Permanent link">&para;</a></h3>
-<p>Types are automatically mapped between dialects:</p>
-<table>
-<thead>
-<tr>
-<th>DuckDB</th>
-<th>Greenplum</th>
-<th>StarRocks</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>VARCHAR</td>
-<td>VARCHAR</td>
-<td>VARCHAR(65533)</td>
-</tr>
-<tr>
-<td>VARCHAR(n)</td>
-<td>VARCHAR(n)</td>
-<td>VARCHAR(n)</td>
-</tr>
-<tr>
-<td>TEXT</td>
-<td>TEXT</td>
-<td>STRING</td>
-</tr>
-<tr>
-<td>INTEGER</td>
-<td>INTEGER</td>
-<td>INT</td>
-</tr>
-<tr>
-<td>BIGINT</td>
-<td>BIGINT</td>
-<td>BIGINT</td>
-</tr>
-<tr>
-<td>DOUBLE</td>
-<td>DOUBLE PRECISION</td>
-<td>DOUBLE</td>
-</tr>
-<tr>
-<td>DECIMAL(p,s)</td>
-<td>NUMERIC(p,s)</td>
-<td>DECIMAL(p,s)</td>
-</tr>
-<tr>
-<td>BOOLEAN</td>
-<td>BOOLEAN</td>
-<td>BOOLEAN</td>
-</tr>
-<tr>
-<td>DATE</td>
-<td>DATE</td>
-<td>DATE</td>
-</tr>
-<tr>
-<td>TIMESTAMP</td>
-<td>TIMESTAMP</td>
-<td>DATETIME</td>
-</tr>
-</tbody>
-</table>
-<p>Unsupported types (LIST, STRUCT, MAP, BLOB, etc.) are reported as errors.</p>
+<h3 id="dialect-hints-adapter-driven">Dialect Hints (adapter-driven)<a class="headerlink" href="#dialect-hints-adapter-driven" title="Permanent link">&para;</a></h3>
+<p>Type mapping and DDL requirements are NOT hardcoded in the agent. Each target adapter implements <code>MigrationTargetMixin</code> in <code>datus-db-core</code> to declare its own dialect's contract. The agent consumes this via three wrapper tools:</p>
+<ul>
+<li><strong><code>get_migration_capabilities(database=target)</code></strong> — returns the target's <code>dialect_family</code>, <code>requires</code> (clauses the DDL MUST include), <code>forbids</code> (patterns the DDL MUST NOT include), <code>type_hints</code> (preferred mappings), and a reference <code>example_ddl</code>.</li>
+<li><strong><code>suggest_table_layout(database=target, columns_json=...)</code></strong> — returns OLAP-specific hints (e.g. <code>{duplicate_key, distributed_by, buckets}</code> for StarRocks, <code>{engine, order_by}</code> for ClickHouse, <code>{partitioned_by}</code> for Hive via Trino).</li>
+<li><strong><code>validate_ddl(database=target, ddl=..., target_table=...)</code></strong> — runs structural validation (e.g. StarRocks must have <code>DUPLICATE KEY</code> + <code>DISTRIBUTED BY</code>; ClickHouse must have <code>ENGINE</code> + <code>ORDER BY</code>); optionally runs <code>dry_run_ddl</code> (CREATE + DROP to a temp table).</li>
+</ul>
+<p>Adapters that implement the Mixin (as of this release): StarRocks, Greenplum, PostgreSQL, MySQL, ClickHouse, Trino, Snowflake, Redshift, DuckDB, SQLite, plus a generic OLTP fallback on the SQLAlchemy base. Adapters without a Mixin yet (e.g. BigQuery, Hive, Spark, ClickZetta) fall back to pure-LLM mode — <code>get_migration_capabilities</code> returns <code>{"supported": false, "warning": ...}</code> and the LLM relies on its own knowledge of the target dialect.</p>
+<p>To add hints for a new target dialect, implement <code>MigrationTargetMixin</code> in the adapter — no changes to the agent are required.</p>
 <h3 id="data-transfer">Data Transfer<a class="headerlink" href="#data-transfer" title="Permanent link">&para;</a></h3>
 <p>The <code>transfer_query_result</code> tool handles data movement:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>transfer_query_result(
@@ -4192,7 +4143,7 @@
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">agent</span><span class="p">:</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">agentic_nodes</span><span class="p">:</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">gen_job</span><span class="p">:</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">      </span><span class="nt">max_turns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w">       </span><span class="c1"># Default: 30</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">      </span><span class="nt">max_turns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40</span><span class="w">       </span><span class="c1"># Default: 40 (cross-DB flows need more turns)</span>
 </span></code></pre></div>
 <h2 id="skills-used">Skills Used<a class="headerlink" href="#skills-used" title="Permanent link">&para;</a></h2>
 <p>gen_job leverages three skills:</p>
@@ -4218,13 +4169,31 @@
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>      target table public.users_copy
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>gen_job:
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>  1. Calls list_databases() -&gt; discovers local_duckdb (duckdb) and greenplum (greenplum)
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>  2. Calls describe_table(&quot;users&quot;, database=&quot;local_duckdb&quot;) -&gt; gets 6 columns
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>  3. Maps types: INTEGER-&gt;INTEGER, VARCHAR-&gt;VARCHAR, DECIMAL-&gt;NUMERIC, etc.
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>  4. Executes CREATE TABLE on greenplum
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>  5. Calls transfer_query_result(source_database=&quot;local_duckdb&quot;, target_database=&quot;greenplum&quot;)
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>  6. Runs 7 reconciliation checks comparing both databases
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>  7. Returns migration report with pass/fail status
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>  1. Calls list_databases() -&gt; local_duckdb (duckdb) and greenplum (greenplum)
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>  2. Calls describe_table(&quot;users&quot;, database=&quot;local_duckdb&quot;) -&gt; 6 columns
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>  3. Calls get_migration_capabilities(database=&quot;greenplum&quot;)
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>     -&gt; dialect_family=&quot;postgres-like&quot;, DISTRIBUTED BY recommended
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>  4. Drafts CREATE TABLE public.users_copy (...) DISTRIBUTED BY (id)
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>  5. Calls validate_ddl(database=&quot;greenplum&quot;, ddl=..., target_table=&quot;users_copy&quot;)
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>     -&gt; errors=[], proceeds
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>  6. Executes DDL via execute_ddl(database=&quot;greenplum&quot;)
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>  7. Calls transfer_query_result(source_database=&quot;local_duckdb&quot;,
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>     target_database=&quot;greenplum&quot;, mode=&quot;replace&quot;)
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>  8. Activates data-migration skill; runs 7 reconciliation checks
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>  9. Returns migration report with pass/fail status
+</span></code></pre></div>
+<h3 id="example-3-migrate-mysql-to-starrocks">Example 3: Migrate MySQL to StarRocks<a class="headerlink" href="#example-3-migrate-mysql-to-starrocks" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>User: Migrate orders from mysql_prod to starrocks, target test.orders_copy
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>gen_job:
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  1. Calls get_migration_capabilities(database=&quot;starrocks&quot;)
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>     -&gt; requires DUPLICATE KEY + DISTRIBUTED BY HASH + BUCKETS
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>  2. Calls suggest_table_layout(database=&quot;starrocks&quot;, columns_json=...)
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>     -&gt; {&quot;duplicate_key&quot;: [&quot;order_id&quot;], &quot;distributed_by&quot;: [&quot;order_id&quot;], &quot;buckets&quot;: 10}
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>  3. Drafts CREATE TABLE with the suggested layout + type_hints
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  4. validate_ddl() catches a missing NOT NULL on the key column -&gt; LLM fixes it
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>  5. Executes DDL on starrocks
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>  6. transfer_query_result + 7-point reconciliation
 </span></code></pre></div>
 
 
@@ -4274,13 +4243,13 @@
         
         
           
-          <a href="../migration/" class="md-footer__link md-footer__link--next" aria-label="Next: Migration">
+          <a href="../../web_chatbot/introduction/" class="md-footer__link md-footer__link--next" aria-label="Next: Chatbot">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Migration
+                Chatbot
               </div>
             </div>
             <div class="md-footer__button md-icon">

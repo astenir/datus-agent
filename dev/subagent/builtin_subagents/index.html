@@ -1022,8 +1022,6 @@
       
         
       
-        
-      
     
     
     
@@ -2505,35 +2503,7 @@
   <span class="md-ellipsis">
     
   
-    ETL Job
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../migration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Migration
+    Data Pipeline (ETL + Migration)
   
 
     
@@ -5771,8 +5741,7 @@
 <li><strong><a href="#gen_sql">gen_sql</a></strong> — Specialized SQL generation with deep expertise</li>
 <li><strong><a href="#gen_report">gen_report</a></strong> — Flexible report generation with configurable tools</li>
 <li><strong><a href="../gen_table/">gen_table</a></strong> — Database table creation via CTAS or natural language</li>
-<li><strong><a href="../gen_job/">gen_job</a></strong> — Single-database ETL job execution</li>
-<li><strong><a href="../migration/">migration</a></strong> — Cross-database migration with reconciliation</li>
+<li><strong><a href="../gen_job/">gen_job</a></strong> — Data pipeline execution (single-database ETL AND cross-database migration with reconciliation)</li>
 <li><strong><a href="#gen_skill">gen_skill</a></strong> — Skill creation and optimization</li>
 <li><strong><a href="#gen_dashboard">gen_dashboard</a></strong> — BI dashboard CRUD for Superset and Grafana</li>
 <li><strong><a href="#scheduler">scheduler</a></strong> — Airflow job lifecycle management</li>
@@ -7012,17 +6981,10 @@
 </tr>
 <tr>
 <td><code>gen_job</code></td>
-<td>Build single-database ETL jobs</td>
-<td>Job result</td>
-<td>Database</td>
-<td>ETL flow with DDL/DML execution</td>
-</tr>
-<tr>
-<td><code>migration</code></td>
-<td>Run cross-database migrations</td>
-<td>Migration result</td>
-<td>Target database</td>
-<td>Type mapping, transfer, mandatory reconciliation</td>
+<td>Data pipeline jobs (intra-DB ETL + cross-DB migration)</td>
+<td>Job / migration result</td>
+<td>Source + target databases</td>
+<td>DDL/DML execution, cross-dialect type mapping via MigrationTargetMixin, <code>transfer_query_result</code>, mandatory reconciliation when source ≠ target</td>
 </tr>
 <tr>
 <td><code>gen_skill</code></td>

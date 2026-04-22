@@ -1022,8 +1022,6 @@
       
         
       
-        
-      
     
     
     
@@ -1507,35 +1505,7 @@
   <span class="md-ellipsis">
     
   
-    ETL Job
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../migration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Migration
+    Data Pipeline (ETL + Migration)
   
 
     
@@ -3900,7 +3870,7 @@
 <tr>
 <td>跨库迁移</td>
 <td>不支持</td>
-<td>不支持（使用 <a href="../migration/">migration</a>）</td>
+<td>支持</td>
 </tr>
 <tr>
 <td>用户确认 (ask_user)</td>
@@ -3910,11 +3880,11 @@
 <tr>
 <td>默认 max_turns</td>
 <td>20</td>
-<td>30</td>
+<td>40</td>
 </tr>
 </tbody>
 </table>
-<p>需要交互式建表时用 <strong>gen_table</strong>，需要单库 ETL 流水线时用 <strong>gen_job</strong>。跨库迁移请使用 <a href="../migration/">migration</a>。</p>
+<p>需要交互式建表时用 <strong>gen_table</strong>，单库 ETL 或跨库迁移都用 <strong>gen_job</strong>（gen_job 已覆盖两者）。</p>
 
 
 
@@ -3963,13 +3933,13 @@
         
         
           
-          <a href="../gen_job/" class="md-footer__link md-footer__link--next" aria-label="下一页: ETL Job">
+          <a href="../gen_job/" class="md-footer__link md-footer__link--next" aria-label="下一页: Data Pipeline (ETL + Migration)">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                ETL Job
+                Data Pipeline (ETL + Migration)
               </div>
             </div>
             <div class="md-footer__button md-icon">

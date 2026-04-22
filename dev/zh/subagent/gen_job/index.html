@@ -14,7 +14,7 @@
         <link rel="prev" href="../gen_table/">
       
       
-        <link rel="next" href="../migration/">
+        <link rel="next" href="../../web_chatbot/introduction/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>ETL Job - Datus Docs</title>
+        <title>Data Pipeline (ETL + Migration) - Datus Docs</title>
       
     
     
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#etl-gen_job" class="md-skip">
+        <a href="#gen_job" class="md-skip">
           跳转至
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ETL Job
+              Data Pipeline (ETL + Migration)
             
           </span>
         </div>
@@ -1022,8 +1022,6 @@
       
         
       
-        
-      
     
     
     
@@ -1342,7 +1340,7 @@
   <span class="md-ellipsis">
     
   
-    ETL Job
+    Data Pipeline (ETL + Migration)
   
 
     
@@ -1360,7 +1358,7 @@
   <span class="md-ellipsis">
     
   
-    ETL Job
+    Data Pipeline (ETL + Migration)
   
 
     
@@ -1520,10 +1518,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#adapter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        类型映射
+        方言提示（由 adapter 驱动）
       
     </span>
   </a>
@@ -1531,7 +1529,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         数据传输
@@ -1542,7 +1540,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         对数校验
@@ -1558,7 +1556,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       
         可选配置
@@ -1580,7 +1578,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
       
         示例
@@ -1613,6 +1611,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#3mysql-starrocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        示例 3：MySQL 迁移到 StarRocks
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1633,34 +1642,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../migration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Migration
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -3862,10 +3843,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#adapter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        类型映射
+        方言提示（由 adapter 驱动）
       
     </span>
   </a>
@@ -3873,7 +3854,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         数据传输
@@ -3884,7 +3865,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         对数校验
@@ -3900,7 +3881,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       
         可选配置
@@ -3922,7 +3903,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
       
         示例
@@ -3949,6 +3930,17 @@
     <span class="md-ellipsis">
       
         示例 2：DuckDB 迁移到 Greenplum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3mysql-starrocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        示例 3：MySQL 迁移到 StarRocks
       
     </span>
   </a>
@@ -3996,10 +3988,10 @@
   
 
 
-<h1 id="etl-gen_job">ETL 作业 (gen_job)<a class="headerlink" href="#etl-gen_job" title="Permanent link">&para;</a></h1>
+<h1 id="gen_job">数据管道 (gen_job)<a class="headerlink" href="#gen_job" title="Permanent link">&para;</a></h1>
 <h2 id="_1">概览<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><code>gen_job</code> 是一个内置 subagent，用于单库 ETL。在同一数据库内从源表构建目标表（CREATE TABLE AS SELECT、INSERT FROM SELECT 等）。</p>
-<p>跨库迁移请使用 <a href="../migration/">migration</a> subagent。</p>
+<p><code>gen_job</code> 是一个内置 subagent，同时覆盖 <strong>单库 ETL</strong> 和 <strong>跨库迁移</strong>。从一个或多个源表构建或更新目标表，在源库与目标库不同时执行数据传输，并校验结果。</p>
+<p>agent 会根据用户的 prompt 自动判断路径：源库和目标库相同则走单库 ETL（CREATE TABLE AS SELECT / INSERT FROM SELECT）；不同则走跨库迁移（通过 <code>transfer_query_result</code>），并激活 <code>data-migration</code> skill 执行强制对数校验。</p>
 <h2 id="_2">快速开始<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>启动 Datus CLI 后使用 gen_job subagent：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 单库 ETL</span>
@@ -4086,6 +4078,18 @@
 <td>跨库数据传输</td>
 </tr>
 <tr>
+<td><code>get_migration_capabilities</code></td>
+<td>读取目标 adapter 的 <code>MigrationTargetMixin</code> 提示：requires / forbids / type_hints</td>
+</tr>
+<tr>
+<td><code>suggest_table_layout</code></td>
+<td>让目标 adapter 根据源列建议分布键 / 分区 / 排序键</td>
+</tr>
+<tr>
+<td><code>validate_ddl</code></td>
+<td>针对目标方言做静态校验（可选再做 dry-run CREATE+DROP），执行 DDL 前先过一遍</td>
+</tr>
+<tr>
 <td><code>read_file</code> / <code>write_file</code></td>
 <td>读写 SQL 文件</td>
 </tr>
@@ -4105,10 +4109,12 @@
 </span></code></pre></div>
 <h3 id="_8">跨库迁移<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>阶段 1：发现数据库（list_databases）并检查源表
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>阶段 2：生成目标表 DDL（跨库类型映射）
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>阶段 3：传输数据（transfer_query_result）
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>阶段 4：对数校验（7 项检查）
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>阶段 5：输出迁移报告
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>阶段 2：对目标库调用 get_migration_capabilities() 获取方言提示
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        + 对 OLAP 目标调用 suggest_table_layout()
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>阶段 3：草拟目标 DDL → validate_ddl() → execute_ddl()
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>阶段 4：传输数据（transfer_query_result）
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>阶段 5：对数校验（7 项检查）
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>阶段 6：输出迁移报告
 </span></code></pre></div>
 <h2 id="_9">跨库迁移详解<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <h3 id="_10">数据库发现<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
@@ -4119,71 +4125,16 @@
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;starrocks&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;starrocks&quot;</span><span class="p">}</span>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">]</span>
 </span></code></pre></div>
-<h3 id="_11">类型映射<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>类型在不同方言间自动映射：</p>
-<table>
-<thead>
-<tr>
-<th>DuckDB</th>
-<th>Greenplum</th>
-<th>StarRocks</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>VARCHAR</td>
-<td>VARCHAR</td>
-<td>VARCHAR(65533)</td>
-</tr>
-<tr>
-<td>VARCHAR(n)</td>
-<td>VARCHAR(n)</td>
-<td>VARCHAR(n)</td>
-</tr>
-<tr>
-<td>TEXT</td>
-<td>TEXT</td>
-<td>STRING</td>
-</tr>
-<tr>
-<td>INTEGER</td>
-<td>INTEGER</td>
-<td>INT</td>
-</tr>
-<tr>
-<td>BIGINT</td>
-<td>BIGINT</td>
-<td>BIGINT</td>
-</tr>
-<tr>
-<td>DOUBLE</td>
-<td>DOUBLE PRECISION</td>
-<td>DOUBLE</td>
-</tr>
-<tr>
-<td>DECIMAL(p,s)</td>
-<td>NUMERIC(p,s)</td>
-<td>DECIMAL(p,s)</td>
-</tr>
-<tr>
-<td>BOOLEAN</td>
-<td>BOOLEAN</td>
-<td>BOOLEAN</td>
-</tr>
-<tr>
-<td>DATE</td>
-<td>DATE</td>
-<td>DATE</td>
-</tr>
-<tr>
-<td>TIMESTAMP</td>
-<td>TIMESTAMP</td>
-<td>DATETIME</td>
-</tr>
-</tbody>
-</table>
-<p>不支持的类型（LIST、STRUCT、MAP、BLOB 等）会报错。</p>
-<h3 id="_12">数据传输<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="adapter">方言提示（由 adapter 驱动）<a class="headerlink" href="#adapter" title="Permanent link">&para;</a></h3>
+<p>类型映射和 DDL 要求**不再硬编码在 agent 中**。每个目标 adapter 在 <code>datus-db-core</code> 中实现 <code>MigrationTargetMixin</code>，各自声明自身方言的契约。agent 通过三个包装工具消费：</p>
+<ul>
+<li><strong><code>get_migration_capabilities(database=target)</code></strong> — 返回目标的 <code>dialect_family</code>、<code>requires</code>（DDL 必须包含的子句）、<code>forbids</code>（DDL 不能出现的模式）、<code>type_hints</code>（推荐映射）和参考 <code>example_ddl</code>。</li>
+<li><strong><code>suggest_table_layout(database=target, columns_json=...)</code></strong> — 返回 OLAP 相关建议（StarRocks 的 <code>{duplicate_key, distributed_by, buckets}</code>、ClickHouse 的 <code>{engine, order_by}</code>、Trino/Hive 的 <code>{partitioned_by}</code> 等）。</li>
+<li><strong><code>validate_ddl(database=target, ddl=..., target_table=...)</code></strong> — 做结构化校验（如 StarRocks 必须有 <code>DUPLICATE KEY</code> + <code>DISTRIBUTED BY</code>；ClickHouse 必须有 <code>ENGINE</code> + <code>ORDER BY</code>）；可选再跑 <code>dry_run_ddl</code>（在目标库 CREATE + DROP 临时表）。</li>
+</ul>
+<p>本版本已实现 Mixin 的 adapter：StarRocks、Greenplum、PostgreSQL、MySQL、ClickHouse、Trino、Snowflake、Redshift、DuckDB、SQLite，以及基于 SQLAlchemy 基类的通用 OLTP fallback。其他未实装的 adapter（如 BigQuery、Hive、Spark、ClickZetta）回退到纯 LLM 模式——<code>get_migration_capabilities</code> 返回 <code>{"supported": false, "warning": ...}</code>，由 LLM 凭自身知识处理目标方言。</p>
+<p>要为新方言加提示：在对应 adapter 实现 <code>MigrationTargetMixin</code> 即可，agent 不需改动。</p>
+<h3 id="_11">数据传输<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p><code>transfer_query_result</code> 工具负责数据搬运：</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>transfer_query_result(
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    source_sql=&quot;SELECT * FROM users&quot;,
@@ -4197,7 +4148,7 @@
 - 单次传输最大 1,000,000 行
 - 部分失败不支持事务回滚
 - 通过批量 INSERT 写入（非 COPY 或 stream load）</p>
-<h3 id="_13">对数校验<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<h3 id="_12">对数校验<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>迁移后自动执行 7 项对数检查：</p>
 <ol>
 <li><strong>行数</strong> — 源端与目标端总行数比较</li>
@@ -4208,12 +4159,12 @@
 <li><strong>样本对比</strong> — 按键排序取前 10 行比较</li>
 <li><strong>数值聚合</strong> — SUM/AVG 比较</li>
 </ol>
-<h2 id="_14">可选配置<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h2 id="_13">可选配置<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
 <p>gen_job 开箱即用。可在 <code>agent.yml</code> 中自定义：</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">agent</span><span class="p">:</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">agentic_nodes</span><span class="p">:</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">gen_job</span><span class="p">:</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">      </span><span class="nt">max_turns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w">       </span><span class="c1"># 默认：30</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">      </span><span class="nt">max_turns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40</span><span class="w">       </span><span class="c1"># 默认：40（跨库场景需要更多 turn）</span>
 </span></code></pre></div>
 <h2 id="skill">使用的 Skill<a class="headerlink" href="#skill" title="Permanent link">&para;</a></h2>
 <ul>
@@ -4221,7 +4172,7 @@
 <li><strong>table-validation</strong> — Schema 和数据质量检查</li>
 <li><strong>data-migration</strong> — 跨库迁移工作流和对数校验</li>
 </ul>
-<h2 id="_15">示例<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h2 id="_14">示例<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
 <h3 id="1">示例 1：构建汇总表<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>用户：从 orders 表构建一个 daily_sales_summary 表，
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>      按日期聚合 total_amount 和 order_count
@@ -4238,13 +4189,31 @@
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>      目标表 public.users_copy
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>gen_job：
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>  1. 调用 list_databases() → 发现 local_duckdb (duckdb) 和 greenplum (greenplum)
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>  2. 调用 describe_table(&quot;users&quot;, database=&quot;local_duckdb&quot;) → 获取 6 列信息
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>  3. 类型映射：INTEGER→INTEGER, VARCHAR→VARCHAR, DECIMAL→NUMERIC 等
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>  4. 在 greenplum 上执行 CREATE TABLE
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>  5. 调用 transfer_query_result(source_database=&quot;local_duckdb&quot;, target_database=&quot;greenplum&quot;)
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>  6. 执行 7 项对数检查，比较两端数据
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>  7. 输出迁移报告，标注各检查项 pass/fail
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>  1. 调用 list_databases() → local_duckdb (duckdb) 和 greenplum (greenplum)
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>  2. describe_table(&quot;users&quot;, database=&quot;local_duckdb&quot;) → 6 列
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>  3. get_migration_capabilities(database=&quot;greenplum&quot;)
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>     → dialect_family=&quot;postgres-like&quot;，建议 DISTRIBUTED BY
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>  4. 草拟 CREATE TABLE public.users_copy (...) DISTRIBUTED BY (id)
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>  5. validate_ddl(database=&quot;greenplum&quot;, ddl=..., target_table=&quot;users_copy&quot;)
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>     → errors=[]，通过
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>  6. execute_ddl(database=&quot;greenplum&quot;) 执行 DDL
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>  7. transfer_query_result(source_database=&quot;local_duckdb&quot;,
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>     target_database=&quot;greenplum&quot;, mode=&quot;replace&quot;)
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>  8. 激活 data-migration skill，执行 7 项对数检查
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>  9. 输出迁移报告，标注各检查项 pass/fail
+</span></code></pre></div>
+<h3 id="3mysql-starrocks">示例 3：MySQL 迁移到 StarRocks<a class="headerlink" href="#3mysql-starrocks" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>用户：把 mysql_prod 的 orders 表迁移到 starrocks，目标 test.orders_copy
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>gen_job：
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  1. get_migration_capabilities(database=&quot;starrocks&quot;)
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>     → 要求 DUPLICATE KEY + DISTRIBUTED BY HASH + BUCKETS
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>  2. suggest_table_layout(database=&quot;starrocks&quot;, columns_json=...)
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>     → {&quot;duplicate_key&quot;: [&quot;order_id&quot;], &quot;distributed_by&quot;: [&quot;order_id&quot;], &quot;buckets&quot;: 10}
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>  3. 按建议 + type_hints 草拟 CREATE TABLE
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  4. validate_ddl() 发现键列缺 NOT NULL → LLM 修正
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>  5. 在 starrocks 上执行 DDL
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>  6. transfer_query_result + 7 项对数校验
 </span></code></pre></div>
 <h2 id="gen_table">与 gen_table 的区别<a class="headerlink" href="#gen_table" title="Permanent link">&para;</a></h2>
 <table>
@@ -4284,7 +4253,7 @@
 <tr>
 <td>默认 max_turns</td>
 <td>20</td>
-<td>30</td>
+<td>40</td>
 </tr>
 </tbody>
 </table>
@@ -4337,13 +4306,13 @@
         
         
           
-          <a href="../migration/" class="md-footer__link md-footer__link--next" aria-label="下一页: Migration">
+          <a href="../../web_chatbot/introduction/" class="md-footer__link md-footer__link--next" aria-label="下一页: chatbot">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Migration
+                chatbot
               </div>
             </div>
             <div class="md-footer__button md-icon">
