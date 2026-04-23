@@ -1805,10 +1805,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#namespace" class="md-nav__link">
+  <a href="#datasource" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Namespace 隔离
+        Datasource 隔离
       
     </span>
   </a>
@@ -3759,10 +3759,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#namespace" class="md-nav__link">
+  <a href="#datasource" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Namespace 隔离
+        Datasource 隔离
       
     </span>
   </a>
@@ -3879,7 +3879,7 @@
 <h3 id="lancedb-sqlite">默认：LanceDB + SQLite<a class="headerlink" href="#lancedb-sqlite" title="Permanent link">&para;</a></h3>
 <ul>
 <li>零配置，开箱即用</li>
-<li>数据存储在 <code>data/datus_db_&lt;namespace&gt;/</code></li>
+<li>数据存储在 <code>data/datus_db_&lt;datasource&gt;/</code></li>
 <li>适用于开发、单机部署</li>
 </ul>
 <h3 id="postgresql-pgvector">PostgreSQL (pgvector)<a class="headerlink" href="#postgresql-pgvector" title="Permanent link">&para;</a></h3>
@@ -3887,13 +3887,13 @@
 <li>生产级后端，安装 <code>datus-storage-postgresql</code> 包后自动注册</li>
 <li>向量存储：pgvector 扩展提供向量搜索</li>
 <li>关系存储：原生 PostgreSQL 关系存储</li>
-<li>通过 PostgreSQL schema 实现 namespace 隔离</li>
+<li>通过 PostgreSQL schema 实现 datasource 隔离</li>
 </ul>
-<h3 id="namespace">Namespace 隔离<a class="headerlink" href="#namespace" title="Permanent link">&para;</a></h3>
+<h3 id="datasource">Datasource 隔离<a class="headerlink" href="#datasource" title="Permanent link">&para;</a></h3>
 <ul>
-<li>每个 namespace 独立存储，互不干扰</li>
-<li>LanceDB：每个 namespace 一个独立目录</li>
-<li>PostgreSQL：每个 namespace 一个独立 schema</li>
+<li>每个 datasource 独立存储，互不干扰</li>
+<li>LanceDB：每个 datasource 一个独立目录</li>
+<li>PostgreSQL：每个 datasource 一个独立 schema</li>
 </ul>
 <blockquote>
 <p>详细配置请参考 <a href="../../configuration/storage/#storage-backends">存储配置</a></p>

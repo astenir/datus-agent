@@ -5807,7 +5807,7 @@
 - <strong>Hooks</strong>：交互模式下的用户确认工作流
 - <strong>MCP 服务器</strong>：MetricFlow 验证（用于 gen_semantic_model 和 gen_metrics）
 - <strong>系统提示</strong>：内置模板版本 1.0
-- <strong>工作空间</strong>：<code>~/.datus/data/{namespace}/</code> 及 subagent 特定子目录</p>
+- <strong>工作空间</strong>：<code>~/.datus/data/{datasource}/</code> 及 subagent 特定子目录</p>
 <hr />
 <h2 id="gen_sql_summary">gen_sql_summary<a class="headerlink" href="#gen_sql_summary" title="Permanent link">&para;</a></h2>
 <h3 id="_3">概览<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
@@ -5975,7 +5975,7 @@
 <li><strong>数据源（Data Source）</strong>：与数据库表的连接</li>
 </ul>
 <h3 id="_11">快速开始<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>使用 <code>datus --database &lt;namespace&gt;</code> 启动 Datus CLI，然后使用subagent命令：</p>
+<p>使用 <code>datus --database &lt;datasource&gt;</code> 启动 Datus CLI，然后使用subagent命令：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>/gen_semantic_model<span class="w"> </span>generate<span class="w"> </span>a<span class="w"> </span>semantic<span class="w"> </span>model<span class="w"> </span><span class="k">for</span><span class="w"> </span>table<span class="w"> </span>&lt;table_name&gt;
 </span></code></pre></div>
 <h3 id="_12">工作原理<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
@@ -6077,7 +6077,7 @@
 </ul>
 <p><strong>示例</strong>：与其重复编写 <code>SELECT SUM(revenue) / COUNT(DISTINCT customer_id)</code>，不如定义一次 <code>avg_customer_revenue</code> 指标。</p>
 <h3 id="_21">快速开始<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
-<p>使用 <code>datus --database &lt;namespace&gt;</code> 启动 Datus CLI，然后使用指标生成subagent：</p>
+<p>使用 <code>datus --database &lt;datasource&gt;</code> 启动 Datus CLI，然后使用指标生成subagent：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>/gen_metrics<span class="w"> </span>Generate<span class="w"> </span>a<span class="w"> </span>metric<span class="w"> </span>from<span class="w"> </span>this<span class="w"> </span>SQL:<span class="w"> </span>SELECT<span class="w"> </span>SUM<span class="o">(</span>amount<span class="o">)</span><span class="w"> </span>FROM<span class="w"> </span>transactions,<span class="w"> </span>the<span class="w"> </span>corresponding<span class="w"> </span>question<span class="w"> </span>is<span class="w"> </span>total<span class="w"> </span>amount<span class="w"> </span>of<span class="w"> </span>all<span class="w"> </span>transactions
 </span></code></pre></div>
 <h3 id="_22">工作原理<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>

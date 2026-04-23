@@ -3951,13 +3951,13 @@
 <h3 id="1">1. 命令行参数<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>在任何 Datus 命令中添加 <code>--save_llm_trace</code> 参数：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># CLI 模式</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>datus-cli<span class="w"> </span>--namespace<span class="w"> </span>spidersnow<span class="w"> </span>--save_llm_trace
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>datus-cli<span class="w"> </span>--datasource<span class="w"> </span>spidersnow<span class="w"> </span>--save_llm_trace
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 主程序模式</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>python<span class="w"> </span>datus/main.py<span class="w"> </span>run<span class="w"> </span>--namespace<span class="w"> </span>bird_sqlite<span class="w"> </span>--task<span class="w"> </span><span class="s2">&quot;Query all users&quot;</span><span class="w"> </span>--task_db_name<span class="w"> </span>test.db<span class="w"> </span>--save_llm_trace
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>python<span class="w"> </span>datus/main.py<span class="w"> </span>run<span class="w"> </span>--datasource<span class="w"> </span>bird_sqlite<span class="w"> </span>--task<span class="w"> </span><span class="s2">&quot;Query all users&quot;</span><span class="w"> </span>--task_db_name<span class="w"> </span>test.db<span class="w"> </span>--save_llm_trace
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Benchmark 模式</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>python<span class="w"> </span>datus/main.py<span class="w"> </span>benchmark<span class="w"> </span>--namespace<span class="w"> </span>bird_sqlite<span class="w"> </span>--benchmark<span class="w"> </span>bird_dev<span class="w"> </span>--save_llm_trace
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>python<span class="w"> </span>datus/main.py<span class="w"> </span>benchmark<span class="w"> </span>--datasource<span class="w"> </span>bird_sqlite<span class="w"> </span>--benchmark<span class="w"> </span>bird_dev<span class="w"> </span>--save_llm_trace
 </span></code></pre></div>
 <h3 id="2">2. 配置文件<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>你也可以在 <code>agent.yml</code> 配置文件中为特定模型启用跟踪：</p>
@@ -4003,19 +4003,19 @@
 <h2 id="_7">使用场景<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="1_1">1. 调试和开发<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 在开发期间启用跟踪以调试提示词</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>datus-cli<span class="w"> </span>--namespace<span class="w"> </span>local_duckdb<span class="w"> </span>--save_llm_trace
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>datus-cli<span class="w"> </span>--datasource<span class="w"> </span>local_duckdb<span class="w"> </span>--save_llm_trace
 </span></code></pre></div>
 <h3 id="2_1">2. 性能分析<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 分析不同节点的 LLM 输入/输出</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>python<span class="w"> </span>datus/main.py<span class="w"> </span>benchmark<span class="w"> </span>--namespace<span class="w"> </span>bird_sqlite<span class="w"> </span>--benchmark<span class="w"> </span>bird_dev<span class="w"> </span>--save_llm_trace
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>python<span class="w"> </span>datus/main.py<span class="w"> </span>benchmark<span class="w"> </span>--datasource<span class="w"> </span>bird_sqlite<span class="w"> </span>--benchmark<span class="w"> </span>bird_dev<span class="w"> </span>--save_llm_trace
 </span></code></pre></div>
 <h3 id="3">3. 审计和合规<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 记录所有 LLM 交互以进行审计</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>python<span class="w"> </span>datus/main.py<span class="w"> </span>run<span class="w"> </span>--namespace<span class="w"> </span>prod<span class="w"> </span>--task<span class="w"> </span><span class="s2">&quot;sensitive query&quot;</span><span class="w"> </span>--save_llm_trace
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>python<span class="w"> </span>datus/main.py<span class="w"> </span>run<span class="w"> </span>--datasource<span class="w"> </span>prod<span class="w"> </span>--task<span class="w"> </span><span class="s2">&quot;sensitive query&quot;</span><span class="w"> </span>--save_llm_trace
 </span></code></pre></div>
 <h3 id="4-mcp">4. MCP 调用跟踪<a class="headerlink" href="#4-mcp" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 启用 MCP 调用的详细跟踪，包括整个函数调用过程</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>python<span class="w"> </span>datus/main.py<span class="w"> </span>run<span class="w"> </span>--namespace<span class="w"> </span>bird_sqlite<span class="w"> </span>--task<span class="w"> </span><span class="s2">&quot;Complex query&quot;</span><span class="w"> </span>--save_llm_trace
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>python<span class="w"> </span>datus/main.py<span class="w"> </span>run<span class="w"> </span>--datasource<span class="w"> </span>bird_sqlite<span class="w"> </span>--task<span class="w"> </span><span class="s2">&quot;Complex query&quot;</span><span class="w"> </span>--save_llm_trace
 </span></code></pre></div>
 <h2 id="_8">重要说明<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <ol>

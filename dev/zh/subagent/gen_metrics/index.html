@@ -3903,7 +3903,7 @@
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="w">  </span><span class="c1">-- ❌ 不支持 JOIN</span>
 </span></code></pre></div></p>
 <h2 id="_5">工作原理<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>使用 <code>datus --database &lt;namespace&gt;</code> 启动 Datus CLI，然后使用指标生成子代理：</p>
+<p>使用 <code>datus --database &lt;datasource&gt;</code> 启动 Datus CLI，然后使用指标生成子代理：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/gen_metrics<span class="w"> </span>Generate<span class="w"> </span>a<span class="w"> </span>metric<span class="w"> </span>from<span class="w"> </span>this<span class="w"> </span>SQL:<span class="w"> </span>SELECT<span class="w"> </span>SUM<span class="o">(</span>amount<span class="o">)</span><span class="w"> </span>FROM<span class="w"> </span>transactions,<span class="w"> </span>the<span class="w"> </span>coresponding<span class="w"> </span>question<span class="w"> </span>is<span class="w"> </span>total<span class="w"> </span>amount<span class="w"> </span>of<span class="w"> </span>all<span class="w"> </span>transactions
 </span></code></pre></div>
 <h3 id="_6">生成工作流<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
@@ -3949,7 +3949,7 @@
 - <strong>Hooks</strong>：交互模式下的用户确认工作流
 - <strong>MCP 服务器</strong>：MetricFlow 验证服务器
 - <strong>系统提示</strong>：内置模板版本 1.0
-- <strong>工作空间</strong>：<code>~/.datus/data/{namespace}/semantic_models</code></p>
+- <strong>工作空间</strong>：<code>~/.datus/data/{datasource}/semantic_models</code></p>
 <h3 id="_9">主题树分类<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>在 CLI 模式下通过问题中包含主题树来组织指标：</p>
 <p><strong>带主题树示例：</strong>

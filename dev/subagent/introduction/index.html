@@ -3739,7 +3739,7 @@
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">subagents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">explore, gen_sql</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">max_turns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="nt">scoped_context</span><span class="p">:</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">finance</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="nt">datasource</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">finance</span>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="nt">tables</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mart.finance_daily, mart.finance_budget</span>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="nt">metrics</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">finance.revenue.daily_revenue</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="nt">sqls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">finance.revenue.region_rollup</span>
@@ -3749,7 +3749,7 @@
 <p>Notes:</p>
 <ul>
 <li><code>node_class</code> defaults to <code>gen_sql</code> if omitted</li>
-<li>When writing <code>scoped_context</code> manually, set <code>namespace</code> explicitly</li>
+<li>When writing <code>scoped_context</code> manually, set <code>datasource</code> explicitly</li>
 <li><code>subagents</code> controls which task types this node may delegate to</li>
 </ul>
 <h2 id="how-to-use-subagents">How to Use Subagents<a class="headerlink" href="#how-to-use-subagents" title="Permanent link">&para;</a></h2>

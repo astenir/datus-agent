@@ -3875,7 +3875,7 @@
 <li><code>metrics</code></li>
 <li><code>sqls</code></li>
 </ul>
-<p>When the wizard saves the config, it also records the current database as <code>scoped_context.namespace</code>.</p>
+<p>When the wizard saves the config, it also records the current database as <code>scoped_context.datasource</code>.</p>
 <h3 id="step-4-rules">Step 4: Rules<a class="headerlink" href="#step-4-rules" title="Permanent link">&para;</a></h3>
 <p>Rules are stored as a string list under <code>rules</code> and appended to the final system prompt.</p>
 <h2 id="command-reference">Command Reference<a class="headerlink" href="#command-reference" title="Permanent link">&para;</a></h2>
@@ -3924,7 +3924,7 @@
 </span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="nt">rules</span><span class="p">:</span>
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefer existing finance metrics before generating new SQL</span>
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">      </span><span class="nt">scoped_context</span><span class="p">:</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">finance</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">        </span><span class="nt">datasource</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">finance</span>
 </span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">        </span><span class="nt">tables</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mart.finance_daily</span>
 </span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="nt">metrics</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">finance.revenue.daily_revenue</span>
 </span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="nt">sqls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">finance.revenue.region_rollup</span>

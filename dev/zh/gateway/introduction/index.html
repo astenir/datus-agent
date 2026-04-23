@@ -1748,7 +1748,7 @@
   <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       
-        命名空间覆盖
+        数据源覆盖
       
     </span>
   </a>
@@ -4034,7 +4034,7 @@
   <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       
-        命名空间覆盖
+        数据源覆盖
       
     </span>
   </a>
@@ -4161,7 +4161,7 @@
 <li><strong>仅使用出站长连接</strong> — Datus Gateway 通过 WebSocket、Socket Mode 或 Stream SDK 主动连接到各 IM 平台，无需 Webhook 端点或公网 URL。</li>
 <li><strong>实时流式响应</strong> — Agent 的响应（思考过程、工具调用、SQL、Markdown）在生成时即刻流式推送到聊天中。</li>
 <li><strong>会话管理</strong> — 每个对话（群聊/私聊/话题）自动获得持久化会话。用户可通过 <code>/new</code> 或 <code>/reset</code> 重置会话。</li>
-<li><strong>命名空间与子代理路由</strong> — 每个频道可覆盖默认命名空间或将消息路由到特定的子代理。</li>
+<li><strong>数据源与子代理路由</strong> — 每个频道可覆盖默认数据源或将消息路由到特定的子代理。</li>
 </ul>
 <h2 id="_2">支持的平台<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <table>
@@ -4235,7 +4235,7 @@
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">my-channel</span><span class="p">:</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">slack</span><span class="w">          </span><span class="c1"># 必填: feishu | slack</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">           </span><span class="c1"># 可选: 默认 true</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_namespace</span><span class="w"> </span><span class="c1"># 可选: 覆盖默认命名空间</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">datasource</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_datasource</span><span class="w"> </span><span class="c1"># 可选: 覆盖默认数据源</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">subagent_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">agent_01</span><span class="w">   </span><span class="c1"># 可选: 路由到特定子代理</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">extra</span><span class="p">:</span><span class="w">                  </span><span class="c1"># 必填: 适配器专用凭证</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="c1"># ... 平台专用配置项</span>
@@ -4263,10 +4263,10 @@
 <td>是否启用此频道（默认：<code>true</code>）</td>
 </tr>
 <tr>
-<td><code>namespace</code></td>
+<td><code>datasource</code></td>
 <td>string</td>
 <td>否</td>
-<td>覆盖网关的默认命名空间</td>
+<td>覆盖网关的默认数据源</td>
 </tr>
 <tr>
 <td><code>subagent_id</code></td>
@@ -4351,9 +4351,9 @@
 <td>Agent 配置文件路径</td>
 </tr>
 <tr>
-<td><code>--namespace</code></td>
-<td><code>default</code>（或 <code>DATUS_NAMESPACE</code> 环境变量）</td>
-<td>所有频道的默认命名空间</td>
+<td><code>--datasource</code></td>
+<td><code>default</code>（或 <code>DATUS_DATASOURCE</code> 环境变量）</td>
+<td>所有频道的默认数据源</td>
 </tr>
 <tr>
 <td><code>--host</code></td>
@@ -4476,8 +4476,8 @@
 <h3 id="_14">会话管理<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <p>每个对话（群聊、私聊或话题）会自动映射到一个持久化会话。要开启新会话，发送 <code>/new</code>、<code>/reset</code> 或 <code>/clear</code>。</p>
 <p>机器人会确认重置并返回新的会话 ID。</p>
-<h3 id="_15">命名空间覆盖<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<p>每个频道可在配置中指定 <code>namespace</code> 以覆盖网关的默认命名空间。这允许不同频道查询不同的数据库。</p>
+<h3 id="_15">数据源覆盖<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>每个频道可在配置中指定 <code>datasource</code> 以覆盖网关的默认数据源。这允许不同频道查询不同的数据库。</p>
 <h3 id="_16">子代理路由<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
 <p>使用 <code>subagent_id</code> 字段将特定频道的消息路由到专用子代理，实现按频道定制行为。</p>
 <h2 id="_17">故障排查<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>

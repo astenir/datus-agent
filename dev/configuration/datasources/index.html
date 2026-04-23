@@ -4025,7 +4025,7 @@
 <li><strong>Dynamic Discovery</strong>: Glob pattern-based database discovery for multiple database files</li>
 </ul>
 <blockquote>
-<p><strong>Migration note</strong>: The old <code>namespace:</code> config format is auto-migrated to <code>services.datasources</code> at runtime. The earlier <code>services.databases</code> key has been renamed to <code>services.datasources</code>; run <code>python -m datus.configuration.config_migrator --config conf/agent.yml</code> to rewrite the YAML automatically, or rename the key manually — the runtime rejects the old name.</p>
+<p><strong>Note</strong>: The earlier <code>services.databases</code> key has been renamed to <code>services.datasources</code>. Rename the key manually in your <code>agent.yml</code> — the runtime rejects the old name.</p>
 </blockquote>
 <h2 id="configuration-structure">Configuration Structure<a class="headerlink" href="#configuration-structure" title="Permanent link">&para;</a></h2>
 <p>Datasources are configured under <code>agent.services.datasources</code>. Each entry is an independent database connection:</p>

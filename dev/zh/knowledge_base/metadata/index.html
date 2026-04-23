@@ -3971,11 +3971,11 @@
 </table>
 <h2 id="_4">如何构建<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>你可以使用 <code>datus-agent bootstrap-kb</code> 命令构建：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>datus-agent<span class="w"> </span>bootstrap-kb<span class="w"> </span>--namespace<span class="w"> </span>&lt;your_namespace&gt;<span class="w"> </span>--kb_update_strategy<span class="w"> </span><span class="o">[</span>check/overwrite/incremental<span class="o">]</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>datus-agent<span class="w"> </span>bootstrap-kb<span class="w"> </span>--datasource<span class="w"> </span>&lt;your_datasource&gt;<span class="w"> </span>--kb_update_strategy<span class="w"> </span><span class="o">[</span>check/overwrite/incremental<span class="o">]</span>
 </span></code></pre></div>
 <h3 id="_5">命令行参数说明<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>--namespace</code>：你的数据库配置对应的键</li>
+<li><code>--datasource</code>：你的数据库配置对应的键</li>
 <li><code>--kb_update_strategy</code>：执行策略，有三个选项：<ul>
 <li><code>check</code>：检查当前构建的数据条目数</li>
 <li><code>overwrite</code>：完全覆盖现有数据</li>
@@ -3985,13 +3985,13 @@
 </ul>
 <h2 id="_6">使用示例<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <h3 id="_7">检查当前状态<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>datus-agent<span class="w"> </span>bootstrap-kb<span class="w"> </span>--namespace<span class="w"> </span>&lt;your_namespace&gt;<span class="w"> </span>--kb_update_strategy<span class="w"> </span>check
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>datus-agent<span class="w"> </span>bootstrap-kb<span class="w"> </span>--datasource<span class="w"> </span>&lt;your_datasource&gt;<span class="w"> </span>--kb_update_strategy<span class="w"> </span>check
 </span></code></pre></div>
 <h3 id="_8">完全重建<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>datus-agent<span class="w"> </span>bootstrap-kb<span class="w"> </span>--namespace<span class="w"> </span>&lt;your_namespace&gt;<span class="w"> </span>--kb_update_strategy<span class="w"> </span>overwrite
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>datus-agent<span class="w"> </span>bootstrap-kb<span class="w"> </span>--datasource<span class="w"> </span>&lt;your_datasource&gt;<span class="w"> </span>--kb_update_strategy<span class="w"> </span>overwrite
 </span></code></pre></div>
 <h3 id="_9">增量更新<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>datus-agent<span class="w"> </span>bootstrap-kb<span class="w"> </span>--namespace<span class="w"> </span>&lt;your_namespace&gt;<span class="w"> </span>--kb_update_strategy<span class="w"> </span>incremental
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>datus-agent<span class="w"> </span>bootstrap-kb<span class="w"> </span>--datasource<span class="w"> </span>&lt;your_datasource&gt;<span class="w"> </span>--kb_update_strategy<span class="w"> </span>incremental
 </span></code></pre></div>
 <h2 id="_10">最佳实践<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <h3 id="_11">数据库配置<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>

@@ -4044,7 +4044,7 @@
 </span></code></pre></div>
 <p>The final data paths will be:</p>
 <ul>
-<li><code>data/datus_db_&lt;namespace_name&gt;</code> for each configured namespace</li>
+<li><code>data/datus_db_&lt;datasource_name&gt;</code> for each configured datasource</li>
 <li>Example: <code>data/datus_db_snowflake</code>, <code>data/datus_db_local_sqlite</code></li>
 </ul>
 <h3 id="device-configuration">Device Configuration<a class="headerlink" href="#device-configuration" title="Permanent link">&para;</a></h3>
@@ -4253,7 +4253,7 @@
 <h3 id="metrics-configuration">Metrics Configuration<a class="headerlink" href="#metrics-configuration" title="Permanent link">&para;</a></h3>
 <p>The storage configuration works with the metrics section to embed business metrics:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">metrics</span><span class="p">:</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">duckdb</span><span class="p">:</span><span class="w">                              </span><span class="c1"># Namespace reference</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">duckdb</span><span class="p">:</span><span class="w">                              </span><span class="c1"># Datasource reference</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sale</span><span class="w">                       </span><span class="c1"># Business domain</span>
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nt">layer1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">layer1</span><span class="w">                     </span><span class="c1"># Metric layer classification</span>
 </span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="nt">layer2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">layer2</span><span class="w">                     </span><span class="c1"># Sub-layer classification</span>
@@ -4275,7 +4275,7 @@
 <li><strong>Vector</strong>: LanceDB (file-based, zero-config)</li>
 <li><strong>RDB</strong>: SQLite (file-based, zero-config)</li>
 </ul>
-<p>Data is stored under <code>data/datus_db_&lt;namespace&gt;/</code>.</p>
+<p>Data is stored under <code>data/datus_db_&lt;datasource&gt;/</code>.</p>
 <h3 id="postgresql-backend">PostgreSQL Backend<a class="headerlink" href="#postgresql-backend" title="Permanent link">&para;</a></h3>
 <h4 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h4>
 <ul>

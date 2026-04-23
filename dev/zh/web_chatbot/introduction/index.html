@@ -3703,8 +3703,8 @@
 <p>Datus Web chatbot 提供一个易用的网页界面，用于与 Datus AI 助手交互。它通过 FastAPI 服务端托管 React 前端组件（<code>@datus/web-chatbot</code>），面向自然语言转 SQL 的场景，用户无需掌握命令行即可完成对话式分析。</p>
 <h2 id="_2">快速开始<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">启动网页界面<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><strong>指定命名空间</strong>：
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>datus<span class="w"> </span>--web<span class="w"> </span>--database<span class="w"> </span>&lt;your_namespace&gt;
+<p><strong>指定数据源</strong>：
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>datus<span class="w"> </span>--web<span class="w"> </span>--database<span class="w"> </span>&lt;your_datasource&gt;
 </span></code></pre></div></p>
 <p><strong>使用自定义配置</strong>：
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>datus<span class="w"> </span>--web<span class="w"> </span>--config<span class="w"> </span>path/to/agent.yml<span class="w"> </span>--database<span class="w"> </span>snowflake
@@ -3795,7 +3795,7 @@
 <li><strong>成功归档</strong>：标记并收集有效查询</li>
 <li><strong>一键分享</strong>：复制会话链接</li>
 <li><strong>可视化执行</strong>：逐步展示 SQL 生成过程</li>
-<li><strong>多命名空间支持</strong>：便捷切换数据库</li>
+<li><strong>多数据源支持</strong>：便捷切换数据库</li>
 </ul>
 
 

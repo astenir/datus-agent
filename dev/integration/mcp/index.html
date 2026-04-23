@@ -3671,8 +3671,8 @@
 Claude Desktop, Claude Code, and other MCP-compatible clients.</p>
 <p><strong>Server Modes:</strong></p>
 <ul>
-<li><strong>Static Mode</strong>: Single namespace, suitable for Claude Desktop, CLI tools, or single-tenant HTTP/SSE server</li>
-<li><strong>Dynamic Mode</strong>: Multi-namespace HTTP/SSE server, supports all namespaces via URL path</li>
+<li><strong>Static Mode</strong>: Single datasource, suitable for Claude Desktop, CLI tools, or single-tenant HTTP/SSE server</li>
+<li><strong>Dynamic Mode</strong>: Multi-datasource HTTP/SSE server, supports all datasources via URL path</li>
 </ul>
 <p><strong>Supported Transport Modes:</strong></p>
 <ul>
@@ -3689,16 +3689,16 @@ Claude Desktop, Claude Code, and other MCP-compatible clients.</p>
 <ul>
 <li>Start the MCP server:</li>
 </ul>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Static Mode: Single namespace</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>uvx<span class="w"> </span>--from<span class="w"> </span>datus-agent<span class="w"> </span>datus-mcp<span class="w"> </span>--namespace<span class="w"> </span>&lt;your<span class="w"> </span>namespace&gt;
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>uvx<span class="w"> </span>--from<span class="w"> </span>datus-agent<span class="w"> </span>datus-mcp<span class="w"> </span>--namespace<span class="w"> </span>&lt;your<span class="w"> </span>namespace&gt;<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Dynamic Mode: Multi-namespace HTTP/SSE server</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Static Mode: Single datasource</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>uvx<span class="w"> </span>--from<span class="w"> </span>datus-agent<span class="w"> </span>datus-mcp<span class="w"> </span>--datasource<span class="w"> </span>&lt;your<span class="w"> </span>datasource&gt;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>uvx<span class="w"> </span>--from<span class="w"> </span>datus-agent<span class="w"> </span>datus-mcp<span class="w"> </span>--datasource<span class="w"> </span>&lt;your<span class="w"> </span>datasource&gt;<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Dynamic Mode: Multi-datasource HTTP/SSE server</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>uvx<span class="w"> </span>--from<span class="w"> </span>datus-agent<span class="w"> </span>datus-mcp<span class="w"> </span>--dynamic<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>uvx<span class="w"> </span>--from<span class="w"> </span>datus-agent<span class="w"> </span>datus-mcp<span class="w"> </span>--dynamic<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># Or run directly</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>datus-mcp<span class="w"> </span>--namespace<span class="w"> </span>&lt;your<span class="w"> </span>namespace&gt;
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># Dynamic Mode: Multi-namespace HTTP/SSE server</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>datus-mcp<span class="w"> </span>--datasource<span class="w"> </span>&lt;your<span class="w"> </span>datasource&gt;
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># Dynamic Mode: Multi-datasource HTTP/SSE server</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>datus-mcp<span class="w"> </span>--dynamic<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>datus-mcp<span class="w"> </span>--dynamic<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
 </span></code></pre></div>
@@ -3709,7 +3709,7 @@ Claude Desktop, Claude Code, and other MCP-compatible clients.</p>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>datus-mcp<span class="w"> </span>--dynamic<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Add to Claude Code</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>datus<span class="w"> </span>http://127.0.0.1:8000/sse/&lt;your<span class="w"> </span>namespace&gt;
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>datus<span class="w"> </span>http://127.0.0.1:8000/sse/&lt;your<span class="w"> </span>datasource&gt;
 </span></code></pre></div>
 <h3 id="claude-desktop">Claude Desktop<a class="headerlink" href="#claude-desktop" title="Permanent link">&para;</a></h3>
 <p>Claude Desktop requires <a href="https://www.npmjs.com/package/mcp-remote">mcp-remote</a> to connect to a remote MCP server.</p>
@@ -3725,7 +3725,7 @@ Claude Desktop, Claude Code, and other MCP-compatible clients.</p>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="s">      &quot;command&quot;: &quot;$NPX_PATH&quot;,</span>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="s">      &quot;args&quot;: [</span>
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="s">        &quot;mcp-remote@latest&quot;,</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="s">        &quot;http://127.0.0.1:8000/sse/&lt;your namespace&gt;&quot;,</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="s">        &quot;http://127.0.0.1:8000/sse/&lt;your datasource&gt;&quot;,</span>
 </span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="s">        &quot;--transport&quot;,</span>
 </span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="s">        &quot;sse-only&quot;</span>
 </span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="s">      ],</span>
@@ -3744,7 +3744,7 @@ Claude Desktop, Claude Code, and other MCP-compatible clients.</p>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npx&quot;</span><span class="p">,</span>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="s2">&quot;mcp-remote@latest&quot;</span><span class="p">,</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="s2">&quot;http://127.0.0.1:8000/sse/&lt;your namespace&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="s2">&quot;http://127.0.0.1:8000/sse/&lt;your datasource&gt;&quot;</span><span class="p">,</span>
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="s2">&quot;--transport&quot;</span><span class="p">,</span>
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="s2">&quot;sse-only&quot;</span>
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="p">]</span>
@@ -3769,8 +3769,8 @@ Claude Desktop, Claude Code, and other MCP-compatible clients.</p>
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="s2">&quot;--from&quot;</span><span class="p">,</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="s2">&quot;datus-agent&quot;</span><span class="p">,</span>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">        </span><span class="s2">&quot;datus-mcp&quot;</span><span class="p">,</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="s2">&quot;--namespace&quot;</span><span class="p">,</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="s2">&quot;&lt;your namespace&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="s2">&quot;--datasource&quot;</span><span class="p">,</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="s2">&quot;&lt;your datasource&gt;&quot;</span><span class="p">,</span>
 </span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="s2">&quot;--transport&quot;</span><span class="p">,</span>
 </span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">        </span><span class="s2">&quot;stdio&quot;</span>
 </span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">      </span><span class="p">]</span>
@@ -3788,8 +3788,8 @@ Claude Desktop, Claude Code, and other MCP-compatible clients.</p>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span>
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="s2">&quot;datus.mcp_server&quot;</span><span class="p">,</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">        </span><span class="s2">&quot;--namespace&quot;</span><span class="p">,</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span><span class="s2">&quot;&lt;your namespace&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">        </span><span class="s2">&quot;--datasource&quot;</span><span class="p">,</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span><span class="s2">&quot;&lt;your datasource&gt;&quot;</span><span class="p">,</span>
 </span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">        </span><span class="s2">&quot;--transport&quot;</span><span class="p">,</span>
 </span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">        </span><span class="s2">&quot;stdio&quot;</span>
 </span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">      </span><span class="p">]</span>
@@ -3804,7 +3804,7 @@ Claude Desktop, Claude Code, and other MCP-compatible clients.</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&quot;DatusServer&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://127.0.0.1:8000/sse/&lt;your namespace&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://127.0.0.1:8000/sse/&lt;your datasource&gt;&quot;</span><span class="p">,</span>
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">      </span><span class="nt">&quot;transport&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sse&quot;</span>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="p">}</span>
@@ -3816,7 +3816,7 @@ Claude Desktop, Claude Code, and other MCP-compatible clients.</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">&quot;DatusServer&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://127.0.0.1:8000/mcp/&lt;your namespace&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://127.0.0.1:8000/mcp/&lt;your datasource&gt;&quot;</span><span class="p">,</span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">      </span><span class="nt">&quot;transport&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http&quot;</span>
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="p">}</span>
@@ -3825,41 +3825,41 @@ Claude Desktop, Claude Code, and other MCP-compatible clients.</p>
 </li>
 </ul>
 <h2 id="http-server-mode">HTTP Server Mode<a class="headerlink" href="#http-server-mode" title="Permanent link">&para;</a></h2>
-<p><strong>Static Mode (Single Namespace):</strong></p>
+<p><strong>Static Mode (Single Datasource):</strong></p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Streamable HTTP (default, bidirectional)</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>datus-mcp<span class="w"> </span>--namespace<span class="w"> </span>&lt;your<span class="w"> </span>namespace&gt;<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>datus-mcp<span class="w"> </span>--datasource<span class="w"> </span>&lt;your<span class="w"> </span>datasource&gt;<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># SSE mode (for web clients)</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>datus-mcp<span class="w"> </span>--namespace<span class="w"> </span>&lt;your<span class="w"> </span>namespace&gt;<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>datus-mcp<span class="w"> </span>--datasource<span class="w"> </span>&lt;your<span class="w"> </span>datasource&gt;<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
 </span></code></pre></div>
 <p>Connect to:</p>
 <ul>
 <li>Streamable HTTP: <code>http://localhost:8000/mcp</code></li>
 <li>SSE: <code>http://localhost:8000/sse</code></li>
 </ul>
-<p><strong>Dynamic Mode (Multi-Namespace):</strong></p>
-<p>Run a single server that supports all configured namespaces via URL path:</p>
+<p><strong>Dynamic Mode (Multi-Datasource):</strong></p>
+<p>Run a single server that supports all configured datasources via URL path:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Start dynamic server with sse mode</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>datus-mcp<span class="w"> </span>--dynamic<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span>--transport<span class="w"> </span>sse
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># Start dynamic server with streamable HTTP mode</span>
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>datus-mcp<span class="w"> </span>--dynamic<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span>--transport<span class="w"> </span>http
 </span></code></pre></div>
-<p>Connect to specific namespace:</p>
+<p>Connect to specific datasource:</p>
 <ul>
-<li>HTTP: <code>http://localhost:8000/mcp/{namespace}</code></li>
-<li>SSE: <code>http://localhost:8000/sse/{namespace}</code></li>
-<li>With subagent: <code>http://localhost:8000/mcp/{namespace}?subagent={subagent_name}</code></li>
+<li>HTTP: <code>http://localhost:8000/mcp/{datasource}</code></li>
+<li>SSE: <code>http://localhost:8000/sse/{datasource}</code></li>
+<li>With subagent: <code>http://localhost:8000/mcp/{datasource}?subagent={subagent_name}</code></li>
 </ul>
 <p>Example:</p>
 <ul>
-<li>Streamable HTTP, namespace <code>bird_sqlite</code>: <code>http://localhost:8000/mcp/bird_sqlite</code></li>
-<li>SSE, namespace <code>bird_sqlite</code>: <code>http://localhost:8000/sse/bird_sqlite</code></li>
-<li>Streamable HTTP, namespace <code>superset</code>, subagent <code>sales_dashboard</code>: <code>http://localhost:8000/mcp/superset?subagent=sales_dashboard</code></li>
+<li>Streamable HTTP, datasource <code>bird_sqlite</code>: <code>http://localhost:8000/mcp/bird_sqlite</code></li>
+<li>SSE, datasource <code>bird_sqlite</code>: <code>http://localhost:8000/sse/bird_sqlite</code></li>
+<li>Streamable HTTP, datasource <code>superset</code>, subagent <code>sales_dashboard</code>: <code>http://localhost:8000/mcp/superset?subagent=sales_dashboard</code></li>
 </ul>
 <p>Info endpoints:</p>
 <ul>
-<li><code>http://localhost:8000/</code> - Server info and available namespaces</li>
+<li><code>http://localhost:8000/</code> - Server info and available datasources</li>
 <li><code>http://localhost:8000/health</code> - Health check</li>
 </ul>
 <h2 id="available-tools">Available Tools<a class="headerlink" href="#available-tools" title="Permanent link">&para;</a></h2>
@@ -3886,8 +3886,8 @@ Claude Desktop, Claude Code, and other MCP-compatible clients.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>datus-mcp<span class="w"> </span>--help
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Mode<span class="w"> </span>Selection<span class="w"> </span><span class="o">(</span>mutually<span class="w"> </span>exclusive,<span class="w"> </span>one<span class="w"> </span>required<span class="o">)</span>:
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span>--dynamic<span class="w">            </span>Run<span class="w"> </span><span class="k">in</span><span class="w"> </span>dynamic<span class="w"> </span>mode:<span class="w"> </span>support<span class="w"> </span>all<span class="w"> </span>namespaces<span class="w"> </span>via<span class="w"> </span>/mcp/<span class="o">{</span>namespace<span class="o">}</span><span class="w"> </span>URL
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span>--namespace,<span class="w"> </span>-n<span class="w">      </span>Run<span class="w"> </span><span class="k">in</span><span class="w"> </span>static<span class="w"> </span>mode<span class="w"> </span>with<span class="w"> </span>specified<span class="w"> </span>namespace
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span>--dynamic<span class="w">            </span>Run<span class="w"> </span><span class="k">in</span><span class="w"> </span>dynamic<span class="w"> </span>mode:<span class="w"> </span>support<span class="w"> </span>all<span class="w"> </span>datasources<span class="w"> </span>via<span class="w"> </span>/mcp/<span class="o">{</span>datasource<span class="o">}</span><span class="w"> </span>URL
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span>--datasource,<span class="w"> </span>-n<span class="w">      </span>Run<span class="w"> </span><span class="k">in</span><span class="w"> </span>static<span class="w"> </span>mode<span class="w"> </span>with<span class="w"> </span>specified<span class="w"> </span>datasource
 </span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
 </span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>Static<span class="w"> </span>Mode<span class="w"> </span>Options:
 </span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span>--sub-agent,<span class="w"> </span>-s<span class="w">      </span>Sub-agent<span class="w"> </span>name<span class="w"> </span><span class="k">for</span><span class="w"> </span>scoped<span class="w"> </span>context
@@ -3896,8 +3896,8 @@ Claude Desktop, Claude Code, and other MCP-compatible clients.</p>
 </span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
 </span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>Dynamic<span class="w"> </span>Mode<span class="w"> </span>Options:
 </span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">  </span>--transport,<span class="w"> </span>-t<span class="w">      </span>Transport<span class="w"> </span>type:<span class="w"> </span>http<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>,<span class="w"> </span>sse:
-</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">                       </span>http:<span class="w"> </span>via<span class="w"> </span>/mcp/<span class="o">{</span>namespace<span class="o">}</span><span class="w"> </span>URL
-</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">                       </span>sse:<span class="w"> </span>via<span class="w"> </span>/sse/<span class="o">{</span>namespace<span class="o">}</span><span class="w"> </span>URL
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">                       </span>http:<span class="w"> </span>via<span class="w"> </span>/mcp/<span class="o">{</span>datasource<span class="o">}</span><span class="w"> </span>URL
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">                       </span>sse:<span class="w"> </span>via<span class="w"> </span>/sse/<span class="o">{</span>datasource<span class="o">}</span><span class="w"> </span>URL
 </span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
 </span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>Common<span class="w"> </span>Options:
 </span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">  </span>--config,<span class="w"> </span>-c<span class="w">         </span>Path<span class="w"> </span>to<span class="w"> </span>agent<span class="w"> </span>configuration<span class="w"> </span>file

@@ -4025,7 +4025,7 @@
 <li><strong>动态发现</strong>：支持通过 <code>path_pattern</code> 批量发现多个本地数据库文件</li>
 </ul>
 <blockquote>
-<p><strong>迁移说明</strong>：旧的 <code>namespace:</code> 配置格式会在运行时自动迁移到 <code>services.datasources</code>。此外，早期版本里的 <code>services.databases</code> 键已重命名为 <code>services.datasources</code>；运行 <code>python -m datus.configuration.config_migrator --config conf/agent.yml</code> 可自动改写 YAML，或者手动改名——运行时会拒绝旧键。</p>
+<p><strong>说明</strong>：早期版本的 <code>services.databases</code> 键已重命名为 <code>services.datasources</code>。请在 <code>agent.yml</code> 中手动更改键名——运行时会拒绝旧键。</p>
 </blockquote>
 <h2 id="_2">配置结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>数据库统一配置在 <code>agent.services.datasources</code> 下，每个条目都是一个独立数据库连接：</p>

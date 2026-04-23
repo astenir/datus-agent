@@ -3879,7 +3879,7 @@
 <h3 id="default-lancedb-sqlite">Default: LanceDB + SQLite<a class="headerlink" href="#default-lancedb-sqlite" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Zero configuration, works out of the box</li>
-<li>Data stored under <code>data/datus_db_&lt;namespace&gt;/</code></li>
+<li>Data stored under <code>data/datus_db_&lt;datasource&gt;/</code></li>
 <li>Ideal for development and single-machine deployment</li>
 </ul>
 <h3 id="postgresql-pgvector">PostgreSQL (pgvector)<a class="headerlink" href="#postgresql-pgvector" title="Permanent link">&para;</a></h3>
@@ -3891,9 +3891,9 @@
 </ul>
 <h3 id="database-isolation">Database Isolation<a class="headerlink" href="#database-isolation" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Each namespace is stored independently with no cross-contamination</li>
-<li>LanceDB: One directory per namespace</li>
-<li>PostgreSQL: One schema per namespace</li>
+<li>Each datasource is stored independently with no cross-contamination</li>
+<li>LanceDB: One directory per datasource</li>
+<li>PostgreSQL: One schema per datasource</li>
 </ul>
 <blockquote>
 <p>For detailed configuration, see <a href="../../configuration/storage/#storage-backends">Storage Configuration</a>.</p>

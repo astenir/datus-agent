@@ -4451,7 +4451,7 @@
 <td><code>--database</code></td>
 <td>Yes</td>
 <td>—</td>
-<td>Namespace to benchmark, e.g. <code>bird_sqlite</code></td>
+<td>Datasource to benchmark, e.g. <code>bird_sqlite</code></td>
 </tr>
 <tr>
 <td><code>--benchmark</code></td>
@@ -4531,7 +4531,7 @@
 <p>For each round the tool creates an isolated output directory under <code>{agent.home}/integration/</code>. After all rounds finish, a summary Excel file is also exported:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>{agent.home}/integration/
 </span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>├── {group_name}_0/
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>│   ├── save/{namespace}/{timestamp}/
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>│   ├── save/{datasource}/{timestamp}/
 </span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>│   │   ├── 0.json                                     # Task metadata
 </span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>│   │   ├── 0.sql                                      # Generated SQL
 </span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>│   │   ├── 0.csv                                      # Query execution result
@@ -4539,13 +4539,13 @@
 </span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>│   │   ├── 1.sql
 </span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>│   │   ├── 1.csv
 </span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>│   │   └── ...
-</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>│   ├── trajectory/{namespace}/{timestamp}/
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>│   ├── trajectory/{datasource}/{timestamp}/
 </span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>│   │   ├── 0_{ts}.yaml                                # Workflow trace (e.g. 0_1769611836.yaml)
 </span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>│   │   ├── 1_{ts}.yaml
 </span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>│   │   └── ...
 </span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>│   └── evaluation_round_{timestamp}_0.json            # Evaluation report for round 0
 </span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>├── {group_name}_1/
-</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>│   ├── save/{namespace}/{timestamp}/
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>│   ├── save/{datasource}/{timestamp}/
 </span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>│   │   ├── 0.json
 </span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>│   │   ├── 0.sql
 </span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>│   │   ├── 0.csv
@@ -4553,7 +4553,7 @@
 </span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>│   │   ├── 1.sql
 </span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>│   │   ├── 1.csv
 </span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>│   │   └── ...
-</span><span id="__span-21-25"><a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a>│   ├── trajectory/{namespace}/{timestamp}/
+</span><span id="__span-21-25"><a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a>│   ├── trajectory/{datasource}/{timestamp}/
 </span><span id="__span-21-26"><a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a>│   │   ├── 0_{ts}.yaml
 </span><span id="__span-21-27"><a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a>│   │   ├── 1_{ts}.yaml
 </span><span id="__span-21-28"><a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a>│   │   └── ...

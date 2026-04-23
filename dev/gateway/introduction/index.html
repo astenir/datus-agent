@@ -1745,10 +1745,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#namespace-override" class="md-nav__link">
+  <a href="#datasource-override" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Namespace Override
+        Datasource Override
       
     </span>
   </a>
@@ -4031,10 +4031,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#namespace-override" class="md-nav__link">
+  <a href="#datasource-override" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Namespace Override
+        Datasource Override
       
     </span>
   </a>
@@ -4161,7 +4161,7 @@
 <li><strong>Outbound long connections only</strong> — Datus Gateway actively connects to each IM platform using WebSocket, Socket Mode, or Stream SDK. No webhook endpoint or public URL is needed.</li>
 <li><strong>Real-time streaming</strong> — Agent responses (thinking, tool calls, SQL, markdown) are streamed back to the chat as they are generated.</li>
 <li><strong>Session management</strong> — Each conversation (group/DM/thread) automatically gets a persistent session. Users can reset it with <code>/new</code> or <code>/reset</code>.</li>
-<li><strong>Namespace &amp; subagent routing</strong> — Each channel can override the default namespace or route messages to a specific sub-agent.</li>
+<li><strong>Datasource &amp; subagent routing</strong> — Each channel can override the default datasource or route messages to a specific sub-agent.</li>
 </ul>
 <h2 id="supported-platforms">Supported Platforms<a class="headerlink" href="#supported-platforms" title="Permanent link">&para;</a></h2>
 <table>
@@ -4234,7 +4234,7 @@
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">my-channel</span><span class="p">:</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">slack</span><span class="w">          </span><span class="c1"># Required: feishu | slack</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">           </span><span class="c1"># Optional: default true</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_namespace</span><span class="w"> </span><span class="c1"># Optional: override default namespace</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">datasource</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_datasource</span><span class="w"> </span><span class="c1"># Optional: override default datasource</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">subagent_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">agent_01</span><span class="w">   </span><span class="c1"># Optional: route to a specific sub-agent</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">extra</span><span class="p">:</span><span class="w">                  </span><span class="c1"># Required: adapter-specific credentials</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="c1"># ... platform-specific keys</span>
@@ -4262,10 +4262,10 @@
 <td>Whether this channel is active (default: <code>true</code>)</td>
 </tr>
 <tr>
-<td><code>namespace</code></td>
+<td><code>datasource</code></td>
 <td>string</td>
 <td>No</td>
-<td>Override the gateway's default namespace</td>
+<td>Override the gateway's default datasource</td>
 </tr>
 <tr>
 <td><code>subagent_id</code></td>
@@ -4351,9 +4351,9 @@
 <td>Path to agent configuration file</td>
 </tr>
 <tr>
-<td><code>--namespace</code></td>
-<td><code>default</code> (or <code>DATUS_NAMESPACE</code> env)</td>
-<td>Default namespace for all channels</td>
+<td><code>--datasource</code></td>
+<td><code>default</code> (or <code>DATUS_DATASOURCE</code> env)</td>
+<td>Default datasource for all channels</td>
 </tr>
 <tr>
 <td><code>--host</code></td>
@@ -4476,8 +4476,8 @@
 <h3 id="session-management">Session Management<a class="headerlink" href="#session-management" title="Permanent link">&para;</a></h3>
 <p>Each conversation (group chat, DM, or thread) automatically maps to a persistent session. To start a fresh session, send <code>/new</code>, <code>/reset</code>, or <code>/clear</code>.</p>
 <p>The bot will confirm the reset with the new session ID.</p>
-<h3 id="namespace-override">Namespace Override<a class="headerlink" href="#namespace-override" title="Permanent link">&para;</a></h3>
-<p>Each channel can specify a <code>namespace</code> in its configuration to override the gateway's default namespace. This allows different channels to query different databases.</p>
+<h3 id="datasource-override">Datasource Override<a class="headerlink" href="#datasource-override" title="Permanent link">&para;</a></h3>
+<p>Each channel can specify a <code>datasource</code> in its configuration to override the gateway's default datasource. This allows different channels to query different databases.</p>
 <h3 id="subagent-routing">Subagent Routing<a class="headerlink" href="#subagent-routing" title="Permanent link">&para;</a></h3>
 <p>Use the <code>subagent_id</code> field to route messages from a specific channel to a dedicated sub-agent, enabling specialized behavior per channel.</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
