@@ -5960,7 +5960,7 @@
 <li><strong>Data Source</strong>: Connection to your database table</li>
 </ul>
 <h3 id="quick-start_1">Quick Start<a class="headerlink" href="#quick-start_1" title="Permanent link">&para;</a></h3>
-<p>Start Datus CLI with <code>datus --database &lt;datasource&gt;</code>, and begin with a subagent command:</p>
+<p>Start Datus CLI with <code>datus --datasource &lt;datasource&gt;</code>, and begin with a subagent command:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>/gen_semantic_model<span class="w"> </span>generate<span class="w"> </span>a<span class="w"> </span>semantic<span class="w"> </span>model<span class="w"> </span><span class="k">for</span><span class="w"> </span>table<span class="w"> </span>&lt;table_name&gt;
 </span></code></pre></div>
 <h3 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
@@ -5978,7 +5978,7 @@
     A[User Request] --&gt; B[DDL Analysis]
     B --&gt; C[YAML Generation]
     C --&gt; D[Validation]
-    D --&gt; E[Storage]</code></pre>
+    D --&gt; E[Knowledge Base Sync]</code></pre>
 <h3 id="validation-and-sync">Validation and Sync<a class="headerlink" href="#validation-and-sync" title="Permanent link">&para;</a></h3>
 <p>The agent calls <code>validate_semantic()</code> before publishing. If validation fails, it edits the YAML and retries. In interactive mode, once validation passes, <code>end_semantic_model_generation</code> triggers automatic Knowledge Base sync; in workflow/API mode, use the explicit semantic sync step or tool.</p>
 <h3 id="semantic-model-structure">Semantic Model Structure<a class="headerlink" href="#semantic-model-structure" title="Permanent link">&para;</a></h3>
@@ -6025,8 +6025,8 @@
 <li>✅ Automated YAML generation from table DDL</li>
 <li>✅ Built-in tools, hooks, and MCP server integration</li>
 <li>✅ Interactive validation and error fixing</li>
-<li>✅ User confirmation before storage</li>
-<li>✅ Knowledge Base integration</li>
+<li>✅ Validation-gated Knowledge Base sync</li>
+<li>✅ Interactive auto-sync and workflow/API explicit sync</li>
 <li>✅ Duplicate prevention</li>
 <li>✅ MetricFlow compatibility</li>
 </ul>
@@ -6044,7 +6044,7 @@
 </ul>
 <p><strong>Example</strong>: Instead of writing <code>SELECT SUM(revenue) / COUNT(DISTINCT customer_id)</code> repeatedly, define an <code>avg_customer_revenue</code> metric once.</p>
 <h3 id="quick-start_2">Quick Start<a class="headerlink" href="#quick-start_2" title="Permanent link">&para;</a></h3>
-<p>Start Datus CLI with <code>datus --database &lt;datasource&gt;</code>, and use the metrics generation subagent:</p>
+<p>Start Datus CLI with <code>datus --datasource &lt;datasource&gt;</code>, and use the metrics generation subagent:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>/gen_metrics<span class="w"> </span>Generate<span class="w"> </span>a<span class="w"> </span>metric<span class="w"> </span>from<span class="w"> </span>this<span class="w"> </span>SQL:<span class="w"> </span>SELECT<span class="w"> </span>SUM<span class="o">(</span>amount<span class="o">)</span><span class="w"> </span>FROM<span class="w"> </span>transactions,<span class="w"> </span>the<span class="w"> </span>corresponding<span class="w"> </span>question<span class="w"> </span>is<span class="w"> </span>total<span class="w"> </span>amount<span class="w"> </span>of<span class="w"> </span>all<span class="w"> </span>transactions
 </span></code></pre></div>
 <h3 id="how-it-works_1">How It Works<a class="headerlink" href="#how-it-works_1" title="Permanent link">&para;</a></h3>
@@ -6593,7 +6593,7 @@
 </span><span id="__span-37-18"><a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${SUPERSET_PASSWORD}&quot;</span>
 </span><span id="__span-37-19"><a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a><span class="w">        </span><span class="nt">dataset_db</span><span class="p">:</span>
 </span><span id="__span-37-20"><a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a><span class="w">          </span><span class="nt">datasource_ref</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">serving_pg</span>
-</span><span id="__span-37-21"><a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a><span class="w">          </span><span class="nt">bi_database_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">analytics_pg</span>
+</span><span id="__span-37-21"><a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a><span class="w">          </span><span class="nt">bi_database_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">examples</span>
 </span><span id="__span-37-22"><a id="__codelineno-37-22" name="__codelineno-37-22" href="#__codelineno-37-22"></a>
 </span><span id="__span-37-23"><a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a><span class="w">  </span><span class="nt">agentic_nodes</span><span class="p">:</span>
 </span><span id="__span-37-24"><a id="__codelineno-37-24" name="__codelineno-37-24" href="#__codelineno-37-24"></a><span class="w">    </span><span class="nt">gen_dashboard</span><span class="p">:</span>

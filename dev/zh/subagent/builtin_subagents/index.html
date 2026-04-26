@@ -5960,7 +5960,7 @@
 <li><strong>数据源（Data Source）</strong>：与数据库表的连接</li>
 </ul>
 <h3 id="_11">快速开始<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>使用 <code>datus --database &lt;datasource&gt;</code> 启动 Datus CLI，然后使用subagent命令：</p>
+<p>使用 <code>datus --datasource &lt;datasource&gt;</code> 启动 Datus CLI，然后使用subagent命令：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>/gen_semantic_model<span class="w"> </span>generate<span class="w"> </span>a<span class="w"> </span>semantic<span class="w"> </span>model<span class="w"> </span><span class="k">for</span><span class="w"> </span>table<span class="w"> </span>&lt;table_name&gt;
 </span></code></pre></div>
 <h3 id="_12">工作原理<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
@@ -5978,7 +5978,7 @@
     A[用户请求] --&gt; B[DDL 分析]
     B --&gt; C[YAML 生成]
     C --&gt; D[验证]
-    D --&gt; E[存储]</code></pre>
+    D --&gt; E[知识库同步]</code></pre>
 <h3 id="_15">验证和同步<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <p>发布前，agent 会调用 <code>validate_semantic()</code>。如果验证失败，会修改 YAML 并重试。在 interactive 模式下，验证通过后，<code>end_semantic_model_generation</code> 会触发自动知识库同步；在 workflow/API 模式下，请使用显式的语义模型同步步骤或工具。</p>
 <h3 id="_16">语义模型结构<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
@@ -6024,8 +6024,8 @@
 <ul>
 <li>✅ 从表 DDL 自动生成 YAML</li>
 <li>✅ 交互式验证和错误修复</li>
-<li>✅ 验证通过后自动同步</li>
-<li>✅ 知识库集成</li>
+<li>✅ 验证通过后同步到知识库</li>
+<li>✅ interactive 自动同步，workflow/API 显式同步</li>
 <li>✅ 防止重复</li>
 <li>✅ MetricFlow 兼容性</li>
 </ul>
@@ -6043,7 +6043,7 @@
 </ul>
 <p><strong>示例</strong>：与其重复编写 <code>SELECT SUM(revenue) / COUNT(DISTINCT customer_id)</code>，不如定义一次 <code>avg_customer_revenue</code> 指标。</p>
 <h3 id="_21">快速开始<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
-<p>使用 <code>datus --database &lt;datasource&gt;</code> 启动 Datus CLI，然后使用指标生成subagent：</p>
+<p>使用 <code>datus --datasource &lt;datasource&gt;</code> 启动 Datus CLI，然后使用指标生成subagent：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>/gen_metrics<span class="w"> </span>Generate<span class="w"> </span>a<span class="w"> </span>metric<span class="w"> </span>from<span class="w"> </span>this<span class="w"> </span>SQL:<span class="w"> </span>SELECT<span class="w"> </span>SUM<span class="o">(</span>amount<span class="o">)</span><span class="w"> </span>FROM<span class="w"> </span>transactions,<span class="w"> </span>the<span class="w"> </span>corresponding<span class="w"> </span>question<span class="w"> </span>is<span class="w"> </span>total<span class="w"> </span>amount<span class="w"> </span>of<span class="w"> </span>all<span class="w"> </span>transactions
 </span></code></pre></div>
 <h3 id="_22">工作原理<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
@@ -6592,7 +6592,7 @@
 </span><span id="__span-37-18"><a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${SUPERSET_PASSWORD}&quot;</span>
 </span><span id="__span-37-19"><a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a><span class="w">        </span><span class="nt">dataset_db</span><span class="p">:</span>
 </span><span id="__span-37-20"><a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a><span class="w">          </span><span class="nt">datasource_ref</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">serving_pg</span>
-</span><span id="__span-37-21"><a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a><span class="w">          </span><span class="nt">bi_database_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">analytics_pg</span>
+</span><span id="__span-37-21"><a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a><span class="w">          </span><span class="nt">bi_database_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">examples</span>
 </span><span id="__span-37-22"><a id="__codelineno-37-22" name="__codelineno-37-22" href="#__codelineno-37-22"></a>
 </span><span id="__span-37-23"><a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a><span class="w">  </span><span class="nt">agentic_nodes</span><span class="p">:</span>
 </span><span id="__span-37-24"><a id="__codelineno-37-24" name="__codelineno-37-24" href="#__codelineno-37-24"></a><span class="w">    </span><span class="nt">gen_dashboard</span><span class="p">:</span>
