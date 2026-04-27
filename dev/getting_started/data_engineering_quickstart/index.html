@@ -3726,25 +3726,29 @@
 <p>DAComp is <strong>not bundled</strong> with <code>datus-agent</code>. This tutorial uses a small
 quickstart package derived from the DAComp Lever example, so you do not need to
 download the full DAComp archive.</p>
-<p>Download and unpack the quickstart data and local Docker stack:</p>
+<p>First create and enter the working directory:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/datus-quickstart-data
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>~/datus-quickstart-data
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>datus-de-lever-quickstart-v1.zip<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>https://github.com/Datus-ai/datus-quickstart-data/releases/download/data-engineering-v1/datus-de-lever-quickstart-v1.zip
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>datus-data-engineering-quickstart-stack-v1.zip<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span>https://github.com/Datus-ai/datus-quickstart-data/releases/download/data-engineering-v1/datus-data-engineering-quickstart-stack-v1.zip
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>unzip<span class="w"> </span>datus-de-lever-quickstart-v1.zip
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>unzip<span class="w"> </span>datus-data-engineering-quickstart-stack-v1.zip
 </span></code></pre></div>
-<p>Point <code>DACOMP_HOME</code> at the extracted data directory, point
-<code>DATUS_QUICKSTART_STACK</code> at the extracted Docker stack, and create a writable
-DuckDB workbench:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DACOMP_HOME</span><span class="o">=</span>/absolute/path/to/datus-de-lever-quickstart
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DATUS_QUICKSTART_STACK</span><span class="o">=</span>/absolute/path/to/datus-data-engineering-quickstart-stack
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>cp<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DACOMP_HOME</span><span class="s2">/lever_start.duckdb&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DACOMP_HOME</span><span class="s2">/lever_workbench.duckdb&quot;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DACOMP_HOME</span><span class="s2">&quot;</span>
+<p>Then run the bash block below — it downloads and unpacks the quickstart data
+and local Docker stack, exports <code>DACOMP_HOME</code> / <code>DATUS_QUICKSTART_STACK</code>,
+creates a writable DuckDB workbench, and finally prints the two <code>export</code>
+statements so you can paste them into another shell:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>datus-de-lever-quickstart-v1.zip<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>https://github.com/Datus-ai/datus-quickstart-data/releases/download/data-engineering-v1/datus-de-lever-quickstart-v1.zip
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>datus-data-engineering-quickstart-stack-v1.zip<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>https://github.com/Datus-ai/datus-quickstart-data/releases/download/data-engineering-v1/datus-data-engineering-quickstart-stack-v1.zip
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>unzip<span class="w"> </span>-o<span class="w"> </span>datus-de-lever-quickstart-v1.zip
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>unzip<span class="w"> </span>-o<span class="w"> </span>datus-data-engineering-quickstart-stack-v1.zip
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DACOMP_HOME</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/datus-de-lever-quickstart&quot;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DATUS_QUICKSTART_STACK</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/datus-data-engineering-quickstart-stack&quot;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>cp<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DACOMP_HOME</span><span class="s2">/lever_start.duckdb&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DACOMP_HOME</span><span class="s2">/lever_workbench.duckdb&quot;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DACOMP_HOME</span><span class="s2">&quot;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export DACOMP_HOME=</span><span class="nv">$DACOMP_HOME</span><span class="s2">&quot;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export DATUS_QUICKSTART_STACK=</span><span class="nv">$DATUS_QUICKSTART_STACK</span><span class="s2">&quot;</span>
 </span></code></pre></div>
 <p>The rest of this guide assumes the example directory contains:</p>
 <ul>
@@ -3810,6 +3814,13 @@ an Airflow connection named <code>duckdb_dacomp_lever</code>, which points to
 <p>Install Datus plus the adapters used in this walkthrough:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>datus-agent<span class="w"> </span>datus-bi-superset<span class="w"> </span>datus-postgresql<span class="w"> </span>datus-scheduler-airflow
 </span></code></pre></div>
+<p>You can skip <code>datus-bi-superset</code> and <code>datus-scheduler-airflow</code> here and let
+<code>/services</code> install them on demand: when you create a Superset dashboard
+entry or an Airflow scheduler entry through <code>/services dashboard</code> /
+<code>/services scheduler</code>, Datus runs <code>pip install</code> for you and hot-reloads the
+registry without restarting the CLI. See
+<a href="../../configuration/bi_platforms/#configuring-through-the-cli-services">BI platforms</a>
+and <a href="../../configuration/schedulers/#configuring-through-the-cli-services">Schedulers</a>.</p>
 <h2 id="step-4-configure-agentyml">Step 4: Configure <code>agent.yml</code><a class="headerlink" href="#step-4-configure-agentyml" title="Permanent link">&para;</a></h2>
 <p>Merge the following service configuration into the existing <code>agent:</code> section in
 <code>~/.datus/conf/agent.yml</code>. Keep any existing <code>agent.providers</code> settings; the

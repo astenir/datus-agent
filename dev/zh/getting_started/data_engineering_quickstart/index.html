@@ -3725,24 +3725,28 @@
 <h2 id="0-quickstart">步骤 0：下载 quickstart 数据<a class="headerlink" href="#0-quickstart" title="Permanent link">&para;</a></h2>
 <p>DAComp **不包含**在 <code>datus-agent</code> 仓库中。本文使用一个从 DAComp Lever
 示例整理出来的小型 quickstart 数据包，不需要下载完整 DAComp 压缩包。</p>
-<p>下载并解压 quickstart 数据包和本地 Docker stack：</p>
+<p>先创建并进入工作目录：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/datus-quickstart-data
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>~/datus-quickstart-data
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>datus-de-lever-quickstart-v1.zip<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>https://github.com/Datus-ai/datus-quickstart-data/releases/download/data-engineering-v1/datus-de-lever-quickstart-v1.zip
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>datus-data-engineering-quickstart-stack-v1.zip<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span>https://github.com/Datus-ai/datus-quickstart-data/releases/download/data-engineering-v1/datus-data-engineering-quickstart-stack-v1.zip
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>unzip<span class="w"> </span>datus-de-lever-quickstart-v1.zip
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>unzip<span class="w"> </span>datus-data-engineering-quickstart-stack-v1.zip
 </span></code></pre></div>
-<p>然后把 <code>DACOMP_HOME</code> 指向本地解压后的数据目录，把 <code>DATUS_QUICKSTART_STACK</code>
-指向本地解压后的 Docker stack，并复制一份可写的 DuckDB 工作库：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DACOMP_HOME</span><span class="o">=</span>/absolute/path/to/datus-de-lever-quickstart
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DATUS_QUICKSTART_STACK</span><span class="o">=</span>/absolute/path/to/datus-data-engineering-quickstart-stack
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>cp<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DACOMP_HOME</span><span class="s2">/lever_start.duckdb&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DACOMP_HOME</span><span class="s2">/lever_workbench.duckdb&quot;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DACOMP_HOME</span><span class="s2">&quot;</span>
+<p>然后直接执行下面这段 bash，会下载并解压 quickstart 数据包和本地 Docker
+stack，导出 <code>DACOMP_HOME</code> / <code>DATUS_QUICKSTART_STACK</code>，复制一份可写的 DuckDB
+工作库，最后打印两个环境变量供后续步骤使用：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>datus-de-lever-quickstart-v1.zip<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>https://github.com/Datus-ai/datus-quickstart-data/releases/download/data-engineering-v1/datus-de-lever-quickstart-v1.zip
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>datus-data-engineering-quickstart-stack-v1.zip<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>https://github.com/Datus-ai/datus-quickstart-data/releases/download/data-engineering-v1/datus-data-engineering-quickstart-stack-v1.zip
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>unzip<span class="w"> </span>-o<span class="w"> </span>datus-de-lever-quickstart-v1.zip
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>unzip<span class="w"> </span>-o<span class="w"> </span>datus-data-engineering-quickstart-stack-v1.zip
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DACOMP_HOME</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/datus-de-lever-quickstart&quot;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DATUS_QUICKSTART_STACK</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/datus-data-engineering-quickstart-stack&quot;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>cp<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DACOMP_HOME</span><span class="s2">/lever_start.duckdb&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DACOMP_HOME</span><span class="s2">/lever_workbench.duckdb&quot;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DACOMP_HOME</span><span class="s2">&quot;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export DACOMP_HOME=</span><span class="nv">$DACOMP_HOME</span><span class="s2">&quot;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export DATUS_QUICKSTART_STACK=</span><span class="nv">$DATUS_QUICKSTART_STACK</span><span class="s2">&quot;</span>
 </span></code></pre></div>
 <p>后续步骤默认这个目录下至少有这些文件：</p>
 <ul>
@@ -3806,6 +3810,11 @@
 <p>安装 Datus 以及这条链路会用到的适配器：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>datus-agent<span class="w"> </span>datus-bi-superset<span class="w"> </span>datus-postgresql<span class="w"> </span>datus-scheduler-airflow
 </span></code></pre></div>
+<p>也可以跳过 <code>datus-bi-superset</code> 与 <code>datus-scheduler-airflow</code>，让 <code>/services</code>
+按需安装：通过 <code>/services dashboard</code> 或 <code>/services scheduler</code> 新建对应条目
+时，Datus 会自动 <code>pip install</code> 并热加载 registry，无需重启 CLI。详见
+<a href="../../configuration/bi_platforms/#通过-cli-配置-services">BI 平台</a>
+与 <a href="../../configuration/schedulers/#通过-cli-配置-services">调度器</a>。</p>
 <h2 id="4-agentyml">步骤 4：配置 <code>agent.yml</code><a class="headerlink" href="#4-agentyml" title="Permanent link">&para;</a></h2>
 <p>把下面这段 service 配置合并到 <code>~/.datus/conf/agent.yml</code> 现有的 <code>agent:</code>
 下面。保留已有的 <code>agent.providers</code> 配置；<code>/model</code> 会使用这些凭据。路径会直接使用步骤

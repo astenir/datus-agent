@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#scheduler-configuration" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -2582,10 +2582,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#structure" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Structure
+        结构
       
     </span>
   </a>
@@ -2593,10 +2593,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#selection-rules" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Selection Rules
+        选择规则
       
     </span>
   </a>
@@ -2604,10 +2604,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#cli-services" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notes
+        通过 CLI 配置（/services）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意
       
     </span>
   </a>
@@ -3489,10 +3500,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#structure" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Structure
+        结构
       
     </span>
   </a>
@@ -3500,10 +3511,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#selection-rules" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Selection Rules
+        选择规则
       
     </span>
   </a>
@@ -3511,10 +3522,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#cli-services" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notes
+        通过 CLI 配置（/services）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意
       
     </span>
   </a>
@@ -3538,7 +3560,7 @@
 
 
   
-    <a href="https://github.com/Datus-ai/Datus-agent/edit/main/docs/configuration/schedulers.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/Datus-ai/Datus-agent/edit/main/docs/configuration/schedulers.zh.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3546,9 +3568,9 @@
   
 
 
-<h1 id="scheduler-configuration">Scheduler Configuration<a class="headerlink" href="#scheduler-configuration" title="Permanent link">&para;</a></h1>
-<p>Scheduler services are configured under <code>agent.services.schedulers</code>.</p>
-<h2 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h2>
+<h1 id="_1">调度器配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>调度器服务配置在 <code>agent.services.schedulers</code> 下。</p>
+<h2 id="_2">结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">agent</span><span class="p">:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">schedulers</span><span class="p">:</span>
@@ -3573,19 +3595,37 @@
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="nt">scheduler</span><span class="p">:</span>
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">      </span><span class="nt">scheduler_service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">airflow_prod</span>
 </span></code></pre></div>
-<h2 id="selection-rules">Selection Rules<a class="headerlink" href="#selection-rules" title="Permanent link">&para;</a></h2>
+<h2 id="_3">选择规则<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><code>get_scheduler_config(service_name)</code> 按下列顺序解析活动 scheduler：</p>
+<ol>
+<li>调用处显式传入的 <code>service_name</code>。</li>
+<li><code>./.datus/config.yml</code> 顶层 <code>scheduler:</code> 字段（项目级 pin）。</li>
+<li>全局 <code>default: true</code> 标记（在 <code>services.schedulers</code> 中必须唯一）。</li>
+<li>唯一条目兜底：只配置了一个 scheduler 时直接使用。</li>
+</ol>
+<p>若项目级 pin 已失效（指向一个 agent.yml 里不再存在的 service），Datus 会打
+warning 并退回到全局 default。</p>
+<h2 id="cli-services">通过 CLI 配置（<code>/services</code>）<a class="headerlink" href="#cli-services" title="Permanent link">&para;</a></h2>
+<p>在 Datus REPL 内执行 <code>/services scheduler</code> 直接进入交互式 TUI 的 Scheduler
+tab（裸 <code>/services</code> 落在 Dashboard tab；<code>/services list</code> 退回只读列表）：</p>
 <ul>
-<li><code>scheduler_service</code> selects one scheduler instance from <code>services.schedulers</code>.</li>
-<li>If only one scheduler is configured, Datus can use it automatically.</li>
-<li>If multiple schedulers are configured, either:</li>
-<li>set <code>scheduler_service</code>, or</li>
-<li>mark exactly one scheduler with <code>default: true</code>.</li>
-<li>Do not configure more than one <code>default: true</code>.</li>
+<li>列表最后一行 <code>+ Add new scheduler</code>，按 <code>Enter</code> 进入新增流程。当前仅
+  <code>airflow</code>（<code>datus-scheduler-airflow</code>）受支持；若 adapter 包尚未安装，
+  Datus 会自动 <code>pip install</code> 并热加载 registry，<strong>无需重启</strong>。</li>
+<li><code>e</code> 编辑凭据，<code>x</code> 删除条目，<code>t</code> 触发一次连通性 probe。</li>
+<li><code>d</code> 切换**全局** <code>default: true</code>：按 <code>d</code> 把光标项设为 workspace 级
+  default 并自动清掉其他条目的该字段，避免出现「多 default」。</li>
+<li><code>p</code> 设置**项目级** default：值写入 <code>./.datus/config.yml</code> 的
+  <code>scheduler: &lt;name&gt;</code>，只对当前项目生效，优先级高于全局标记。在已 pin 的
+  行上再按一次 <code>p</code> 清除。</li>
 </ul>
-<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<p>service 定义会写入 <code>~/.datus/conf/agent.yml</code>，跨项目共享；只有 active 选择
+属于项目级。</p>
+<p>首次进入交互式 REPL 时,Datus 会对该 section 跑一遍 bootstrap:若尚无项目级 pin,而能从 YAML 中解析出明确的默认值(单条快捷或唯一标 <code>default: true</code> 的条目),Datus 会自动写入项目级 pin。若配置了多条但都未标 default,启动时会弹出一个轻量选择器。CI / Docker 等无人值守环境可设置 <code>DATUS_DISABLE_SERVICE_BOOTSTRAP=1</code> 关闭。</p>
+<h2 id="_4">注意<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>services.schedulers</code> is now the only runtime source for scheduler config.</li>
-<li>Top-level <code>scheduler:</code> is no longer read at runtime.</li>
+<li><code>services.schedulers</code> 是 scheduler 配置唯一的运行时来源。</li>
+<li>顶层 <code>scheduler:</code> 字段在运行时不再被读取。</li>
 </ul>
 
 

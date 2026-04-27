@@ -2604,6 +2604,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuring-through-the-cli-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring through the CLI (/services)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3511,6 +3522,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuring-through-the-cli-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring through the CLI (/services)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3574,14 +3596,43 @@
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">      </span><span class="nt">scheduler_service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">airflow_prod</span>
 </span></code></pre></div>
 <h2 id="selection-rules">Selection Rules<a class="headerlink" href="#selection-rules" title="Permanent link">&para;</a></h2>
+<p><code>get_scheduler_config(service_name)</code> resolves the active scheduler in this
+order:</p>
+<ol>
+<li>Explicit <code>service_name</code> argument at the call site.</li>
+<li>Project-level pin in <code>./.datus/config.yml</code>'s top-level <code>scheduler:</code> field.</li>
+<li>Global <code>default: true</code> flag (must be unique across <code>services.schedulers</code>).</li>
+<li>Single-entry shortcut when only one scheduler is configured.</li>
+</ol>
+<p>A stale project pin (the named service no longer exists in agent.yml) is
+ignored with a warning so the lookup falls through to the global default.</p>
+<h2 id="configuring-through-the-cli-services">Configuring through the CLI (<code>/services</code>)<a class="headerlink" href="#configuring-through-the-cli-services" title="Permanent link">&para;</a></h2>
+<p>Run <code>/services scheduler</code> inside the Datus REPL to enter the
+configuration TUI on the Scheduler tab (bare <code>/services</code> lands on the
+Dashboard tab; <code>/services list</code> keeps the legacy read-only listing). The
+two-tab TUI lets you:</p>
 <ul>
-<li><code>scheduler_service</code> selects one scheduler instance from <code>services.schedulers</code>.</li>
-<li>If only one scheduler is configured, Datus can use it automatically.</li>
-<li>If multiple schedulers are configured, either:</li>
-<li>set <code>scheduler_service</code>, or</li>
-<li>mark exactly one scheduler with <code>default: true</code>.</li>
-<li>Do not configure more than one <code>default: true</code>.</li>
+<li>Add a new scheduler with <code>Enter</code> on the trailing <code>+ Add new scheduler</code>
+  row. Only <code>airflow</code> (<code>datus-scheduler-airflow</code>) ships today; if the
+  adapter package isn't installed yet, Datus runs <code>pip install</code> for you
+  and hot-reloads the registry — no restart needed.</li>
+<li>Edit credentials with <code>e</code>, delete with <code>x</code>, run a connectivity probe
+  with <code>t</code>.</li>
+<li>Toggle the <strong>global</strong> <code>default: true</code> flag with <code>d</code>. Pressing <code>d</code> on a
+  row sets it as the workspace-wide default and clears the flag from every
+  other entry, so you cannot end up with two defaults.</li>
+<li>Pin a <strong>project-level</strong> default with <code>p</code> — the value lands in
+  <code>./.datus/config.yml</code> as <code>scheduler: &lt;name&gt;</code> and outranks the global
+  flag for the current project only. Press <code>p</code> again on the pinned row to
+  clear it.</li>
 </ul>
+<p>Service definitions are written to <code>~/.datus/conf/agent.yml</code> (shared across
+projects); only the active selection is project-local.</p>
+<p>On the first interactive launch, if no project pin exists, Datus
+auto-pins the only entry (or the one flagged <code>default: true</code>) to
+<code>./.datus/config.yml</code> so subsequent runs are explicit. When multiple
+entries are configured without a default, the launch prompts for a quick
+choice. Set <code>DATUS_DISABLE_SERVICE_BOOTSTRAP=1</code> to opt out (CI / Docker).</p>
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>services.schedulers</code> is now the only runtime source for scheduler config.</li>

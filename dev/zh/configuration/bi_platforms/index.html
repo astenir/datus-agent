@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bi-platforms-configuration" class="md-skip">
+        <a href="#bi" class="md-skip">
           跳转至
         </a>
       
@@ -2554,10 +2554,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#structure" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Structure
+        结构
       
     </span>
   </a>
@@ -2565,10 +2565,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dataset_db-fields" class="md-nav__link">
+  <a href="#dataset_db" class="md-nav__link">
     <span class="md-ellipsis">
       
-        dataset_db fields
+        dataset_db 字段
       
     </span>
   </a>
@@ -2576,10 +2576,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#selection-rules" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Selection rules
+        选择规则
       
     </span>
   </a>
@@ -2587,10 +2587,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ownership" class="md-nav__link">
+  <a href="#cli-services" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ownership
+        通过 CLI 配置（/services）
       
     </span>
   </a>
@@ -2598,10 +2598,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notes
+        所有权
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意
       
     </span>
   </a>
@@ -3511,10 +3522,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#structure" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Structure
+        结构
       
     </span>
   </a>
@@ -3522,10 +3533,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dataset_db-fields" class="md-nav__link">
+  <a href="#dataset_db" class="md-nav__link">
     <span class="md-ellipsis">
       
-        dataset_db fields
+        dataset_db 字段
       
     </span>
   </a>
@@ -3533,10 +3544,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#selection-rules" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Selection rules
+        选择规则
       
     </span>
   </a>
@@ -3544,10 +3555,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ownership" class="md-nav__link">
+  <a href="#cli-services" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ownership
+        通过 CLI 配置（/services）
       
     </span>
   </a>
@@ -3555,10 +3566,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notes
+        所有权
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意
       
     </span>
   </a>
@@ -3582,7 +3604,7 @@
 
 
   
-    <a href="https://github.com/Datus-ai/Datus-agent/edit/main/docs/configuration/bi_platforms.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/Datus-ai/Datus-agent/edit/main/docs/configuration/bi_platforms.zh.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3590,17 +3612,16 @@
   
 
 
-<h1 id="bi-platforms-configuration">BI Platforms Configuration<a class="headerlink" href="#bi-platforms-configuration" title="Permanent link">&para;</a></h1>
-<p>BI platform connections are configured under <code>agent.services.bi_platforms</code>.</p>
-<h2 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h2>
-<p>The serving DB (the database the BI platform reads from and Datus writes to)
-is registered as a <strong>regular Datus datasource</strong>. The BI platform entry then
-references it by name via <code>dataset_db.datasource_ref</code>. This keeps connector
-pooling, schema metadata, and credentials shared with the rest of Datus.</p>
+<h1 id="bi">BI 平台配置<a class="headerlink" href="#bi" title="Permanent link">&para;</a></h1>
+<p>BI 平台连接配置在 <code>agent.services.bi_platforms</code> 下。</p>
+<h2 id="_1">结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>承载 BI 平台读、Datus 写的 serving DB 注册为**普通 Datus datasource**，BI
+平台条目通过 <code>dataset_db.datasource_ref</code> 引用它，连接池、schema 元数据、凭据
+全部与 Datus 其它部分共享。</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">agent</span><span class="p">:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">datasources</span><span class="p">:</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="c1"># Existing source warehouse (read-only from the BI side)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="c1"># 现有源数仓（BI 侧只读）</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="nt">src_warehouse</span><span class="p">:</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">starrocks</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SRC_WAREHOUSE_HOST}</span>
@@ -3609,7 +3630,7 @@ pooling, schema metadata, and credentials shared with the rest of Datus.</p>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SRC_WAREHOUSE_PASSWORD}</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warehouse</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="c1"># Serving DB — Datus writes here, the BI platform reads from here</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="c1"># serving DB —— Datus 写入、BI 平台读取</span>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">serving_pg</span><span class="p">:</span>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql</span>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span>
@@ -3626,75 +3647,99 @@ pooling, schema metadata, and credentials shared with the rest of Datus.</p>
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SUPERSET_USER}</span>
 </span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SUPERSET_PASSWORD}</span>
 </span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="nt">dataset_db</span><span class="p">:</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">          </span><span class="nt">datasource_ref</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">serving_pg</span><span class="w">          </span><span class="c1"># ← references services.datasources.serving_pg</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">          </span><span class="nt">bi_database_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">examples</span><span class="w">          </span><span class="c1"># Superset Database connection name shown in Settings &gt; Database Connections</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">          </span><span class="nt">datasource_ref</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">serving_pg</span><span class="w">          </span><span class="c1"># ← 引用 services.datasources.serving_pg</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">          </span><span class="nt">bi_database_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">examples</span><span class="w">          </span><span class="c1"># Superset Settings &gt; Database Connections 里看到的名字</span>
 </span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
 </span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">      </span><span class="nt">grafana</span><span class="p">:</span>
 </span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">grafana</span>
 </span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">        </span><span class="nt">api_base_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://localhost:3000</span>
 </span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">        </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${GRAFANA_API_KEY}</span>
 </span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">        </span><span class="nt">dataset_db</span><span class="p">:</span>
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">          </span><span class="nt">datasource_ref</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">serving_pg</span><span class="w">          </span><span class="c1"># ← can share the same serving DB</span>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">          </span><span class="nt">bi_database_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PostgreSQL</span><span class="w">        </span><span class="c1"># ← Grafana datasource name</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">          </span><span class="nt">datasource_ref</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">serving_pg</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">          </span><span class="nt">bi_database_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PostgreSQL</span>
 </span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
 </span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">  </span><span class="nt">agentic_nodes</span><span class="p">:</span>
 </span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">    </span><span class="nt">gen_dashboard</span><span class="p">:</span>
 </span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">      </span><span class="nt">bi_platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">superset</span>
 </span></code></pre></div>
-<h2 id="dataset_db-fields"><code>dataset_db</code> fields<a class="headerlink" href="#dataset_db-fields" title="Permanent link">&para;</a></h2>
-<p><code>dataset_db</code> is the BI-platform-specific layer on top of a Datus datasource.
-It carries only what's BI-specific:</p>
+<h2 id="dataset_db"><code>dataset_db</code> 字段<a class="headerlink" href="#dataset_db" title="Permanent link">&para;</a></h2>
+<p><code>dataset_db</code> 是叠在 Datus datasource 之上的 BI 专属层，只承载 BI 相关字段：</p>
 <table>
 <thead>
 <tr>
-<th>Field</th>
-<th>Required</th>
-<th>Description</th>
+<th>字段</th>
+<th>必填</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>datasource_ref</code></td>
-<td>Yes</td>
-<td>Name of a <code>services.datasources</code> entry. Datus uses that datasource's connector for both schema introspection and writes.</td>
+<td>是</td>
+<td><code>services.datasources</code> 中某个条目的名字。Datus 用它进行 schema 内省与写入。</td>
 </tr>
 <tr>
 <td><code>bi_database_name</code></td>
-<td>Recommended</td>
-<td>Alias under which the BI platform itself has registered the same DB. <code>gen_dashboard</code> matches it against <code>list_bi_databases()</code> to resolve <code>database_id</code> for <code>create_dataset</code>.</td>
+<td>推荐</td>
+<td>同一份 DB 在 BI 平台内部的别名。<code>gen_dashboard</code> 通过 <code>list_bi_databases()</code> 匹配它来解出 <code>database_id</code>，给 <code>create_dataset</code> 用。</td>
 </tr>
 </tbody>
 </table>
-<p>The legacy inline form (<code>dataset_db: {uri: "..."}</code> or
-<code>dataset_db: {type: ..., host: ..., ...}</code>) is no longer accepted —
-move the connection fields under <code>services.datasources</code> and reference them
-by name.</p>
-<h2 id="selection-rules">Selection rules<a class="headerlink" href="#selection-rules" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>bi_platform</code> selects one entry from <code>services.bi_platforms</code>.</li>
-<li>The config key should match the platform name (<code>superset</code>, <code>grafana</code>, ...).</li>
-<li>If <code>bi_platform</code> is omitted and only one BI platform is configured, Datus
-  auto-selects it.</li>
-<li>If multiple BI platforms are configured, set <code>bi_platform</code> explicitly.</li>
-</ul>
-<h2 id="ownership">Ownership<a class="headerlink" href="#ownership" title="Permanent link">&para;</a></h2>
-<p>Dashboard creation is split into three explicit steps:</p>
+<p>旧的 inline 写法（<code>dataset_db: {uri: "..."}</code> 或 <code>dataset_db: {type: ..., host: ..., ...}</code>）已经不再受支持，把连接字段挪到
+<code>services.datasources</code> 后用 ref 引用即可。</p>
+<h2 id="_2">选择规则<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><code>BIFuncTool._resolved_platform</code> 解析活动 BI 服务的顺序与 Scheduler / Semantic 完全一致:</p>
 <ol>
-<li><code>gen_job</code> or <code>scheduler</code> prepares / refreshes data in the serving DB
-   referenced by <code>dataset_db.datasource_ref</code>.</li>
-<li><code>gen_dashboard</code> builds the dataset / chart / dashboard on the BI side
-   from tables or SQL datasets that already exist in that BI-registered DB.</li>
-<li><code>bi-validation</code> runs post-creation checks automatically through <code>ValidationHook.on_end</code>.</li>
+<li>调用处显式传入的 <code>bi_service</code>(或 agentic node 上的 <code>bi_platform</code>)。</li>
+<li><code>./.datus/config.yml</code> 中的项目级 pin —— <code>dashboard:</code> 字段。</li>
+<li>YAML 中的全局 <code>default: true</code> 标志:整个 <code>services.bi_platforms</code> 中至多一条可标 default,多于一条会在配置加载阶段直接报错,以避免静默选错。</li>
+<li>单条快捷:仅有一条 BI 服务时,自动使用它。</li>
+<li>否则抛 <code>Multiple BI platforms configured</code>,提示设置默认值。</li>
 </ol>
-<p>Source DB credentials never leave Datus — Superset / Grafana see only the
-serving DB registered under <code>bi_database_name</code>.</p>
-<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<p>YAML 中标记全局默认:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">agent</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">bi_platforms</span><span class="p">:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">superset</span><span class="p">:</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">superset</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">     </span><span class="c1"># 全局默认:在没有项目级 pin 时被选用</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span></code></pre></div>
+<h2 id="cli-services">通过 CLI 配置（<code>/services</code>）<a class="headerlink" href="#cli-services" title="Permanent link">&para;</a></h2>
+<p>在 Datus REPL 内执行 <code>/services</code> 即可直接进入交互式 TUI（默认 Dashboard
+tab；<code>/services scheduler</code> 直接落到 Scheduler tab；<code>/services list</code> 退回
+到原先的只读列表）：</p>
 <ul>
-<li><code>services.bi_platforms</code> is the only runtime source for BI credentials.</li>
-<li>Top-level <code>dashboard:</code> is no longer read at runtime.</li>
-<li><code>services.datasources.&lt;datasource_ref&gt;</code> must exist before
-  <code>services.bi_platforms.&lt;x&gt;.dataset_db.datasource_ref</code> is resolved —
-  Datus validates this at startup and fails loudly if the ref is dangling.</li>
+<li>列表最后一行 <code>+ Add new dashboard</code>，按 <code>Enter</code> 进入新增流程。选择 <code>type</code>
+  时若对应 adapter 包（<code>datus-bi-superset</code> / <code>datus-bi-grafana</code> …）尚未安
+  装，Datus 会自动 <code>pip install</code> 并热加载 registry，<strong>无需重启</strong>。</li>
+<li><code>e</code> 编辑凭据，<code>x</code> 删除条目，<code>t</code> 触发一次连通性 probe。</li>
+<li><code>d</code> 把当前光标项设为**全局** <code>default: true</code> 并清空其他条目的 default,确保不会出现两个默认。</li>
+<li><code>p</code> 把当前光标项设为**项目级** default。pin 会写到 <code>./.datus/config.yml</code> 的
+  <code>dashboard: &lt;name&gt;</code> 字段，仅对当前项目生效，优先级高于全局 default。
+  在已 pin 的行上再按一次 <code>p</code> 清除。</li>
+</ul>
+<p>首次进入交互式 REPL 时,Datus 会对每个 section 自动跑一遍 bootstrap:若该 section 还没有项目级 pin,而 YAML 中能解析出明确的默认值(单条快捷或唯一标 <code>default: true</code> 的条目),Datus 会自动写入项目级 pin,把隐式选择固化为显式选择。如果配置了多条但都未标 default,启动时会弹出一个轻量选择器让你当场选择。</p>
+<p>service 定义会写入 <code>~/.datus/conf/agent.yml</code>，跨项目共享凭据；只有 active
+选择属于项目级。</p>
+<h2 id="_3">所有权<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>仪表盘创建被拆成三步：</p>
+<ol>
+<li><code>gen_job</code> 或 <code>scheduler</code> 在 <code>dataset_db.datasource_ref</code> 对应的 serving DB 里
+   准备 / 刷新数据。</li>
+<li><code>gen_dashboard</code> 基于 BI 已注册数据库中的现成表 / SQL dataset 创建 dataset /
+   chart / dashboard。</li>
+<li><code>bi-validation</code> 通过 <code>ValidationHook.on_end</code> 自动跑创建后的校验。</li>
+</ol>
+<p>源 DB 凭据不会泄露给 Superset / Grafana —— BI 端只看见以 <code>bi_database_name</code>
+注册的 serving DB。</p>
+<h2 id="_4">注意<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>services.bi_platforms</code> 是 BI 凭据唯一的运行时来源。</li>
+<li>顶层 <code>dashboard:</code> 字段在运行时不再被读取。</li>
+<li><code>services.bi_platforms.&lt;x&gt;.dataset_db.datasource_ref</code> 必须指向一个已存在的
+  <code>services.datasources.&lt;datasource_ref&gt;</code> 条目；Datus 在启动时会校验，野指针
+  会直接报错。</li>
 </ul>
 
 

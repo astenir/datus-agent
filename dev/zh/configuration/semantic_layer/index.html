@@ -2558,6 +2558,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cli-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通过 CLI 配置（/services）
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3521,6 +3532,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cli-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通过 CLI 配置（/services）
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3547,8 +3569,10 @@
 
 
 <h1 id="semantic-layer">语义层配置（Semantic Layer）<a class="headerlink" href="#semantic-layer" title="Permanent link">&para;</a></h1>
-<p>语义适配器统一配置在 <code>agent.services.semantic_layer</code> 下。</p>
-<p>如果你使用的是 MetricFlow 的默认配置，整个 <code>semantic_layer</code> 段可以省略；Datus 会默认使用 <code>metricflow</code>。</p>
+<p>语义适配器统一配置在 <code>agent.services.semantic_layer</code> 下。<strong>至少要配置一条</strong>——空 section 不再静默 fallback 到 metricflow,而是 raise <code>No semantic layer configured</code>。</p>
+<blockquote>
+<p><strong>迁移说明</strong>:旧版本会在 section 缺失时隐式注入 metricflow 默认值,新版要求显式写入 yaml 条目。<code>conf/agent.yml.example</code> 已经默认带上 <code>metricflow: {}</code>,新装用户开箱仍能用。</p>
+</blockquote>
 <h2 id="_1">配置结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">agent</span><span class="p">:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
@@ -3556,23 +3580,27 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nt">metricflow</span><span class="p">:</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">300</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="nt">config_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./conf/agent.yml</span><span class="w">   </span><span class="c1"># 可选的高级覆盖项</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">agentic_nodes</span><span class="p">:</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">gen_semantic_model</span><span class="p">:</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">semantic_adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metricflow</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">gen_metrics</span><span class="p">:</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="nt">semantic_adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metricflow</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">                   </span><span class="c1"># 全局默认:无 project pin 时被选用</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">agentic_nodes</span><span class="p">:</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">gen_semantic_model</span><span class="p">:</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">semantic_adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metricflow</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">gen_metrics</span><span class="p">:</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">semantic_adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metricflow</span>
 </span></code></pre></div>
 <h2 id="_2">选择规则<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>services.semantic_layer</code> 下的 key <strong>必须等于 adapter type</strong>（例如 <code>metricflow</code>）。如果同时写了 <code>type:</code> 字段，其值必须与 key 一致，否则 Datus 会在启动时抛出配置错误。比较时会先对 key 与 <code>type</code> 做 lowercase + trim 处理，因此 <code>MetricFlow</code> 或 <code>metricflow</code> 也会被视为与 <code>metricflow</code> 匹配。</li>
-<li>语义相关节点通过 <code>semantic_adapter</code> 选择适配器。</li>
-<li>语义适配器不支持 <code>default: true</code>。</li>
-<li>如果 <code>services.semantic_layer</code> 和 <code>semantic_adapter</code> 都省略，Datus 会默认使用 <code>metricflow</code>。</li>
-<li>如果只配置了一个 semantic layer，省略 <code>semantic_adapter</code> 时会自动使用它。</li>
-<li>如果配置了多个 semantic layer，则必须显式填写 <code>semantic_adapter</code>。</li>
-</ul>
+<p><code>AgentConfig.resolve_semantic_adapter</code> 解析活动语义适配器的顺序与 BI Dashboard / Scheduler 完全一致:</p>
+<ol>
+<li>调用处显式传入的 <code>adapter_type</code>(或 agentic node 上的 <code>semantic_adapter</code>)。</li>
+<li><code>./.datus/config.yml</code> 中的项目级 pin —— <code>semantic:</code> 字段。</li>
+<li>YAML 全局 <code>default: true</code> 标志:<code>services.semantic_layer</code> 中至多一条可标 default,多于一条会在加载阶段直接报错。</li>
+<li>单条快捷:仅有一条 semantic adapter 时,自动使用它。</li>
+<li>否则抛错:</li>
+<li>section 为空 → <code>No semantic layer configured ...</code></li>
+<li>多条无 default → <code>Multiple semantic layers are configured ...</code></li>
+</ol>
+<p><code>services.semantic_layer</code> 下的 key <strong>必须等于 adapter type</strong>(例如 <code>metricflow</code>)。如果同时写了 <code>type:</code> 字段,其值必须与 key 一致,否则 Datus 会在启动时抛出配置错误。比较时会先 lowercase + trim,因此 <code>MetricFlow</code>、<code>metricflow</code> 都会被视为与 <code>metricflow</code> 匹配。</p>
 <h2 id="metricflow">MetricFlow 说明<a class="headerlink" href="#metricflow" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>config_path</code> 是可选项。</li>
@@ -3580,6 +3608,17 @@
 <li>MetricFlow 验证会直接读取配置中的项目语义模型目录，包括位于 gitignore 项目路径下的生成 YAML。</li>
 <li>仅当你需要 MetricFlow 直接读取某个指定的 <code>agent.yml</code> 时才需要设置 <code>config_path</code>。</li>
 </ul>
+<h2 id="cli-services">通过 CLI 配置（<code>/services</code>）<a class="headerlink" href="#cli-services" title="Permanent link">&para;</a></h2>
+<p>在 Datus REPL 中运行 <code>/services semantic</code>（或者从其他 tab 按 <code>Tab</code> 切过来）会进入配置 TUI 的 <strong>Semantic</strong> tab。该 tab 支持：</p>
+<ul>
+<li>在尾部的 <code>+ Add new semantic</code> 行按 <code>Enter</code> 新增一个语义层。目前仅支持 <code>metricflow</code>（<code>datus-semantic-metricflow</code>），并且**无需任何参数** —— 在 type picker 中选中它即可。如果适配器包尚未安装，Datus 会自动执行 <code>pip install datus-semantic-metricflow</code> 并热加载注册表，无需重启进程。</li>
+<li>用 <code>x</code> 删除条目；用 <code>t</code> 触发一次注册探测。</li>
+<li><code>d</code> 切换**全局** <code>default: true</code>:按 <code>d</code> 把光标项设为默认,并自动清掉其他条目的 default。</li>
+<li><code>p</code> 设置**项目级** default:值写入 <code>./.datus/config.yml</code> 的 <code>semantic: &lt;name&gt;</code>,只对当前项目生效,优先级高于全局标记。在已 pin 的行上再按一次 <code>p</code> 清除。</li>
+<li>此 tab 不显示 <code>e edit</code>:metricflow 当前没有可编辑字段。</li>
+</ul>
+<p>新建条目会写入 <code>~/.datus/conf/agent.yml</code>，形态为 <code>services.semantic_layer.&lt;type&gt;: {type: &lt;type&gt;}</code>。</p>
+<p>首次进入交互式 REPL 时,Datus 会跑一遍 bootstrap:若尚无项目级 pin,而 YAML 中能解析出明确的默认值(单条快捷或唯一标 <code>default: true</code>),Datus 会自动写入项目级 pin。若多条都未标 default,启动时会弹出一个轻量选择器。CI / Docker 等无人值守环境可设置 <code>DATUS_DISABLE_SERVICE_BOOTSTRAP=1</code> 关闭。</p>
 
 
 

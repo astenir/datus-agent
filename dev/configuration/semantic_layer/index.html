@@ -2558,6 +2558,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configuring-through-the-cli-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring through the CLI (/services)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3521,6 +3532,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configuring-through-the-cli-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring through the CLI (/services)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3547,8 +3569,18 @@
 
 
 <h1 id="semantic-layer-configuration">Semantic Layer Configuration<a class="headerlink" href="#semantic-layer-configuration" title="Permanent link">&para;</a></h1>
-<p>Semantic adapters are configured under <code>agent.services.semantic_layer</code>.</p>
-<p>When you use MetricFlow with default settings, the entire <code>semantic_layer</code> block can be omitted. Datus defaults to <code>metricflow</code>.</p>
+<p>Semantic adapters are configured under <code>agent.services.semantic_layer</code>.
+At least one entry must be configured — running a semantic node with an
+empty <code>services.semantic_layer</code> block now raises
+<code>No semantic layer configured</code> instead of silently falling back to a
+hard-coded <code>metricflow</code> default.</p>
+<blockquote>
+<p><strong>Migration note</strong>: previous Datus releases inserted an implicit
+<code>metricflow</code> default when the section was missing. The default now
+requires an explicit YAML entry. The bundled <code>conf/agent.yml.example</code>
+already ships with <code>metricflow: {}</code>, so fresh installs continue to
+Just Work.</p>
+</blockquote>
 <h2 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h2>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">agent</span><span class="p">:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
@@ -3556,23 +3588,36 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nt">metricflow</span><span class="p">:</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">300</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="nt">config_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./conf/agent.yml</span><span class="w">   </span><span class="c1"># optional advanced override</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">agentic_nodes</span><span class="p">:</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">gen_semantic_model</span><span class="p">:</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">semantic_adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metricflow</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">gen_metrics</span><span class="p">:</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="nt">semantic_adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metricflow</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">                   </span><span class="c1"># global default — picked when no project pin set</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">agentic_nodes</span><span class="p">:</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">gen_semantic_model</span><span class="p">:</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">semantic_adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metricflow</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">gen_metrics</span><span class="p">:</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">semantic_adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metricflow</span>
 </span></code></pre></div>
 <h2 id="selection-rules">Selection Rules<a class="headerlink" href="#selection-rules" title="Permanent link">&para;</a></h2>
-<ul>
-<li>The key under <code>services.semantic_layer</code> <strong>must equal the adapter type</strong> (for example <code>metricflow</code>). If a <code>type:</code> field is present, it must match the key; otherwise Datus raises a configuration error at startup. Comparison is case-insensitive and trims surrounding whitespace, so <code>MetricFlow</code> and <code>metricflow</code> also match.</li>
-<li>Semantic nodes choose the adapter with <code>semantic_adapter</code>.</li>
-<li>There is no <code>default: true</code> for semantic adapters.</li>
-<li>If both <code>services.semantic_layer</code> and <code>semantic_adapter</code> are omitted, Datus defaults to <code>metricflow</code>.</li>
-<li>If <code>semantic_adapter</code> is omitted and only one semantic layer is configured, Datus uses that adapter automatically.</li>
-<li>If multiple semantic layers are configured, set <code>semantic_adapter</code> explicitly.</li>
-</ul>
+<p><code>AgentConfig.resolve_semantic_adapter</code> resolves the active semantic
+adapter in this order — identical to BI Dashboard and Scheduler
+resolution:</p>
+<ol>
+<li>Explicit <code>adapter_type</code> argument at the call site (or
+   <code>semantic_adapter</code> on the agentic node).</li>
+<li>Project-level pin in <code>./.datus/config.yml</code>'s <code>semantic:</code> field.</li>
+<li>Global <code>default: true</code> flag — at most one entry under
+   <code>services.semantic_layer</code> may carry it; multiple defaults are
+   rejected at config load time.</li>
+<li>Single-entry shortcut when only one semantic adapter is configured.</li>
+<li>Otherwise raise:</li>
+<li><code>No semantic layer configured ...</code> when the section is empty.</li>
+<li><code>Multiple semantic layers are configured ...</code> when there are
+     multiple without a default.</li>
+</ol>
+<p>The key under <code>services.semantic_layer</code> <strong>must equal the adapter type</strong>
+(for example <code>metricflow</code>). If a <code>type:</code> field is present, it must match
+the key; otherwise Datus raises a configuration error at startup.
+Comparison is case-insensitive and trims surrounding whitespace.</p>
 <h2 id="metricflow-notes">MetricFlow Notes<a class="headerlink" href="#metricflow-notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>config_path</code> is optional.</li>
@@ -3580,6 +3625,34 @@
 <li>MetricFlow validation reads YAML files from the configured project semantic model directory directly, including generated files under gitignored project paths.</li>
 <li><code>config_path</code> is only needed when you want MetricFlow to read a specific <code>agent.yml</code> file directly.</li>
 </ul>
+<h2 id="configuring-through-the-cli-services">Configuring through the CLI (<code>/services</code>)<a class="headerlink" href="#configuring-through-the-cli-services" title="Permanent link">&para;</a></h2>
+<p>Run <code>/services semantic</code> inside the Datus REPL (or press <code>Tab</code> from any
+other tab) to enter the configuration TUI on the <strong>Semantic</strong> tab. The
+tab lets you:</p>
+<ul>
+<li>Add a new semantic layer by pressing <code>Enter</code> on the trailing <code>+ Add
+  new semantic</code> row. Only <code>metricflow</code> (<code>datus-semantic-metricflow</code>)
+  ships today and <strong>takes no parameters</strong> — picking it from the type
+  picker is enough. If the adapter package isn't installed, Datus runs
+  <code>pip install datus-semantic-metricflow</code> for you and hot-reloads the
+  registry — no restart needed.</li>
+<li>Delete an entry with <code>x</code> and run a registration probe with <code>t</code>.</li>
+<li>Toggle the <strong>global</strong> <code>default: true</code> flag with <code>d</code>. Pressing <code>d</code>
+  marks the current row as default and clears the flag from every other
+  entry.</li>
+<li>Pin a <strong>project-level</strong> default with <code>p</code> — the value lands in
+  <code>./.datus/config.yml</code> as <code>semantic: &lt;name&gt;</code> and outranks the global
+  flag for the current project only. Press <code>p</code> again on the pinned row
+  to clear it.</li>
+<li><code>e edit</code> is hidden on this tab: metricflow has no editable fields.</li>
+</ul>
+<p>Service definitions are written to <code>~/.datus/conf/agent.yml</code> as
+<code>services.semantic_layer.&lt;type&gt;: {type: &lt;type&gt;}</code>.</p>
+<p>On the first interactive launch, if no project pin exists, Datus
+auto-pins the only entry (or the one flagged <code>default: true</code>) to
+<code>./.datus/config.yml</code> so subsequent runs are explicit. When multiple
+entries are configured without a default, the launch prompts for a quick
+choice. Set <code>DATUS_DISABLE_SERVICE_BOOTSTRAP=1</code> to opt out (CI / Docker).</p>
 
 
 
