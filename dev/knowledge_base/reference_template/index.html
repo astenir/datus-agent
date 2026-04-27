@@ -4155,7 +4155,7 @@
 <thead>
 <tr>
 <th>Parameter</th>
-<th>Required</th>
+<th>Required for reference_template</th>
 <th>Description</th>
 <th>Example</th>
 </tr>
@@ -4170,19 +4170,19 @@
 <tr>
 <td><code>--components</code></td>
 <td>Yes</td>
-<td>Components to initialize</td>
+<td>Components to initialize. Set this to <code>reference_template</code>; otherwise the reference template component is not initialized.</td>
 <td><code>reference_template</code></td>
 </tr>
 <tr>
 <td><code>--template_dir</code></td>
 <td>Yes</td>
-<td>Directory containing J2 template files</td>
+<td>Directory or single file containing J2 template files. If omitted, the reference template store is initialized empty and no template entries are loaded.</td>
 <td><code>/templates/queries</code></td>
 </tr>
 <tr>
 <td><code>--kb_update_strategy</code></td>
-<td>Yes</td>
-<td>Update strategy</td>
+<td>No</td>
+<td>Update strategy. Defaults to <code>check</code>; use <code>overwrite</code> or <code>incremental</code> when loading templates intentionally.</td>
 <td><code>overwrite</code>/<code>incremental</code></td>
 </tr>
 <tr>
@@ -4194,7 +4194,7 @@
 <tr>
 <td><code>--pool_size</code></td>
 <td>No</td>
-<td>Concurrent processing threads (default: 1)</td>
+<td>Concurrent processing threads. CLI default is <code>4</code>; learning mode without <code>--subject_tree</code> forces effective concurrency to <code>1</code>.</td>
 <td><code>8</code></td>
 </tr>
 <tr>
@@ -4255,7 +4255,7 @@
 <p>Semicolons inside Jinja2 block structures (<code>{% if %}</code>, <code>{% for %}</code>, etc.) are not treated as template delimiters.</p>
 <h3 id="format-requirements">Format Requirements<a class="headerlink" href="#format-requirements" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Semicolon Delimiter</strong>: Templates in a multi-template file must be separated by <code>;</code></li>
+<li><strong>Semicolon Delimiter</strong>: Templates in a multi-template file must be separated by <code>;</code>. Put each template delimiter at the end of a statement line; multiple templates on the same physical line are not reliably split.</li>
 <li><strong>Valid Jinja2</strong>: Templates must pass Jinja2 syntax validation</li>
 <li><strong>SQL Content</strong>: Templates should produce valid SQL when rendered</li>
 </ol>
@@ -4331,18 +4331,18 @@
 </span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="p">]</span>
 </span></code></pre></div>
-<p>This allows the LLM to know exactly what values are valid for each parameter when calling <code>execute_reference_template</code>.</p>
+<p>When a parameter's SQL context can be resolved, this gives the LLM concrete candidate values or allowed keywords to use when calling <code>execute_reference_template</code>. Parameters whose context cannot be inferred are still stored, but may not include sample values.</p>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
-<p>After bootstrapping, four tools are available to agents:</p>
+<p>After bootstrapping, template tools are available only when the reference template store contains entries. The complete tool set is:</p>
 <h3 id="search_reference_template"><code>search_reference_template</code><a class="headerlink" href="#search_reference_template" title="Permanent link">&para;</a></h3>
-<p>Search templates by natural language query. Returns matching templates with parameter metadata (name, type, summary, tags). Does not return the template body to save tokens.</p>
+<p>Search templates by natural language query. Returns matching templates with name, raw template body, parameter metadata, summary, and tags.</p>
 <h3 id="get_reference_template"><code>get_reference_template</code><a class="headerlink" href="#get_reference_template" title="Permanent link">&para;</a></h3>
 <p>Retrieve a specific template by <code>subject_path</code> + <code>name</code>. Returns full template content, enriched parameters with <code>sample_values</code>, and summary.</p>
 <h3 id="render_reference_template"><code>render_reference_template</code><a class="headerlink" href="#render_reference_template" title="Permanent link">&para;</a></h3>
 <p>Render a template with provided parameter values using Jinja2. Returns the final SQL string without executing it. Uses <code>StrictUndefined</code> mode — missing parameters produce actionable error messages listing expected vs. provided parameters.</p>
 <h3 id="execute_reference_template"><code>execute_reference_template</code><a class="headerlink" href="#execute_reference_template" title="Permanent link">&para;</a></h3>
 <p>Render a template and immediately execute the resulting SQL (read-only). Combines <code>render_reference_template</code> + <code>read_query</code> in a single step. Returns both the rendered SQL and the query result rows.</p>
-<p>Note: <code>execute_reference_template</code> creates an internal database connection automatically — you do not need to configure <code>db_tools</code> separately when using template tools.</p>
+<p>Note: <code>execute_reference_template</code> is exposed only when the tool instance has a database function tool. Chat and GenSQL nodes create or reuse a DB tool when wiring reference template tools, so they normally expose <code>execute_reference_template</code> when templates exist. Direct <code>ReferenceTemplateTools</code> instances without <code>db_func_tool</code> expose only search/get/render.</p>
 <h2 id="template-only-mode">Template-Only Mode<a class="headerlink" href="#template-only-mode" title="Permanent link">&para;</a></h2>
 <p>For use cases where the agent should only execute pre-approved templates (no ad-hoc SQL), a dedicated system prompt <code>ref_tpl</code> is available:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">agentic_nodes</span><span class="p">:</span>
@@ -4360,11 +4360,11 @@
 <li>Reports "no matching template found" if no template matches, and stops</li>
 </ul>
 <h2 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Template Files (.j2)  →  File Processor  →  Parameter Analysis  →  LLM Analysis  →  Storage  →  Tools
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>       |                       |                   |                    |               |           |
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>   Parse blocks          Validate J2          Infer types           Generate        Vector DB   search/
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>   Extract params        Extract params      Resolve aliases        summary &amp;       + Indices  get/execute
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>   Split by ;            Filter invalid      Query sample values    search_text
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Template Files (.j2)  →  File Processor  →  LLM Analysis  →  Parameter Analysis  →  Storage  →  Tools
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>       |                       |                  |                    |                |           |
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>   Parse blocks          Validate J2         Generate summary,   Infer types,       Vector DB   search/
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>   Extract params        Extract params      search_text,        merge descriptions + Indices  get/render/
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>   Split by ;            Filter invalid      subject_tree        query sample values            execute
 </span></code></pre></div>
 <h3 id="processing-pipeline">Processing Pipeline<a class="headerlink" href="#processing-pipeline" title="Permanent link">&para;</a></h3>
 <ol>
@@ -4372,9 +4372,9 @@
 <li><strong>Block Splitting</strong>: Split multi-template files by semicolons (respecting Jinja2 blocks)</li>
 <li><strong>Validation</strong>: Validate Jinja2 syntax for each template block</li>
 <li><strong>Parameter Extraction</strong>: Extract undeclared variables via <code>jinja2.meta.find_undeclared_variables()</code></li>
+<li><strong>LLM Analysis</strong>: Generate business summary, search text, subject tree, tags, and parameter descriptions using <code>SqlSummaryAgenticNode</code> in workflow mode with <code>storage_type="reference_template"</code></li>
 <li><strong>Parameter Analysis</strong>: Infer parameter types, resolve table aliases to real table names, and query sample values from the database</li>
-<li><strong>LLM Analysis</strong>: Generate business summary, search text, and parameter descriptions using SqlSummaryAgenticNode</li>
-<li><strong>Merge</strong>: Combine statically-analyzed parameter types with LLM-generated descriptions</li>
+<li><strong>Merge</strong>: Combine statically-analyzed parameter types with LLM-generated descriptions and keyword allowed values</li>
 <li><strong>Storage</strong>: Store enriched template data in vector store</li>
 <li><strong>Indexing</strong>: Create search indices for efficient retrieval</li>
 </ol>

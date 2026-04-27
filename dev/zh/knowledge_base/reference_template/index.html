@@ -4155,7 +4155,7 @@
 <thead>
 <tr>
 <th>参数</th>
-<th>必需</th>
+<th>使用 reference_template 时必需</th>
 <th>描述</th>
 <th>示例</th>
 </tr>
@@ -4170,19 +4170,19 @@
 <tr>
 <td><code>--components</code></td>
 <td>是</td>
-<td>要初始化的组件</td>
+<td>要初始化的组件。需要设置为 <code>reference_template</code>；否则不会初始化 reference template 组件。</td>
 <td><code>reference_template</code></td>
 </tr>
 <tr>
 <td><code>--template_dir</code></td>
 <td>是</td>
-<td>包含 J2 模板文件的目录</td>
+<td>包含 J2 模板文件的目录或单个文件。省略时只会初始化空的 reference template 存储，不会加载模板条目。</td>
 <td><code>/templates/queries</code></td>
 </tr>
 <tr>
 <td><code>--kb_update_strategy</code></td>
-<td>是</td>
-<td>更新策略</td>
+<td>否</td>
+<td>更新策略。默认是 <code>check</code>；明确加载模板时通常使用 <code>overwrite</code> 或 <code>incremental</code>。</td>
 <td><code>overwrite</code>/<code>incremental</code></td>
 </tr>
 <tr>
@@ -4194,7 +4194,7 @@
 <tr>
 <td><code>--pool_size</code></td>
 <td>否</td>
-<td>并发处理线程数（默认：1）</td>
+<td>并发处理线程数。CLI 默认值是 <code>4</code>；不传 <code>--subject_tree</code> 的学习模式会把实际并发强制降为 <code>1</code>。</td>
 <td><code>8</code></td>
 </tr>
 <tr>
@@ -4256,7 +4256,7 @@
 <p>Jinja2 块结构（<code>{% if %}</code>、<code>{% for %}</code> 等）内部的分号不会被视为模板分隔符。</p>
 <h3 id="_13">格式要求<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>分号分隔符</strong>：多模板文件中的模板必须用 <code>;</code> 分隔</li>
+<li><strong>分号分隔符</strong>：多模板文件中的模板必须用 <code>;</code> 分隔。建议将每个模板的分隔分号放在语句行末；同一物理行上放多个模板时不会被可靠拆分。</li>
 <li><strong>合法 Jinja2</strong>：模板必须通过 Jinja2 语法验证</li>
 <li><strong>SQL 内容</strong>：模板渲染后应产生合法的 SQL</li>
 </ol>
@@ -4332,18 +4332,18 @@
 </span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="p">]</span>
 </span></code></pre></div>
-<p>这使得 LLM 在调用 <code>execute_reference_template</code> 时能够准确知道每个参数应该填什么值。</p>
+<p>当参数的 SQL 上下文可以被解析时，这些元数据会为 LLM 提供候选值或合法关键字，便于调用 <code>execute_reference_template</code>。无法推断上下文的参数仍会被存储，但可能不会包含候选值。</p>
 <h2 id="_17">工具<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
-<p>Bootstrap 完成后，Agent 可使用四个工具：</p>
+<p>Bootstrap 完成后，只有当 reference template 存储中存在模板条目时，Agent 才会暴露模板工具。完整工具集包括：</p>
 <h3 id="search_reference_template"><code>search_reference_template</code><a class="headerlink" href="#search_reference_template" title="Permanent link">&para;</a></h3>
-<p>通过自然语言查询搜索模板。返回匹配的模板元数据（名称、类型、摘要、标签），不返回模板正文以节省 token。</p>
+<p>通过自然语言查询搜索模板。返回匹配模板的名称、原始模板正文、参数元数据、摘要和标签。</p>
 <h3 id="get_reference_template"><code>get_reference_template</code><a class="headerlink" href="#get_reference_template" title="Permanent link">&para;</a></h3>
 <p>通过 <code>subject_path</code> + <code>name</code> 精确获取特定模板。返回完整的模板内容、带有 <code>sample_values</code> 的增强参数信息和摘要。</p>
 <h3 id="render_reference_template"><code>render_reference_template</code><a class="headerlink" href="#render_reference_template" title="Permanent link">&para;</a></h3>
 <p>使用提供的参数值渲染模板，返回最终 SQL 字符串但不执行。使用 Jinja2 的 <code>StrictUndefined</code> 模式 — 缺少参数时会产生可操作的错误信息，列出期望参数与已提供参数的对比。</p>
 <h3 id="execute_reference_template"><code>execute_reference_template</code><a class="headerlink" href="#execute_reference_template" title="Permanent link">&para;</a></h3>
 <p>渲染模板并立即执行生成的 SQL（只读）。将 <code>render_reference_template</code> + <code>read_query</code> 合并为一步操作。返回渲染后的 SQL 和查询结果行。</p>
-<p>注意：<code>execute_reference_template</code> 会自动创建内部数据库连接 — 使用模板工具时不需要单独配置 <code>db_tools</code>。</p>
+<p>注意：只有当工具实例持有数据库函数工具时，<code>execute_reference_template</code> 才会暴露。Chat 和 GenSQL 节点在挂载 reference template tools 时会创建或复用 DB tool，因此模板存在时通常会暴露 <code>execute_reference_template</code>。直接创建且未传入 <code>db_func_tool</code> 的 <code>ReferenceTemplateTools</code> 实例只会暴露 search/get/render。</p>
 <h2 id="_18">纯模板模式<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
 <p>当需要 Agent 只能执行预审批的模板（禁止自由编写 SQL）时，可使用专用的 <code>ref_tpl</code> 系统提示词：</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">agentic_nodes</span><span class="p">:</span>
@@ -4361,11 +4361,11 @@
 <li>无匹配时直接回复"未找到匹配的 SQL 模板"并停止</li>
 </ul>
 <h2 id="_19">数据流<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>模板文件 (.j2)  →  文件处理器  →  参数分析  →  LLM 分析  →  存储  →  工具
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>模板文件 (.j2)  →  文件处理器  →  LLM 分析  →  参数分析  →  存储  →  工具
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>     |                |             |             |          |         |
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  解析模板块      验证 J2 语法   推断类型       生成摘要   向量数据库  search/
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  提取参数        过滤无效模板   解析别名      和搜索文本   + 索引     get/execute
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>  分号分割                     查询候选值
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  解析模板块      验证 J2 语法   生成摘要、    推断类型、  向量数据库  search/
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  提取参数        过滤无效模板   搜索文本、    合并描述    + 索引     get/render/
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>  分号分割                       主题树       查询候选值             execute
 </span></code></pre></div>
 <h3 id="_20">处理流程<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
 <ol>
@@ -4373,9 +4373,9 @@
 <li><strong>模板分割</strong>：按分号分割多模板文件（尊重 Jinja2 块结构）</li>
 <li><strong>语法验证</strong>：验证每个模板块的 Jinja2 语法</li>
 <li><strong>参数提取</strong>：通过 <code>jinja2.meta.find_undeclared_variables()</code> 提取未声明变量</li>
+<li><strong>LLM 分析</strong>：使用 <code>SqlSummaryAgenticNode</code> 的 workflow 模式生成业务摘要、搜索文本、主题树、标签和参数描述，并设置 <code>storage_type="reference_template"</code></li>
 <li><strong>参数分析</strong>：推断参数类型，将表别名解析为真实表名，从数据库查询候选值</li>
-<li><strong>LLM 分析</strong>：使用 SqlSummaryAgenticNode 生成业务摘要、搜索文本和参数描述</li>
-<li><strong>合并</strong>：将静态分析的参数类型与 LLM 生成的描述合并</li>
+<li><strong>合并</strong>：将静态分析的参数类型与 LLM 生成的描述、关键字合法取值合并</li>
 <li><strong>存储入库</strong>：将增强后的模板数据存入向量数据库</li>
 <li><strong>索引构建</strong>：创建搜索索引以支持高效检索</li>
 </ol>
