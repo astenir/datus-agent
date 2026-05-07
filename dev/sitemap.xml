@@ -491,6 +491,13 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/training/llm_trace_usage/"/>
     </url>
     <url>
+        <loc>https://docs.datus.ai/dev/vscode_extension/introduction/</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/dev/vscode_extension/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/vscode_extension/introduction/"/>
+    </url>
+    <url>
         <loc>https://docs.datus.ai/dev/web_chatbot/introduction/</loc>
         <lastmod>2026-05-07</lastmod>
         <changefreq>daily</changefreq>
@@ -1014,6 +1021,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/training/llm_trace_usage/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devtraining/llm_trace_usage/"/>
+    </url>
+    <url>
+        <loc>https://docs.datus.ai/dev/zh/vscode_extension/introduction/</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/vscode_extension/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devvscode_extension/introduction/"/>
     </url>
     <url>
         <loc>https://docs.datus.ai/dev/zh/web_chatbot/introduction/</loc>
