@@ -9,7 +9,10 @@
     "title": "0.3.0",
     "aliases": [
       "latest"
-    ]
+    ],
+    "properties": {
+      "hidden": true
+    }
   },
   {
     "version": "0.2.6",
