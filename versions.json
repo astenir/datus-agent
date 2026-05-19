@@ -17,6 +17,9 @@
   {
     "version": "0.2.6",
     "title": "0.2.6",
-    "aliases": []
+    "aliases": [],
+    "properties": {
+      "hidden": true
+    }
   }
 ]
