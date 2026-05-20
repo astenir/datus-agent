@@ -260,20 +260,6 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/develop/"/>
     </url>
     <url>
-        <loc>https://docs.datus.ai/dev/develop/Architecture/</loc>
-        <lastmod>2026-05-20</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/dev/develop/Architecture/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/develop/Architecture/"/>
-    </url>
-    <url>
-        <loc>https://docs.datus.ai/dev/develop/Contributing/</loc>
-        <lastmod>2026-05-20</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/dev/develop/Contributing/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/develop/Contributing/"/>
-    </url>
-    <url>
         <loc>https://docs.datus.ai/dev/gateway/feishu/</loc>
         <lastmod>2026-05-20</lastmod>
         <changefreq>daily</changefreq>
@@ -790,20 +776,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/develop/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devdevelop/"/>
-    </url>
-    <url>
-        <loc>https://docs.datus.ai/dev/zh/develop/Architecture/</loc>
-        <lastmod>2026-05-20</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/develop/Architecture/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devdevelop/Architecture/"/>
-    </url>
-    <url>
-        <loc>https://docs.datus.ai/dev/zh/develop/Contributing/</loc>
-        <lastmod>2026-05-20</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/develop/Contributing/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devdevelop/Contributing/"/>
     </url>
     <url>
         <loc>https://docs.datus.ai/dev/zh/gateway/feishu/</loc>
