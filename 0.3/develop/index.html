@@ -14,7 +14,7 @@
         <link rel="prev" href="../training/llm_trace_usage/">
       
       
-        <link rel="next" href="Architecture/">
+        <link rel="next" href="../vscode_extension/introduction/">
       
       
         
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#datus-agent" class="md-skip">
+        <a href="#developer-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -3258,10 +3258,6 @@
           
         
       
-        
-      
-        
-      
     
     
     
@@ -3294,11 +3290,6 @@
 
             </a>
             
-              
-              <label class="md-nav__link md-nav__link--active" for="__nav_1_16" id="__nav_1_16_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
           </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_16_label" aria-expanded="true">
@@ -3312,62 +3303,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Architecture
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Contributing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Contributing
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
               
             
           </ul>
@@ -3460,6 +3395,219 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#source-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datasources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datasources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smoke-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Smoke Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benchmarks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Benchmarks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bird" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIRD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spider-20-snow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spider 2.0 Snow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inline-repl-trace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inline REPL Trace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-yaml-traces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local YAML Traces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langsmith" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LangSmith
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langfuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Langfuse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-langsmith-and-langfuse-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running LangSmith and Langfuse Together
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3483,265 +3631,376 @@
   
 
 
-<h1 id="datus-agent">Datus-agent<a class="headerlink" href="#datus-agent" title="Permanent link">&para;</a></h1>
-<hr />
-<h1 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h1>
-<h2 id="pulling-submodule-code-locally">Pulling submodule code locally<a class="headerlink" href="#pulling-submodule-code-locally" title="Permanent link">&para;</a></h2>
+<h1 id="developer-guide">Developer Guide<a class="headerlink" href="#developer-guide" title="Permanent link">&para;</a></h1>
+<p>This page is for contributors running Datus Agent from a source checkout. If you are installing a released package, start with the <a href="../getting_started/Quickstart/">Quickstart</a> instead.</p>
+<h2 id="source-setup">Source Setup<a class="headerlink" href="#source-setup" title="Permanent link">&para;</a></h2>
+<p>Clone the repository and initialize submodules:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
 </span></code></pre></div>
-<h2 id="install-the-necessary-dependencies">Install the Necessary Dependencies<a class="headerlink" href="#install-the-necessary-dependencies" title="Permanent link">&para;</a></h2>
-<h3 id="using-uv">Using <code>uv</code><a class="headerlink" href="#using-uv" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Create a virtual environment</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>uv<span class="w"> </span>venv<span class="w"> </span>-p<span class="w"> </span><span class="m">3</span>.12
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Synchronize all dependencies</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>uv<span class="w"> </span>sync
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># with dev dependencies</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>uv<span class="w"> </span>sync<span class="w"> </span>--dev
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># Use current environment</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<p>Use Python 3.12. The recommended development environment is <code>uv</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>uv<span class="w"> </span>venv<span class="w"> </span>-p<span class="w"> </span><span class="m">3</span>.12
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>uv<span class="w"> </span>sync<span class="w"> </span>--dev
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 </span></code></pre></div>
-<h3 id="using-conda">Using <code>conda</code><a class="headerlink" href="#using-conda" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>datus-agent<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>conda<span class="w"> </span>activate<span class="w"> </span>datus-agent
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<p><code>uv sync --dev</code> installs the runtime package, test tools, and tracing integrations used during development.</p>
+<p>The source checkout exposes the same console entry points as the installed package:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>uv<span class="w"> </span>run<span class="w"> </span>datus<span class="w"> </span>--version
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>uv<span class="w"> </span>run<span class="w"> </span>datus-agent<span class="w"> </span>--version
 </span></code></pre></div>
-<h3 id="using-venv">Using <code>venv</code><a class="headerlink" href="#using-venv" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>virtualenv<span class="w"> </span>datus-agent<span class="w"> </span>--python<span class="o">=</span>python3.12
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">source</span><span class="w"> </span>datus-agent/bin/activate
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<p>Use these entry points in docs and scripts:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>datus</code></td>
+<td>Interactive REPL and TUI</td>
+</tr>
+<tr>
+<td><code>datus-agent</code></td>
+<td>Batch commands such as <code>probe-llm</code>, <code>check-db</code>, <code>bootstrap-kb</code>, and <code>benchmark</code></td>
+</tr>
+<tr>
+<td><code>datus-api</code></td>
+<td>REST API server</td>
+</tr>
+<tr>
+<td><code>datus-mcp</code></td>
+<td>MCP server</td>
+</tr>
+</tbody>
+</table>
+<p><code>python -m datus.main</code> and <code>python -m datus.cli.main</code> still work for low-level debugging, but they are not the preferred user-facing commands.</p>
+<p>To build the docs from a fresh source checkout, provide the MkDocs plugins required by <code>mkdocs.yml</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>mkdocs-material<span class="w"> </span>--with<span class="w"> </span>mike<span class="w"> </span>--with<span class="w"> </span>mkdocs-static-i18n<span class="w"> </span>mkdocs<span class="w"> </span>build<span class="w"> </span>--strict
 </span></code></pre></div>
-<hr />
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<h3 id="agentyml">Agent.yml<a class="headerlink" href="#agentyml" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cp<span class="w"> </span>conf/agent.yml.qs<span class="w"> </span>conf/agent.yml
+<p>Configuration lookup order is:</p>
+<ol>
+<li><code>--config &lt;path&gt;</code> if provided.</li>
+<li><code>./conf/agent.yml</code> in the current working directory.</li>
+<li><code>~/.datus/conf/agent.yml</code>.</li>
+</ol>
+<p>For local source work, copy the example only if you do not already have a local config:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cp<span class="w"> </span>conf/agent.yml.example<span class="w"> </span>conf/agent.yml
 </span></code></pre></div>
-<p>Then modify <code>conf/agent.yml</code> as needed:</p>
+<p>Keep secrets in environment variables rather than committing literal API keys.</p>
+<h3 id="models">Models<a class="headerlink" href="#models" title="Permanent link">&para;</a></h3>
+<p>Current model configuration is provider-based. Put credentials under <code>agent.providers</code>, then use <code>/model</code> in the REPL to choose the active provider/model for the current project. The selection is written to <code>./.datus/config.yml</code>.</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">agent</span><span class="p">:</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deepseek-v3</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">models</span><span class="p">:</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">deepseek-v3</span><span class="p">:</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deepseek</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">      </span><span class="nt">base_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://api.deepseek.com</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.datus</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">providers</span><span class="p">:</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">openai</span><span class="p">:</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">      </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${OPENAI_API_KEY}</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">deepseek</span><span class="p">:</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">      </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DEEPSEEK_API_KEY}</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">      </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deepseek-chat</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="nt">deepseek-r1</span><span class="p">:</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deepseek</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">      </span><span class="nt">base_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://api.deepseek.com</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">      </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DEEPSEEK_API_KEY}</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">      </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deepseek-reasoner</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">  </span><span class="nt">storage_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">  </span><span class="nt">benchmark</span><span class="p">:</span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="nt">bird_dev</span><span class="p">:</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">      </span><span class="nt">benchmark_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">benchmark/bird/dev_20240627</span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">    </span><span class="nt">spider2</span><span class="p">:</span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">      </span><span class="nt">benchmark_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">benchmark/spider2/spider2-snow</span>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">    </span><span class="nt">datasources</span><span class="p">:</span>
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">      </span><span class="nt">local_duckdb</span><span class="p">:</span>
-</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">duckdb</span>
-</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">        </span><span class="nt">uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./tests/duckdb-demo.duckdb</span>
-</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">      </span><span class="nt">spider-snow</span><span class="p">:</span>
-</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">snowflake</span>
-</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">        </span><span class="nt">warehouse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SNOWFLAKE_WAREHOUSE}</span>
-</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">        </span><span class="nt">account</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SNOWFLAKE_ACCOUNT}</span>
-</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SNOWFLAKE_USER}</span>
-</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SNOWFLAKE_PASSWORD}</span>
-</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">      </span><span class="nt">bird_sqlite</span><span class="p">:</span>
-</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sqlite</span>
-</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="w">        </span><span class="nt">path_pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">benchmark/bird/dev_20240627/dev_databases/**/*.sqlite</span>
-</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
-</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="w">  </span><span class="nt">storage</span><span class="p">:</span>
-</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="w">    </span><span class="nt">base_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data</span>
-</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="w">    </span><span class="c1"># Local model recommendations:</span>
-</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="w">    </span><span class="c1"># 1. For extreme performance: all-MiniLM-L6-v2 (~100M) or intfloat/multilingual-e5-small (~460M)</span>
-</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="w">    </span><span class="c1"># 2. For balanced performance and quality: intfloat/multilingual-e5-large-instruct (~1.2G)</span>
-</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="w">    </span><span class="c1"># 3. For optimal retrieval quality: BAAI/bge-large-en-v1.5 or BAAI/bge-large-zh-v1.5 (~3.6G)</span>
-</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="w">    </span><span class="c1"># You can also select any model that suits your requirements.</span>
-</span><span id="__span-5-46"><a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="w">    </span><span class="c1"># Default: all-MiniLM-L6-v2 if no model is configured.</span>
-</span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="w">    </span><span class="c1"># Claude model suggestions: Now we just support openai.</span>
-</span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a><span class="w">    </span><span class="nt">database</span><span class="p">:</span>
-</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="w">      </span><span class="nt">registry_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sentence-transformers</span><span class="w"> </span><span class="c1"># default is sentence-transformers, now just support sentence-transformers and openai.</span>
-</span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="w">      </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-embedding-v3</span>
-</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a><span class="w">      </span><span class="nt">dim_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1024</span>
-</span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="w">      </span><span class="c1"># batch_size: 10 # This configuration is required when the registration mode is openai</span>
-</span><span id="__span-5-53"><a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="w">    </span><span class="nt">document</span><span class="p">:</span>
-</span><span id="__span-5-54"><a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a><span class="w">      </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">intfloat/multilingual-e5-large-instruct</span>
-</span><span id="__span-5-55"><a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="w">      </span><span class="nt">dim_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1024</span>
-</span><span id="__span-5-56"><a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a><span class="w">    </span><span class="nt">metric</span><span class="p">:</span>
-</span><span id="__span-5-57"><a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a><span class="w">      </span><span class="nt">model_name</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">all-MiniLM-L6-v2</span>
-</span><span id="__span-5-58"><a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a><span class="w">      </span><span class="nt">dim_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">384</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">claude</span><span class="p">:</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">      </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${ANTHROPIC_API_KEY}</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="nt">gemini</span><span class="p">:</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">      </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${GEMINI_API_KEY}</span>
 </span></code></pre></div>
-<p>You can configure multiple models and databases. The <code>target</code> is the default model to use.</p>
-<hr />
-<h3 id="langsmith-optional">Langsmith (Optional)<a class="headerlink" href="#langsmith-optional" title="Permanent link">&para;</a></h3>
-<p>Set the following environment variables for Langsmith integration:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>LANGSMITH_TRACING=true
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>LANGSMITH_ENDPOINT=https://api.smith.langchain.com
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>LANGCHAIN_API_KEY=xxx
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>LANGSMITH_PROJECT=Datus-agent
+<p>Use <code>agent.models</code> only for custom or private endpoints that are not covered by <code>conf/providers.yml</code>.</p>
+<h3 id="datasources">Datasources<a class="headerlink" href="#datasources" title="Permanent link">&para;</a></h3>
+<p>For a quick local smoke test, use the bundled DuckDB sample:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">agent</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">datasources</span><span class="p">:</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">      </span><span class="nt">local_duckdb</span><span class="p">:</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">duckdb</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="nt">uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">duckdb:///datus/sample_data/duckdb-demo.duckdb</span>
 </span></code></pre></div>
-<hr />
-<h1 id="have-a-try">Have a Try<a class="headerlink" href="#have-a-try" title="Permanent link">&para;</a></h1>
-<h2 id="test-connection">Test Connection<a class="headerlink" href="#test-connection" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python<span class="w"> </span>-m<span class="w"> </span>datus.main<span class="w"> </span>probe-llm
+<p>Then verify the connection and open the REPL:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>uv<span class="w"> </span>run<span class="w"> </span>datus-agent<span class="w"> </span>check-db<span class="w"> </span>--config<span class="w"> </span>conf/agent.yml<span class="w"> </span>--datasource<span class="w"> </span>local_duckdb
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>uv<span class="w"> </span>run<span class="w"> </span>datus<span class="w"> </span>--config<span class="w"> </span>conf/agent.yml<span class="w"> </span>--datasource<span class="w"> </span>local_duckdb
 </span></code></pre></div>
-<p>Example Output:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>LLM model test successful
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Final Result: {&quot;status&quot;: &quot;success&quot;, &quot;message&quot;: &quot;LLM model test successful&quot;, &quot;response&quot;: &quot;Yes, I can &#39;hear&#39; you! 😊 How can I assist you today?&quot;}
-</span></code></pre></div></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>python<span class="w"> </span>-m<span class="w"> </span>datus.main<span class="w"> </span>check-db<span class="w"> </span>--datasource<span class="w"> </span>local_duckdb
+<p>Inside the REPL, SQL is detected automatically:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&gt; show tables;
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>&gt; select * from tree;
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>&gt; /help
 </span></code></pre></div>
-<hr />
-<h2 id="run-sql">Run SQL<a class="headerlink" href="#run-sql" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>python<span class="w"> </span>-m<span class="w"> </span>datus.cli.main<span class="w"> </span>--datasource<span class="w"> </span>local_duckdb<span class="w"> </span>--config<span class="w"> </span>conf/agent.yml
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Datus&gt;<span class="w"> </span><span class="k">select</span><span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>tree<span class="p">;</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>┏━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━┓
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>┃<span class="w"> </span>Continent<span class="w"> </span>┃<span class="w"> </span>TradingBloc<span class="w"> </span>┃<span class="w"> </span>Country<span class="w">    </span>┃<span class="w"> </span>GDP<span class="w">    </span>┃
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>┡━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━┩
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>│<span class="w"> </span>NA<span class="w">        </span>│<span class="w"> </span>US<span class="w">          </span>│<span class="w"> </span>US<span class="w">         </span>│<span class="w"> </span><span class="m">19</span>.485<span class="w"> </span>│
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>│<span class="w"> </span>Asia<span class="w">      </span>│<span class="w"> </span>China<span class="w">       </span>│<span class="w"> </span>China<span class="w">      </span>│<span class="w"> </span><span class="m">12</span>.238<span class="w"> </span>│
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>│<span class="w"> </span>Asia<span class="w">      </span>│<span class="w"> </span>Japan<span class="w">       </span>│<span class="w"> </span>Japan<span class="w">      </span>│<span class="w"> </span><span class="m">4</span>.872<span class="w">  </span>│
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>│<span class="w"> </span>Europe<span class="w">    </span>│<span class="w"> </span>EU<span class="w">          </span>│<span class="w"> </span>Germany<span class="w">    </span>│<span class="w"> </span><span class="m">3</span>.693<span class="w">  </span>│
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>│<span class="w"> </span>Asia<span class="w">      </span>│<span class="w"> </span>India<span class="w">       </span>│<span class="w"> </span>India<span class="w">      </span>│<span class="w"> </span><span class="m">2</span>.651<span class="w">  </span>│
-</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>│<span class="w"> </span>Europe<span class="w">    </span>│<span class="w"> </span>UK<span class="w">          </span>│<span class="w"> </span>UK<span class="w">         </span>│<span class="w"> </span><span class="m">2</span>.638<span class="w">  </span>│
-</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>│<span class="w"> </span>Europe<span class="w">    </span>│<span class="w"> </span>EU<span class="w">          </span>│<span class="w"> </span>France<span class="w">     </span>│<span class="w"> </span><span class="m">2</span>.583<span class="w">  </span>│
-</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>│<span class="w"> </span>SA<span class="w">        </span>│<span class="w"> </span>Brazil<span class="w">      </span>│<span class="w"> </span>Brazil<span class="w">     </span>│<span class="w"> </span><span class="m">2</span>.054<span class="w">  </span>│
-</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>│<span class="w"> </span>Europe<span class="w">    </span>│<span class="w"> </span>EU<span class="w">          </span>│<span class="w"> </span>Italy<span class="w">      </span>│<span class="w"> </span><span class="m">1</span>.944<span class="w">  </span>│
-</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>│<span class="w"> </span>NA<span class="w">        </span>│<span class="w"> </span>US<span class="w">          </span>│<span class="w"> </span>Canada<span class="w">     </span>│<span class="w"> </span><span class="m">1</span>.647<span class="w">  </span>│
-</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>│<span class="w"> </span>Europe<span class="w">    </span>│<span class="w"> </span>Russia<span class="w">      </span>│<span class="w"> </span>Russia<span class="w">     </span>│<span class="w"> </span><span class="m">1</span>.578<span class="w">  </span>│
-</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>│<span class="w"> </span>Asia<span class="w">      </span>│<span class="w"> </span>SouthKorea<span class="w">  </span>│<span class="w"> </span>SouthKorea<span class="w"> </span>│<span class="w"> </span><span class="m">1</span>.531<span class="w">  </span>│
-</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>│<span class="w"> </span>Australia<span class="w"> </span>│<span class="w"> </span>Australia<span class="w">   </span>│<span class="w"> </span>Australia<span class="w">  </span>│<span class="w"> </span><span class="m">1</span>.323<span class="w">  </span>│
-</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>│<span class="w"> </span>Europe<span class="w">    </span>│<span class="w"> </span>EU<span class="w">          </span>│<span class="w"> </span>Spain<span class="w">      </span>│<span class="w"> </span><span class="m">1</span>.314<span class="w">  </span>│
-</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>│<span class="w"> </span>NA<span class="w">        </span>│<span class="w"> </span>US<span class="w">          </span>│<span class="w"> </span>Mexico<span class="w">     </span>│<span class="w"> </span><span class="m">1</span>.151<span class="w">  </span>│
-</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>└───────────┴─────────────┴────────────┴────────┘
-</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>Returned<span class="w"> </span><span class="m">15</span><span class="w"> </span>rows<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.03<span class="w"> </span>seconds
-</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>
-</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>Datus&gt;<span class="w"> </span>/help
+<p>You can also configure datasources interactively with <code>/datasource</code>; it writes to <code>~/.datus/conf/agent.yml</code> by default.</p>
+<h3 id="storage-layout">Storage Layout<a class="headerlink" href="#storage-layout" title="Permanent link">&para;</a></h3>
+<p>Do not configure <code>storage_path</code> for new setups. Data paths are derived from <code>agent.home</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{agent.home}/data/</code></td>
+<td>RDB/vector storage backends</td>
+</tr>
+<tr>
+<td><code>{agent.home}/sessions/</code></td>
+<td>Persisted chat sessions</td>
+</tr>
+<tr>
+<td><code>{agent.home}/benchmark/</code></td>
+<td>Built-in and custom benchmark data</td>
+</tr>
+<tr>
+<td><code>{agent.home}/trajectory/</code></td>
+<td>Workflow checkpoints and local LLM trace YAML files</td>
+</tr>
+<tr>
+<td><code>{cwd}/subject/</code></td>
+<td>Project semantic models, SQL summaries, and external knowledge</td>
+</tr>
+<tr>
+<td><code>{cwd}/.datus/config.yml</code></td>
+<td>Project-local model, datasource, and service pins</td>
+</tr>
+</tbody>
+</table>
+<h2 id="smoke-tests">Smoke Tests<a class="headerlink" href="#smoke-tests" title="Permanent link">&para;</a></h2>
+<p>Run a model probe after configuring at least one provider:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>uv<span class="w"> </span>run<span class="w"> </span>datus-agent<span class="w"> </span>probe-llm<span class="w"> </span>--config<span class="w"> </span>conf/agent.yml
 </span></code></pre></div>
-<hr />
-<h1 id="spider2-benchmark">Spider2 Benchmark<a class="headerlink" href="#spider2-benchmark" title="Permanent link">&para;</a></h1>
-<h2 id="initialization">Initialization<a class="headerlink" href="#initialization" title="Permanent link">&para;</a></h2>
-<p>Update <code>agent.yml</code> if needed:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">benchmark</span><span class="p">:</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">spider2</span><span class="p">:</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">benchmark_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">benchmark/spider2/spider2-snow</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nt">agent</span><span class="p">:</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="nt">datasources</span><span class="p">:</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">      </span><span class="nt">spider-snow</span><span class="p">:</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">snowflake</span>
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SNOWFLAKE_USER}</span>
-</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">        </span><span class="nt">account</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SNOWFLAKE_ACCOUNT}</span>
-</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">        </span><span class="nt">warehouse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SNOWFLAKE_WAREHOUSE}</span>
-</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SNOWFLAKE_PASSWORD}</span>
+<p>Run a datasource probe:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>uv<span class="w"> </span>run<span class="w"> </span>datus-agent<span class="w"> </span>check-db<span class="w"> </span>--config<span class="w"> </span>conf/agent.yml<span class="w"> </span>--datasource<span class="w"> </span>local_duckdb
 </span></code></pre></div>
-<h3 id="bootstrap-knowledge-base">Bootstrap Knowledge Base<a class="headerlink" href="#bootstrap-knowledge-base" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>python<span class="w"> </span>-m<span class="w"> </span>datus.main<span class="w"> </span>bootstrap-kb<span class="w"> </span>--datasource<span class="w"> </span>spider-snow<span class="w"> </span>--benchmark<span class="w"> </span>spider2<span class="w"> </span>--kb_update_strategy<span class="w"> </span>overwrite
+<p>Start the REPL:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>uv<span class="w"> </span>run<span class="w"> </span>datus<span class="w"> </span>--config<span class="w"> </span>conf/agent.yml<span class="w"> </span>--datasource<span class="w"> </span>local_duckdb
 </span></code></pre></div>
-<blockquote>
-<p>⚠️ May take hours (approx. 14,000 tables).</p>
-</blockquote>
-<h3 id="run-test-by-ids">Run Test by IDs<a class="headerlink" href="#run-test-by-ids" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>python<span class="w"> </span>-m<span class="w"> </span>datus.main<span class="w"> </span>benchmark<span class="w"> </span>--datasource<span class="w"> </span>spider-snow<span class="w"> </span>--benchmark<span class="w"> </span>spider2<span class="w"> </span>--benchmark_task_ids<span class="w"> </span>sf_bq104
+<p>For one-shot workflow execution, use <code>datus-agent run</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>uv<span class="w"> </span>run<span class="w"> </span>datus-agent<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span>--config<span class="w"> </span>conf/agent.yml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span>--datasource<span class="w"> </span>local_duckdb<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span>--task_db_name<span class="w"> </span>duckdb-demo<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span>--task<span class="w"> </span><span class="s2">&quot;List the top 5 rows from the tree table&quot;</span>
 </span></code></pre></div>
-<h2 id="python-m-datusclimain-datasource-spider-snow-config-confagentyml-datus-darun_screen-creating-a-new-sql-task-enter-task-id-49856268-enter-task-description-based-on-the-most-recent-refresh-date-identify-the-top-ranked-rising-search-term-for-the-week-that-is-exactly-one-year-prior-to-the-latest-available-week-in-the-dataset-enter-database-name-google_trends-enter-output-directory-output-enter-external-knowledge-optional-sql-task-created-49856268-database-snowflake-google_trends"><div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>python<span class="w"> </span>-m<span class="w"> </span>datus.cli.main<span class="w"> </span>--datasource<span class="w"> </span>spider-snow<span class="w">  </span>--config<span class="w"> </span>conf/agent.yml
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Datus&gt;<span class="w"> </span>!darun_screen
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>Creating<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>SQL<span class="w"> </span>task
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>Enter<span class="w"> </span>task<span class="w"> </span>ID<span class="w"> </span><span class="o">(</span><span class="m">49856268</span><span class="o">)</span>:
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>Enter<span class="w"> </span>task<span class="w"> </span>description<span class="w"> </span><span class="o">()</span>:<span class="w"> </span>Based<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>most<span class="w"> </span>recent<span class="w"> </span>refresh<span class="w"> </span>date,<span class="w"> </span>identify<span class="w"> </span>the<span class="w"> </span>top-ranked<span class="w"> </span>rising<span class="w"> </span>search<span class="w"> </span>term<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>week<span class="w"> </span>that<span class="w"> </span>is<span class="w"> </span>exactly<span class="w"> </span>one<span class="w"> </span>year<span class="w"> </span>prior<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>latest<span class="w"> </span>available<span class="w"> </span>week<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>dataset.
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>Enter<span class="w"> </span>database<span class="w"> </span>name:<span class="w"> </span>GOOGLE_TRENDS
-</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>Enter<span class="w"> </span>output<span class="w"> </span>directory<span class="w"> </span><span class="o">(</span>output<span class="o">)</span>:
-</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>Enter<span class="w"> </span>external<span class="w"> </span>knowledge<span class="w"> </span><span class="o">(</span>optional<span class="o">)</span><span class="w"> </span><span class="o">()</span>:
-</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>SQL<span class="w"> </span>Task<span class="w"> </span>created:<span class="w"> </span><span class="m">49856268</span>
-</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>Database:<span class="w"> </span>snowflake<span class="w"> </span>-<span class="w"> </span>GOOGLE_TRENDS
-</span></code></pre></div><a class="headerlink" href="#python-m-datusclimain-datasource-spider-snow-config-confagentyml-datus-darun_screen-creating-a-new-sql-task-enter-task-id-49856268-enter-task-description-based-on-the-most-recent-refresh-date-identify-the-top-ranked-rising-search-term-for-the-week-that-is-exactly-one-year-prior-to-the-latest-available-week-in-the-dataset-enter-database-name-google_trends-enter-output-directory-output-enter-external-knowledge-optional-sql-task-created-49856268-database-snowflake-google_trends" title="Permanent link">&para;</a></h2>
-<h1 id="bird-benchmark">Bird Benchmark<a class="headerlink" href="#bird-benchmark" title="Permanent link">&para;</a></h1>
-<h2 id="initialization_1">Initialization<a class="headerlink" href="#initialization_1" title="Permanent link">&para;</a></h2>
-<p>Update Configuration:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">benchmark</span><span class="p">:</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">bird_dev</span><span class="p">:</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">benchmark_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">benchmark/bird/dev_20240627</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="nt">agent</span><span class="p">:</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="nt">datasources</span><span class="p">:</span>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">      </span><span class="nt">bird_sqlite</span><span class="p">:</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sqlite</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">        </span><span class="nt">path_pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">benchmark/bird/dev_20240627/dev_databases/**/*.sqlite</span>
+<h2 id="benchmarks">Benchmarks<a class="headerlink" href="#benchmarks" title="Permanent link">&para;</a></h2>
+<p><code>bird_dev</code>, <code>spider2</code>, and <code>semantic_layer</code> are built-in benchmark names. Their paths are fixed by Datus and are resolved under <code>{agent.home}/benchmark</code>; do not override their <code>benchmark_path</code> in <code>agent.yml</code>.</p>
+<p>Expected built-in locations:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>~/.datus/benchmark/bird/dev_20240627/
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>~/.datus/benchmark/spider2/spider2-snow/
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>~/.datus/benchmark/semantic_layer/
 </span></code></pre></div>
-<h3 id="download-and-extract-bird-dev">Download and Extract Bird Dev<a class="headerlink" href="#download-and-extract-bird-dev" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>wget<span class="w"> </span>https://bird-bench.oss-cn-beijing.aliyuncs.com/dev.zip
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>unzip<span class="w"> </span>dev.zip
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>benchmark/bird
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>mv<span class="w"> </span>dev_20240627<span class="w"> </span>benchmark/bird
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nb">cd</span><span class="w"> </span>benchmark/bird/dev_20240627
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>unzip<span class="w"> </span>dev_databases
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="nb">cd</span><span class="w"> </span>../../..
+<p>Only custom benchmarks need entries under <code>agent.benchmark</code>.</p>
+<h3 id="bird">BIRD<a class="headerlink" href="#bird" title="Permanent link">&para;</a></h3>
+<p>Download the BIRD dev dataset into the Datus home directory:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">cd</span><span class="w"> </span>~/.datus
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>wget<span class="w"> </span>https://bird-bench.oss-cn-beijing.aliyuncs.com/dev.zip
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>unzip<span class="w"> </span>dev.zip
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>benchmark/bird
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>mv<span class="w"> </span>dev_20240627<span class="w"> </span>benchmark/bird/
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="nb">cd</span><span class="w"> </span>benchmark/bird/dev_20240627
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>unzip<span class="w"> </span>dev_databases
 </span></code></pre></div>
-<h3 id="bootstrap-knowledge-base_1">Bootstrap Knowledge Base<a class="headerlink" href="#bootstrap-knowledge-base_1" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>python<span class="w"> </span>-m<span class="w"> </span>datus.main<span class="w"> </span>bootstrap-kb<span class="w"> </span>--datasource<span class="w"> </span>bird_sqlite<span class="w"> </span>--benchmark<span class="w"> </span>bird_dev<span class="w"> </span>--kb_update_strategy<span class="w"> </span>overwrite
+<p>Configure a SQLite datasource that points at the extracted databases:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">agent</span><span class="p">:</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">datasources</span><span class="p">:</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">      </span><span class="nt">bird_sqlite</span><span class="p">:</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sqlite</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">        </span><span class="nt">path_pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.datus/benchmark/bird/dev_20240627/dev_databases/**/*.sqlite</span>
 </span></code></pre></div>
-<h3 id="run-tests">Run Tests<a class="headerlink" href="#run-tests" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>python<span class="w"> </span>-m<span class="w"> </span>datus.main<span class="w"> </span>benchmark<span class="w"> </span>--datasource<span class="w"> </span>bird_sqlite<span class="w"> </span>--benchmark<span class="w"> </span>bird_dev<span class="w"> </span>--workflow<span class="w"> </span>fixed<span class="w"> </span>--schema_linking_rate<span class="w"> </span>medium<span class="w"> </span>--benchmark_task_ids<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">15</span>
+<p>Bootstrap metadata and run selected tasks:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>uv<span class="w"> </span>run<span class="w"> </span>datus-agent<span class="w"> </span>bootstrap-kb<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span>--config<span class="w"> </span>conf/agent.yml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span>--datasource<span class="w"> </span>bird_sqlite<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span>--benchmark<span class="w"> </span>bird_dev<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span>--kb_update_strategy<span class="w"> </span>overwrite
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>uv<span class="w"> </span>run<span class="w"> </span>datus-agent<span class="w"> </span>benchmark<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">  </span>--config<span class="w"> </span>conf/agent.yml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">  </span>--datasource<span class="w"> </span>bird_sqlite<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">  </span>--benchmark<span class="w"> </span>bird_dev<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">  </span>--workflow<span class="w"> </span>fixed<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">  </span>--schema_linking_rate<span class="w"> </span>medium<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">  </span>--benchmark_task_ids<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">15</span>
 </span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>python<span class="w"> </span>-m<span class="w"> </span>datus.main<span class="w"> </span>benchmark<span class="w"> </span>--datasource<span class="w"> </span>bird_sqlite<span class="w"> </span>--benchmark<span class="w"> </span>bird_dev<span class="w"> </span>--schema_linking_rate<span class="w"> </span>fast<span class="w"> </span>--benchmark_task_ids<span class="w"> </span><span class="m">32</span>
+<h3 id="spider-20-snow">Spider 2.0 Snow<a class="headerlink" href="#spider-20-snow" title="Permanent link">&para;</a></h3>
+<p>Configure a Snowflake datasource. The datasource name can be anything; the examples use <code>snowflake</code>.</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">agent</span><span class="p">:</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nt">datasources</span><span class="p">:</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">      </span><span class="nt">snowflake</span><span class="p">:</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">snowflake</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">        </span><span class="nt">account</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SNOWFLAKE_ACCOUNT}</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SNOWFLAKE_USER}</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SNOWFLAKE_PASSWORD}</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">        </span><span class="nt">warehouse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SNOWFLAKE_WAREHOUSE}</span>
 </span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>python<span class="w"> </span>-m<span class="w"> </span>datus.main<span class="w"> </span>benchmark<span class="w"> </span>--datasource<span class="w"> </span>bird_sqlite<span class="w"> </span>--benchmark<span class="w"> </span>bird_dev<span class="w"> </span>--workflow<span class="w"> </span>fixed<span class="w"> </span>--schema_linking_rate<span class="w"> </span>medium
+<p>Bootstrap and run selected tasks:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>uv<span class="w"> </span>run<span class="w"> </span>datus-agent<span class="w"> </span>bootstrap-kb<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span>--config<span class="w"> </span>conf/agent.yml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span>--datasource<span class="w"> </span>snowflake<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span>--benchmark<span class="w"> </span>spider2<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">  </span>--kb_update_strategy<span class="w"> </span>overwrite
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>uv<span class="w"> </span>run<span class="w"> </span>datus-agent<span class="w"> </span>benchmark<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span>--config<span class="w"> </span>conf/agent.yml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">  </span>--datasource<span class="w"> </span>snowflake<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">  </span>--benchmark<span class="w"> </span>spider2<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">  </span>--benchmark_task_ids<span class="w"> </span>sf_bq104
 </span></code></pre></div>
-<h3 id="using-cli-to-develop">Using cli to develop<a class="headerlink" href="#using-cli-to-develop" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>python<span class="w"> </span>-m<span class="w"> </span>datus.cli.main<span class="w"> </span>--datasource<span class="w"> </span>bird_sqlite<span class="w">  </span>--config<span class="w"> </span>conf/agent.yml
+<p>Spider metadata bootstrap can take hours because the benchmark contains thousands of tables.</p>
+<h3 id="semantic-layer">Semantic Layer<a class="headerlink" href="#semantic-layer" title="Permanent link">&para;</a></h3>
+<p>MetricFlow is configured through the semantic adapter system, not by running <code>poetry lock</code>, <code>mf setup</code>, or editing <code>~/.metricflow/config.yml</code> manually.</p>
+<p>At minimum, configure a datasource and an explicit MetricFlow semantic adapter:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">agent</span><span class="p">:</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="nt">datasources</span><span class="p">:</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">      </span><span class="nt">duckdb</span><span class="p">:</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">duckdb</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">        </span><span class="nt">uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">duckdb:///path/to/duck.db</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="nt">semantic_layer</span><span class="p">:</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">      </span><span class="nt">metricflow</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
 </span></code></pre></div>
-<h1 id="semantic-layer-benchmark">Semantic Layer Benchmark<a class="headerlink" href="#semantic-layer-benchmark" title="Permanent link">&para;</a></h1>
-<h2 id="initialization_2">Initialization<a class="headerlink" href="#initialization_2" title="Permanent link">&para;</a></h2>
-<p>Install Metricflow:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># poetry config virtualenvs.in-project true</span>
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>poetry<span class="w"> </span>lock
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>poetry<span class="w"> </span>install
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
-</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="c1"># make sure these commands succeeded</span>
-</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>mf<span class="w"> </span>setup
-</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>mf<span class="w"> </span>tutorial
-</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>mf<span class="w"> </span>validate-configs
+<p>The <code>/services semantic</code> TUI can add the <code>metricflow</code> entry and install <code>datus-semantic-metricflow</code> if the adapter package is missing.</p>
+<p>Place semantic-layer benchmark data under:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>~/.datus/benchmark/semantic_layer/
 </span></code></pre></div>
-<p>Update Configuration <code>~/.metricflow/config.yml</code>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>model_path: &lt;/path/to/semantic-models-dir&gt;
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>dwh_schema: mf_demo
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>dwh_dialect: duckdb
-</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>dwh_database: &lt;home dir&gt;/.metricflow/duck.db
+<p>Then run:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>uv<span class="w"> </span>run<span class="w"> </span>datus-agent<span class="w"> </span>bootstrap-kb<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span>--config<span class="w"> </span>conf/agent.yml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span>--datasource<span class="w"> </span>duckdb<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">  </span>--components<span class="w"> </span>metrics<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">  </span>--kb_update_strategy<span class="w"> </span>overwrite
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>uv<span class="w"> </span>run<span class="w"> </span>datus-agent<span class="w"> </span>benchmark<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">  </span>--config<span class="w"> </span>conf/agent.yml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">  </span>--datasource<span class="w"> </span>duckdb<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">  </span>--benchmark<span class="w"> </span>semantic_layer<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">  </span>--workflow<span class="w"> </span>metric_to_sql
 </span></code></pre></div>
-<p>Update Configuration conf/agent.yml:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">agent</span><span class="p">:</span>
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span><span class="nt">datasources</span><span class="p">:</span>
-</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">      </span><span class="nt">duckdb</span><span class="p">:</span>
-</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">duckdb</span>
-</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">        </span><span class="nt">uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.metricflow/duck.db</span>
-</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>
-</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">  </span><span class="nt">benchmark</span><span class="p">:</span>
-</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">    </span><span class="nt">semantic_layer</span><span class="p">:</span>
-</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">      </span><span class="nt">benchmark_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">benchmark/semantic_layer</span>
+<h2 id="observability">Observability<a class="headerlink" href="#observability" title="Permanent link">&para;</a></h2>
+<p>Datus has three complementary ways to inspect execution:</p>
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>Mechanism</th>
+<th>When to use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Current REPL turn</td>
+<td>Press <code>Ctrl+O</code></td>
+<td>Inspect tool calls, SQL, and raw outputs while interacting locally</td>
+</tr>
+<tr>
+<td>Local files</td>
+<td><code>--save_llm_trace</code> or <code>save_llm_trace: true</code></td>
+<td>Debug exact prompts and model outputs without sending data to a hosted tracing system</td>
+</tr>
+<tr>
+<td>Hosted traces</td>
+<td>LangSmith and/or Langfuse</td>
+<td>Debug full workflow, benchmark, chat, LiteLLM, and OpenAI Agents SDK traces across runs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inline-repl-trace">Inline REPL Trace<a class="headerlink" href="#inline-repl-trace" title="Permanent link">&para;</a></h3>
+<p>In the <code>datus</code> REPL, press <code>Ctrl+O</code> during or after a turn to toggle verbose trace details. Press it again, or <code>q</code>, to return to the compact view.</p>
+<h3 id="local-yaml-traces">Local YAML Traces<a class="headerlink" href="#local-yaml-traces" title="Permanent link">&para;</a></h3>
+<p>Use <code>--save_llm_trace</code> to persist model inputs and outputs:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>uv<span class="w"> </span>run<span class="w"> </span>datus-agent<span class="w"> </span>--save_llm_trace<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span>--config<span class="w"> </span>conf/agent.yml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">  </span>--datasource<span class="w"> </span>local_duckdb<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">  </span>--task_db_name<span class="w"> </span>duckdb-demo<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">  </span>--task<span class="w"> </span><span class="s2">&quot;Summarize the tree table&quot;</span>
 </span></code></pre></div>
-<p>Export Environment Variables:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MF_PATH</span><span class="o">=</span>&lt;/path/to/metricflow&gt;/.venv/bin/mf
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MF_VERBOSE</span><span class="o">=</span><span class="nb">true</span>
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MF_MODEL_PATH</span><span class="o">=</span>&lt;/path/to/semantic-models-dir&gt;
-</span></code></pre></div></p>
-<h3 id="bootstrap-metrics-generation">Bootstrap Metrics Generation<a class="headerlink" href="#bootstrap-metrics-generation" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>python<span class="w"> </span>-m<span class="w"> </span>datus.main<span class="w"> </span>bootstrap-kb<span class="w"> </span>--datasource<span class="w"> </span>duckdb<span class="w"> </span>--components<span class="w"> </span>metrics<span class="w"> </span>--kb_update_strategy<span class="w"> </span>overwrite
+<p>You can also enable it for a custom model entry:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">agent</span><span class="p">:</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="nt">models</span><span class="p">:</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="nt">my-internal</span><span class="p">:</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">      </span><span class="nt">base_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://internal.example.com/v1</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">      </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MY_KEY}</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">      </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">internal-gpt-4</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">      </span><span class="nt">save_llm_trace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </span></code></pre></div>
-<h3 id="run-tests_1">Run Tests<a class="headerlink" href="#run-tests_1" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>python<span class="w"> </span>-m<span class="w"> </span>datus.main<span class="w"> </span>benchmark<span class="w"> </span>--datasource<span class="w"> </span>duckdb<span class="w"> </span>--benchmark<span class="w"> </span>semantic_layer<span class="w"> </span>--workflow<span class="w"> </span>metric_to_sql
+<p>Trace YAML files are written under <code>{agent.home}/trajectory/...</code>. Workflow checkpoints are saved in the same trajectory tree and may include a <code>trace_url</code> metadata field when LangSmith or Langfuse is enabled.</p>
+<h3 id="langsmith">LangSmith<a class="headerlink" href="#langsmith" title="Permanent link">&para;</a></h3>
+<p>LangSmith tracing is enabled only when tracing is explicitly switched on and an API key is available.</p>
+<p>For source development, <code>uv sync --dev</code> installs the LangSmith packages. In a minimal environment, install them into the active Datus environment:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>langsmith<span class="w"> </span>langsmith-fetch
 </span></code></pre></div>
+<p>Set environment variables before starting <code>datus</code> or <code>datus-agent</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LANGSMITH_TRACING</span><span class="o">=</span><span class="nb">true</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LANGSMITH_API_KEY</span><span class="o">=</span>&lt;your-langsmith-key&gt;
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LANGSMITH_PROJECT</span><span class="o">=</span>datus-agent-dev
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="c1"># Optional, for self-hosted LangSmith:</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LANGSMITH_ENDPOINT</span><span class="o">=</span>https://api.smith.langchain.com
+</span></code></pre></div>
+<p><code>LANGCHAIN_TRACING_V2=true</code> and <code>LANGCHAIN_API_KEY</code> are also accepted for compatibility.</p>
+<p>Run any traced path:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>uv<span class="w"> </span>run<span class="w"> </span>datus-agent<span class="w"> </span>benchmark<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">  </span>--config<span class="w"> </span>conf/agent.yml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">  </span>--datasource<span class="w"> </span>bird_sqlite<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">  </span>--benchmark<span class="w"> </span>bird_dev<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">  </span>--benchmark_task_ids<span class="w"> </span><span class="m">14</span>
+</span></code></pre></div>
+<p>View traces in the LangSmith project named by <code>LANGSMITH_PROJECT</code>. Workflow runs log the LangSmith trace URL when the trace ends and persist it in the saved workflow metadata when available.</p>
+<h3 id="langfuse">Langfuse<a class="headerlink" href="#langfuse" title="Permanent link">&para;</a></h3>
+<p>Langfuse requires both public and secret keys. For complete agent/tool spans, keep the OpenInference and OpenTelemetry packages installed; they are included by <code>uv sync --dev</code>.</p>
+<p>In a minimal environment:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>langfuse<span class="w"> </span>openinference-instrumentation-openai-agents<span class="w"> </span>opentelemetry-exporter-otlp
+</span></code></pre></div>
+<p>Set environment variables before starting Datus:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LANGFUSE_PUBLIC_KEY</span><span class="o">=</span>&lt;your-langfuse-public-key&gt;
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LANGFUSE_SECRET_KEY</span><span class="o">=</span>&lt;your-langfuse-secret-key&gt;
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LANGFUSE_HOST</span><span class="o">=</span>https://us.cloud.langfuse.com
+</span></code></pre></div>
+<p>For self-hosted Langfuse, point <code>LANGFUSE_HOST</code> at your instance. If your OTLP ingestion endpoint differs from the UI/API host, set <code>LANGFUSE_OTEL_HOST</code> explicitly. Otherwise Datus derives it from <code>LANGFUSE_HOST</code> or <code>LANGFUSE_BASE_URL</code>.</p>
+<p>Run a command:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>uv<span class="w"> </span>run<span class="w"> </span>datus-agent<span class="w"> </span>bootstrap-kb<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">  </span>--config<span class="w"> </span>conf/agent.yml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">  </span>--datasource<span class="w"> </span>local_duckdb<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">  </span>--components<span class="w"> </span>metadata
+</span></code></pre></div>
+<p>Open the Langfuse project for the key pair you configured. Traces are named by operation, for example:</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Trace name shape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Workflow run</td>
+<td><code>cli/run/&lt;workflow&gt;</code></td>
+</tr>
+<tr>
+<td>Benchmark task</td>
+<td><code>benchmark/&lt;benchmark&gt;/&lt;context&gt;/task-&lt;id&gt;</code></td>
+</tr>
+<tr>
+<td>Knowledge bootstrap</td>
+<td><code>bootstrap-kb/&lt;datasource&gt;/&lt;components&gt;</code></td>
+</tr>
+<tr>
+<td>Chat/API session</td>
+<td><code>chat/&lt;agent&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Tags and metadata include datasource, workflow, benchmark, task id, run id, and <code>agent.home</code> when available.</p>
+<h3 id="running-langsmith-and-langfuse-together">Running LangSmith and Langfuse Together<a class="headerlink" href="#running-langsmith-and-langfuse-together" title="Permanent link">&para;</a></h3>
+<p>Both backends can be enabled in the same process. LangSmith handles SDK tracing through its tracing processor; Langfuse receives LiteLLM callbacks and, when OpenInference is installed, OpenAI Agents SDK spans as well.</p>
+<p>Only one <code>trace_url</code> is stored in workflow metadata. If both systems are enabled and LangSmith has produced a URL, that LangSmith URL takes precedence; Langfuse still receives traces.</p>
+<p>After changing tracing environment variables, restart the Datus process. Tracing setup is initialized once per process.</p>
+<h2 id="useful-references">Useful References<a class="headerlink" href="#useful-references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../getting_started/Quickstart/">Quickstart</a></li>
+<li><a href="../configuration/introduction/">Configuration Guide</a></li>
+<li><a href="../configuration/agent/">Agent Configuration</a></li>
+<li><a href="../benchmark/benchmark_manual/">Benchmark Manual</a></li>
+<li><a href="../configuration/semantic_layer/">Semantic Layer Configuration</a></li>
+<li><a href="../training/llm_trace_usage/">LLM Trace Usage</a></li>
+</ul>
 
 
 
@@ -3790,13 +4049,13 @@
         
         
           
-          <a href="Architecture/" class="md-footer__link md-footer__link--next" aria-label="Next: Architecture">
+          <a href="../vscode_extension/introduction/" class="md-footer__link md-footer__link--next" aria-label="Next: VSCode Extension">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Architecture
+                VSCode Extension
               </div>
             </div>
             <div class="md-footer__button md-icon">
