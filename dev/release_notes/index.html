@@ -985,6 +985,8 @@
       
         
       
+        
+      
     
     
     
@@ -1295,6 +1297,34 @@
     
   
     Data Pipeline (ETL + Migration)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subagent/gen_visual_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTML Report Generation
   
 
     
@@ -3423,6 +3453,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#031" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.3.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#030" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3651,6 +3692,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#031" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.3.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#030" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3859,6 +3911,24 @@
 
 <h1 id="release-notes">Release notes<a class="headerlink" href="#release-notes" title="Permanent link">&para;</a></h1>
 <h2 id="03">0.3<a class="headerlink" href="#03" title="Permanent link">&para;</a></h2>
+<h3 id="031">0.3.1<a class="headerlink" href="#031" title="Permanent link">&para;</a></h3>
+<p><strong>New Features</strong></p>
+<ul>
+<li><strong>HTML Report Generation</strong> - New <code>gen_visual_report</code> subagent turns a question, a metric reference, or your own SQL into a self-contained HTML report (KPI cards, charts, tables, narrative) with section-by-section editing so you can refine a single chart without rewriting the whole report. <a href="https://github.com/Datus-ai/Datus-agent/pull/783">#783</a> <a href="https://github.com/Datus-ai/Datus-agent/pull/821">#821</a> <a href="../subagent/gen_visual_report/">docs</a></li>
+<li><strong>Persistent Plan Mode</strong> - Plan Mode now writes <code>plan.md</code> to disk and restores it on session resume, so closing the CLI mid-plan no longer loses your work. <a href="https://github.com/Datus-ai/Datus-agent/pull/772">#772</a> <a href="../cli/plan_mode/">docs</a></li>
+<li><strong>CLI / TUI Polish</strong> - Live todo sidebar tracks task progress at a glance, plus an inline command wizard, scroll-back search, mouse-drag selection copy, and a draggable scrollbar for a more native terminal feel. <a href="https://github.com/Datus-ai/Datus-agent/pull/772">#772</a></li>
+</ul>
+<p><strong>Enhancements</strong></p>
+<ul>
+<li><strong><code>/permission</code> Command</strong> - Renamed <code>/profile</code> to <code>/permission</code>, with <code>normal</code> / <code>auto</code> / <code>dangerous</code> modes for matching different development workflows. <a href="https://github.com/Datus-ai/Datus-agent/pull/769">#769</a> <a href="../cli/reference/">docs</a></li>
+<li><strong>Custom Subagent Management</strong> - Custom subagents can now be deleted via API or TUI, and the available-tools list per agent type is returned by a single backend source so SaaS and standalone UIs build and edit subagents consistently. <a href="https://github.com/Datus-ai/Datus-agent/pull/807">#807</a> <a href="https://github.com/Datus-ai/Datus-agent/pull/812">#812</a> <a href="../subagent/customized_subagent/">docs</a></li>
+<li><strong>Per-Request Permission Mode</strong> - Chat requests can pick <code>normal</code> / <code>auto</code> / <code>dangerous</code> per call, so multi-tenant SaaS deployments stop polluting a shared default. <a href="https://github.com/Datus-ai/Datus-agent/pull/822">#822</a> <a href="../integration/skills/">docs</a></li>
+</ul>
+<p><strong>Bug Fixes</strong></p>
+<ul>
+<li><strong>Claude / Anthropic Parameter Conflict</strong> - Requests on the Claude / Anthropic route no longer fail when both <code>temperature</code> and <code>top_p</code> are sent in the same call. <a href="https://github.com/Datus-ai/Datus-agent/pull/817">#817</a></li>
+<li><strong>Metric ID Collision Under Missing Subject Path</strong> - Same-named metrics across different subject trees now stay distinct when <code>subject_path</code> was previously absent from the metric id. <a href="https://github.com/Datus-ai/Datus-agent/pull/819">#819</a></li>
+</ul>
 <h3 id="030">0.3.0<a class="headerlink" href="#030" title="Permanent link">&para;</a></h3>
 <p><strong>New Features</strong></p>
 <p><strong><em>Datus API</em></strong></p>

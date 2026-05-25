@@ -994,6 +994,8 @@
       
         
       
+        
+      
     
     
     
@@ -2476,6 +2478,34 @@
     
   
     Data Pipeline (ETL + Migration)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gen_visual_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTML Report Generation
   
 
     
@@ -5744,6 +5774,7 @@
 <li><strong><a href="../gen_job/">gen_job</a></strong> — Data pipeline execution (single-database ETL AND cross-database migration with reconciliation)</li>
 <li><strong><a href="#gen_skill">gen_skill</a></strong> — Skill creation and optimization</li>
 <li><strong><a href="#gen_dashboard">gen_dashboard</a></strong> — BI dashboard CRUD for Superset and Grafana</li>
+<li><strong><a href="../gen_visual_report/">gen_visual_report</a></strong> — Self-contained visual report under <code>reports/&lt;slug&gt;/</code></li>
 <li><strong><a href="#scheduler">scheduler</a></strong> — Airflow job lifecycle management</li>
 </ol>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
@@ -5793,9 +5824,14 @@
 </span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">      </span><span class="nt">max_turns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w">     </span><span class="c1"># Optional: defaults to 30</span>
 </span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">      </span><span class="nt">bi_platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">superset</span><span class="w">  </span><span class="c1"># Optional: explicit platform (auto-detected when only one BI platform is configured)</span>
 </span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">    </span><span class="nt">scheduler</span><span class="p">:</span>
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">      </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">claude</span><span class="w">     </span><span class="c1"># Optional: defaults to configured model</span>
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">      </span><span class="nt">max_turns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w">     </span><span class="c1"># Optional: defaults to 30</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">    </span><span class="nt">gen_visual_report</span><span class="p">:</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">      </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">claude</span><span class="w">            </span><span class="c1"># Optional: defaults to configured model</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">      </span><span class="nt">max_turns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w">            </span><span class="c1"># Optional: defaults to 30</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">      </span><span class="nt">report_dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/report_dist</span><span class="w">  </span><span class="c1"># Optional: local dist path for offline HTML compilation</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="w">    </span><span class="nt">scheduler</span><span class="p">:</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">      </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">claude</span><span class="w">     </span><span class="c1"># Optional: defaults to configured model</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">      </span><span class="nt">max_turns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w">     </span><span class="c1"># Optional: defaults to 30</span>
 </span></code></pre></div>
 <p><strong>Optional configuration parameters:</strong></p>
 <ul>
@@ -6948,6 +6984,13 @@
 <td>Dashboard result</td>
 <td>BI platform</td>
 <td>Dynamic tool exposure, existing serving data, multi-platform</td>
+</tr>
+<tr>
+<td><code>gen_visual_report</code></td>
+<td>Self-contained visual report (narrative, pre-baked queries)</td>
+<td><code>reports/&lt;slug&gt;/</code> (executable SQL + executed results + report components)</td>
+<td>Project root</td>
+<td>Modular section-by-section edits, generate from metrics or your own SQL, CLI auto-opens the report in your browser</td>
 </tr>
 <tr>
 <td><code>scheduler</code></td>

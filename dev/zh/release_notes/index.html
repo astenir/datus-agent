@@ -985,6 +985,8 @@
       
         
       
+        
+      
     
     
     
@@ -1295,6 +1297,34 @@
     
   
     Data Pipeline (ETL + Migration)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subagent/gen_visual_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTML Report Generation
   
 
     
@@ -3423,6 +3453,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#031" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.3.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#030" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3651,6 +3692,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#031" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.3.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#030" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3859,6 +3911,24 @@
 
 <h1 id="_1">发布说明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="03">0.3<a class="headerlink" href="#03" title="Permanent link">&para;</a></h2>
+<h3 id="031">0.3.1<a class="headerlink" href="#031" title="Permanent link">&para;</a></h3>
+<p><strong>新功能</strong></p>
+<ul>
+<li><strong>HTML 报告生成</strong> - 新增 <code>gen_visual_report</code> subagent，把一个问题、一个指标引用或一条 SQL 直接变成自包含的 HTML 报告（KPI 卡片、图表、表格、叙事段落齐全），并支持按章节单独修改，可针对单个图表微调而无需重写整篇报告。<a href="https://github.com/Datus-ai/Datus-agent/pull/783">#783</a> <a href="https://github.com/Datus-ai/Datus-agent/pull/821">#821</a> <a href="../subagent/gen_visual_report/">文档</a></li>
+<li><strong>Plan Mode 持久化</strong> - Plan Mode 现在会把 <code>plan.md</code> 落盘并在会话恢复时一并恢复，CLI 中途关闭也不会丢失正在制定的计划。<a href="https://github.com/Datus-ai/Datus-agent/pull/772">#772</a> <a href="../cli/plan_mode/">文档</a></li>
+<li><strong>CLI / TUI 体验升级</strong> - 新增实时 todo sidebar 直观跟踪任务进度，配合内联命令向导、滚动回查搜索、鼠标拖选复制和可拖拽 scrollbar，使终端交互更接近原生体验。<a href="https://github.com/Datus-ai/Datus-agent/pull/772">#772</a></li>
+</ul>
+<p><strong>增强</strong></p>
+<ul>
+<li><strong><code>/permission</code> 命令</strong> - 将 <code>/profile</code> 更名为 <code>/permission</code>，支持 <code>normal</code> / <code>auto</code> / <code>dangerous</code> 三档模式，适配不同的开发场景。<a href="https://github.com/Datus-ai/Datus-agent/pull/769">#769</a> <a href="../cli/reference/">文档</a></li>
+<li><strong>自定义 Subagent 管理</strong> - 自定义 subagent 支持通过 API 或 TUI 删除；不同 agent 类型的可用工具改由后端统一返回，SaaS 与 standalone UI 创建和编辑 subagent 的行为保持一致。<a href="https://github.com/Datus-ai/Datus-agent/pull/807">#807</a> <a href="https://github.com/Datus-ai/Datus-agent/pull/812">#812</a> <a href="../subagent/customized_subagent/">文档</a></li>
+<li><strong>按次指定权限模式</strong> - Chat 请求支持按次指定 <code>normal</code> / <code>auto</code> / <code>dangerous</code> 权限模式，多租户 SaaS 部署中不会再互相污染共享默认配置。<a href="https://github.com/Datus-ai/Datus-agent/pull/822">#822</a> <a href="../integration/skills/">文档</a></li>
+</ul>
+<p><strong>Bug 修复</strong></p>
+<ul>
+<li><strong>Claude / Anthropic 参数冲突</strong> - 修复 Claude / Anthropic 路由下同时传递 <code>temperature</code> 与 <code>top_p</code> 时请求失败的问题。<a href="https://github.com/Datus-ai/Datus-agent/pull/817">#817</a></li>
+<li><strong>缺少 Subject Path 时的 Metric ID 冲突</strong> - 修复 metric id 未包含 <code>subject_path</code> 时，不同 subject 树下同名 metric 出现冲突的问题。<a href="https://github.com/Datus-ai/Datus-agent/pull/819">#819</a></li>
+</ul>
 <h3 id="030">0.3.0<a class="headerlink" href="#030" title="Permanent link">&para;</a></h3>
 <p><strong>新功能</strong></p>
 <p><strong><em>Datus API</em></strong></p>

@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="zh" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -8,35 +8,35 @@
       
       
       
-        <link rel="canonical" href="https://docs.datus.ai/dev/zh/subagent/customized_subagent/">
+        <link rel="canonical" href="https://docs.datus.ai/dev/subagent/gen_visual_report/">
       
       
-        <link rel="prev" href="../builtin_subagents/">
+        <link rel="prev" href="../gen_job/">
       
       
-        <link rel="next" href="../gen_dashboard/">
+        <link rel="next" href="../../web_chatbot/introduction/">
       
       
         
-          <link rel="alternate" href="../../../subagent/customized_subagent/" hreflang="en">
+          <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="./" hreflang="zh">
+          <link rel="alternate" href="../../zh/subagent/gen_visual_report/" hreflang="zh">
         
       
       
-      <link rel="icon" href="../../../assets/logo-light.png">
+      <link rel="icon" href="../../assets/logo-light.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>自定义 subagent - Datus Docs</title>
+        <title>HTML Report Generation - Datus Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,9 +49,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -86,8 +86,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#subagent" class="md-skip">
-          跳转至
+        <a href="#html-report-generation-guide" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -103,10 +103,10 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../" title="Datus Docs" class="md-header__button md-logo" aria-label="Datus Docs" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Datus Docs" class="md-header__button md-logo" aria-label="Datus Docs" data-md-component="logo">
       
-  <img src="../../../assets/logo-light.png" alt="logo">
+  <img src="../../assets/logo-light.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              自定义 subagent
+              HTML Report Generation
             
           </span>
         </div>
@@ -173,20 +173,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="选择当前语言">
+    <button class="md-header__button md-icon" aria-label="Select language">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../subagent/customized_subagent/" hreflang="en" class="md-select__link">
+            <a href="./" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="./" hreflang="zh" class="md-select__link">
+            <a href="../../zh/subagent/gen_visual_report/" hreflang="zh" class="md-select__link">
               中文
             </a>
           </li>
@@ -207,16 +207,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="查找">
+      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -227,7 +227,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            正在初始化搜索引擎
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -239,7 +239,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/Datus-ai/Datus-agent" title="前往仓库" class="md-source" data-md-component="source">
+        <a href="https://github.com/Datus-ai/Datus-agent" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -260,7 +260,7 @@
         
           
             
-<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -274,13 +274,13 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
   
     
   
-  首页
+  Home
 
         </a>
       </li>
@@ -300,7 +300,7 @@
   
     
   
-  发布说明
+  Release Notes
 
       </a>
     </li>
@@ -327,18 +327,18 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../" title="Datus Docs" class="md-nav__button md-logo" aria-label="Datus Docs" data-md-component="logo">
+    <a href="../.." title="Datus Docs" class="md-nav__button md-logo" aria-label="Datus Docs" data-md-component="logo">
       
-  <img src="../../../assets/logo-light.png" alt="logo">
+  <img src="../../assets/logo-light.png" alt="logo">
 
     </a>
     Datus Docs
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/Datus-ai/Datus-agent" title="前往仓库" class="md-source" data-md-component="source">
+      <a href="https://github.com/Datus-ai/Datus-agent" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -416,14 +416,14 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
     
   
-    首页
+    Home
   
 
     
@@ -445,7 +445,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    首页
+    Home
   
 
           </label>
@@ -491,7 +491,7 @@
   <span class="md-ellipsis">
     
   
-    入门指南
+    Getting Started
   
 
     
@@ -507,7 +507,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    入门指南
+    Getting Started
   
 
           </label>
@@ -527,7 +527,7 @@
   <span class="md-ellipsis">
     
   
-    快速开始
+    Quickstart
   
 
     
@@ -555,7 +555,7 @@
   <span class="md-ellipsis">
     
   
-    数据工程快速开始
+    Data Engineering Quickstart
   
 
     
@@ -583,7 +583,7 @@
   <span class="md-ellipsis">
     
   
-    上下文数据工程
+    Contextual Data Engineering
   
 
     
@@ -681,7 +681,7 @@
   <span class="md-ellipsis">
     
   
-    命令行
+    CLI
   
 
     
@@ -697,7 +697,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    命令行
+    CLI
   
 
           </label>
@@ -717,7 +717,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -745,7 +745,7 @@
   <span class="md-ellipsis">
     
   
-    聊天命令
+    Chat Command
   
 
     
@@ -773,7 +773,7 @@
   <span class="md-ellipsis">
     
   
-    上下文命令
+    Context Command
   
 
     
@@ -801,7 +801,7 @@
   <span class="md-ellipsis">
     
   
-    执行命令
+    Execution Command
   
 
     
@@ -829,7 +829,7 @@
   <span class="md-ellipsis">
     
   
-    MCP 扩展
+    MCP Extensions
   
 
     
@@ -857,7 +857,7 @@
   <span class="md-ellipsis">
     
   
-    SQL 执行
+    SQL Execution
   
 
     
@@ -885,7 +885,7 @@
   <span class="md-ellipsis">
     
   
-    技能命令
+    Skill Command
   
 
     
@@ -913,7 +913,7 @@
   <span class="md-ellipsis">
     
   
-    参考
+    Reference
   
 
     
@@ -941,7 +941,7 @@
   <span class="md-ellipsis">
     
   
-    计划模式
+    Plan Mode
   
 
     
@@ -1053,7 +1053,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -1081,7 +1081,7 @@
   <span class="md-ellipsis">
     
   
-    内置 subagent
+    Built-in subagents
   
 
     
@@ -1099,44 +1099,17 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    自定义 subagent
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../customized_subagent/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    自定义 subagent
+    Customized subagents
   
 
     
@@ -1145,153 +1118,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        概览
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        向导会生成什么
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        向导字段
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="向导字段">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        第 1 步：基础信息
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-tools-mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        第 2 步：Tools 与 MCP
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        第 3 步：范围化上下文
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        第 4 步：Rules
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        TUI 操作说明
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        配置示例
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scoped-context" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scoped Context 的当前语义
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        高级手工配置
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1311,7 +1137,7 @@
   <span class="md-ellipsis">
     
   
-    生成 Dashboard
+    Generate Dashboard
   
 
     
@@ -1339,7 +1165,7 @@
   <span class="md-ellipsis">
     
   
-    生成指标
+    Generate Metrics
   
 
     
@@ -1367,7 +1193,7 @@
   <span class="md-ellipsis">
     
   
-    生成语义模型
+    Generate Semantic Model
   
 
     
@@ -1395,7 +1221,7 @@
   <span class="md-ellipsis">
     
   
-    调度器
+    Scheduler
   
 
     
@@ -1497,10 +1323,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../gen_visual_report/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTML Report Generation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1516,6 +1369,114 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-from-a-metric-or-your-own-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start from a Metric or Your Own SQL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-a-report-gets-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How a Report Gets Built
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-section-by-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit Section by Section
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-agent-has-access-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Agent Has Access To
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-for-better-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips for Better Prompts
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1543,7 +1504,7 @@
   <span class="md-ellipsis">
     
   
-    chatbot
+    Chatbot
   
 
     
@@ -1593,7 +1554,7 @@
   <span class="md-ellipsis">
     
   
-    IM 网关
+    IM Gateway
   
 
     
@@ -1609,7 +1570,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    IM 网关
+    IM Gateway
   
 
           </label>
@@ -1629,7 +1590,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -1685,7 +1646,7 @@
   <span class="md-ellipsis">
     
   
-    飞书
+    Feishu
   
 
     
@@ -1753,7 +1714,7 @@
   <span class="md-ellipsis">
     
   
-    知识库
+    Knowledge Base
   
 
     
@@ -1769,7 +1730,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    知识库
+    Knowledge Base
   
 
           </label>
@@ -1789,7 +1750,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -1817,7 +1778,7 @@
   <span class="md-ellipsis">
     
   
-    外部知识
+    External Knowledge
   
 
     
@@ -1845,7 +1806,7 @@
   <span class="md-ellipsis">
     
   
-    平台文档
+    Platform Documentation
   
 
     
@@ -1873,7 +1834,7 @@
   <span class="md-ellipsis">
     
   
-    元数据
+    Metadata
   
 
     
@@ -1901,7 +1862,7 @@
   <span class="md-ellipsis">
     
   
-    语义模型
+    Semantic Models
   
 
     
@@ -1929,7 +1890,7 @@
   <span class="md-ellipsis">
     
   
-    指标
+    Metrics
   
 
     
@@ -1985,7 +1946,7 @@
   <span class="md-ellipsis">
     
   
-    SQL模板
+    Reference Template
   
 
     
@@ -2045,7 +2006,7 @@
   <span class="md-ellipsis">
     
   
-    工作流
+    Workflow
   
 
     
@@ -2061,7 +2022,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    工作流
+    Workflow
   
 
           </label>
@@ -2081,7 +2042,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -2109,7 +2070,7 @@
   <span class="md-ellipsis">
     
   
-    节点
+    Nodes
   
 
     
@@ -2137,7 +2098,7 @@
   <span class="md-ellipsis">
     
   
-    编排
+    Orchestration
   
 
     
@@ -2261,7 +2222,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -2289,7 +2250,7 @@
   <span class="md-ellipsis">
     
   
-    部署
+    Deployment
   
 
     
@@ -2345,7 +2306,7 @@
   <span class="md-ellipsis">
     
   
-    知识库 API
+    Knowledge Base API
   
 
     
@@ -2411,7 +2372,7 @@
   <span class="md-ellipsis">
     
   
-    配置
+    Configuration
   
 
     
@@ -2427,7 +2388,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    配置
+    Configuration
   
 
           </label>
@@ -2447,7 +2408,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -2503,7 +2464,7 @@
   <span class="md-ellipsis">
     
   
-    工作流
+    Workflow
   
 
     
@@ -2531,7 +2492,7 @@
   <span class="md-ellipsis">
     
   
-    基准测试
+    Benchmark
   
 
     
@@ -2583,7 +2544,7 @@
   <span class="md-ellipsis">
     
   
-    服务
+    Services
   
 
     
@@ -2599,7 +2560,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    服务
+    Services
   
 
           </label>
@@ -2647,7 +2608,7 @@
   <span class="md-ellipsis">
     
   
-    语义层
+    Semantic Layer
   
 
     
@@ -2675,7 +2636,7 @@
   <span class="md-ellipsis">
     
   
-    BI 平台
+    BI Platforms
   
 
     
@@ -2703,7 +2664,7 @@
   <span class="md-ellipsis">
     
   
-    调度器
+    Schedulers
   
 
     
@@ -2767,7 +2728,7 @@
   <span class="md-ellipsis">
     
   
-    节点
+    Nodes
   
 
     
@@ -2827,7 +2788,7 @@
   <span class="md-ellipsis">
     
   
-    适配器
+    Adapters
   
 
     
@@ -2843,7 +2804,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    适配器
+    Adapters
   
 
           </label>
@@ -2863,7 +2824,7 @@
   <span class="md-ellipsis">
     
   
-    数据库适配器
+    Database Adapters
   
 
     
@@ -2891,7 +2852,7 @@
   <span class="md-ellipsis">
     
   
-    语义层适配器
+    Semantic Adapters
   
 
     
@@ -2919,7 +2880,7 @@
   <span class="md-ellipsis">
     
   
-    BI 适配器
+    BI Adapters
   
 
     
@@ -2947,7 +2908,7 @@
   <span class="md-ellipsis">
     
   
-    Scheduler 适配器
+    Scheduler Adapters
   
 
     
@@ -3001,7 +2962,7 @@
   <span class="md-ellipsis">
     
   
-    基准测试
+    Benchmark
   
 
     
@@ -3017,7 +2978,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    基准测试
+    Benchmark
   
 
           </label>
@@ -3037,7 +2998,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -3091,7 +3052,7 @@
   <span class="md-ellipsis">
     
   
-    MetricFlow
+    Metricflow
   
 
     
@@ -3107,7 +3068,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    MetricFlow
+    Metricflow
   
 
           </label>
@@ -3127,7 +3088,7 @@
   <span class="md-ellipsis">
     
   
-    介绍
+    Introduction
   
 
     
@@ -3187,7 +3148,7 @@
   <span class="md-ellipsis">
     
   
-    集成
+    Integration
   
 
     
@@ -3203,7 +3164,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    集成
+    Integration
   
 
           </label>
@@ -3279,7 +3240,7 @@
   <span class="md-ellipsis">
     
   
-    校验
+    Validation
   
 
     
@@ -3307,7 +3268,7 @@
   <span class="md-ellipsis">
     
   
-    自动记忆
+    Auto Memory
   
 
     
@@ -3456,7 +3417,7 @@
   <span class="md-ellipsis">
     
   
-    开发
+    Develop
   
 
     
@@ -3478,7 +3439,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    开发
+    Develop
   
 
           </label>
@@ -3500,7 +3461,7 @@
   <span class="md-ellipsis">
     
   
-    可观测性
+    Observability
   
 
     
@@ -3536,7 +3497,7 @@
   <span class="md-ellipsis">
     
   
-    VSCode 插件
+    VSCode Extension
   
 
     
@@ -3571,7 +3532,7 @@
   <span class="md-ellipsis">
     
   
-    发布说明
+    Release Notes
   
 
     
@@ -3597,7 +3558,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -3606,15 +3567,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      目录
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        概览
+        Overview
       
     </span>
   </a>
@@ -3622,10 +3583,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        向导会生成什么
+        Quick Start
       
     </span>
   </a>
@@ -3633,71 +3594,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#start-from-a-metric-or-your-own-sql" class="md-nav__link">
     <span class="md-ellipsis">
       
-        向导字段
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="向导字段">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        第 1 步：基础信息
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-tools-mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        第 2 步：Tools 与 MCP
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        第 3 步：范围化上下文
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        第 4 步：Rules
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        TUI 操作说明
+        Start from a Metric or Your Own SQL
       
     </span>
   </a>
@@ -3705,10 +3605,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#how-a-report-gets-built" class="md-nav__link">
     <span class="md-ellipsis">
       
-        配置示例
+        How a Report Gets Built
       
     </span>
   </a>
@@ -3716,10 +3616,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scoped-context" class="md-nav__link">
+  <a href="#edit-section-by-section" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scoped Context 的当前语义
+        Edit Section by Section
       
     </span>
   </a>
@@ -3727,10 +3627,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#what-the-agent-has-access-to" class="md-nav__link">
     <span class="md-ellipsis">
       
-        高级手工配置
+        What the Agent Has Access To
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-for-better-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips for Better Prompts
       
     </span>
   </a>
@@ -3754,7 +3676,7 @@
 
 
   
-    <a href="https://github.com/Datus-ai/Datus-agent/edit/main/docs/subagent/customized_subagent.zh.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/Datus-ai/Datus-agent/edit/main/docs/subagent/gen_visual_report.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3762,166 +3684,114 @@
   
 
 
-<h1 id="subagent">自定义 Subagent<a class="headerlink" href="#subagent" title="Permanent link">&para;</a></h1>
-<h2 id="_1">概览<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><code>/agent</code> 和 <code>/subagent</code> 都会打开**统一的 agent 管理 TUI**，内含两个 Tab：</p>
+<h1 id="html-report-generation-guide">HTML Report Generation Guide<a class="headerlink" href="#html-report-generation-guide" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p><code>gen_visual_report</code> turns a question — <em>"how did Q4 revenue do?"</em>, <em>"explain merchant churn in H2"</em> — into a self-contained <strong>HTML report</strong>: a scrollable web page with an executive summary, KPI cards, charts, tables, and narrative paragraphs. In Datus-CLI mode the page opens in your browser automatically; in Datus-SaaS it shows up inline in the chat.</p>
+<p><img alt="Sample HTML report — KPI strip, headline metrics, and a monthly growth trend chart" src="../../assets/gen_visual_report_preview.png" /></p>
+<p>An HTML report is a long-form, narrative answer with the data baked in at build time. There are no filters and no live re-querying once the report is built. For interactive BI dashboards on Superset / Grafana, use <code>gen_dashboard</code> instead.</p>
+<p>If you'd rather have a plain-text <strong>Markdown report</strong> (no HTML rendering, no charts), use <code>/gen_report</code> instead.</p>
+<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<p>Just ask. State the question, the time window, and the breakdowns you care about:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/gen_visual_report<span class="w"> </span>Give<span class="w"> </span>me<span class="w"> </span>a<span class="w"> </span>Q4<span class="w"> </span><span class="m">2025</span><span class="w"> </span>revenue<span class="w"> </span>report.<span class="w"> </span>Show<span class="w"> </span>monthly<span class="w"> </span>trend,<span class="w"> </span>top<span class="w"> </span><span class="m">10</span><span class="w"> </span>regions,<span class="w"> </span>and<span class="w"> </span>a<span class="w"> </span>YoY<span class="w"> </span>comparison<span class="w"> </span>vs<span class="w"> </span>Q4<span class="w"> </span><span class="m">2024</span>.
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/gen_visual_report<span class="w"> </span>Analyze<span class="w"> </span>merchant<span class="w"> </span>churn<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">2025</span><span class="w"> </span>H2,<span class="w"> </span>segment<span class="w"> </span>by<span class="w"> </span>tenure<span class="w"> </span>bucket,<span class="w"> </span>and<span class="w"> </span>give<span class="w"> </span>key<span class="w"> </span>findings<span class="w"> </span>and<span class="w"> </span>recommendations.
+</span></code></pre></div>
+<p>To edit an existing report, reference it by display name or by its short id:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/gen_visual_report<span class="w"> </span>Add<span class="w"> </span>a<span class="w"> </span>channel-level<span class="w"> </span>breakdown<span class="w"> </span>table<span class="w"> </span>to<span class="w"> </span>report<span class="w"> </span>q4_2025_revenue_analysis.
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/gen_visual_report<span class="w"> </span>In<span class="w"> </span><span class="s2">&quot;Q4 2025 Revenue Analysis&quot;</span>,<span class="w"> </span>switch<span class="w"> </span>the<span class="w"> </span>revenue<span class="w"> </span>trend<span class="w"> </span>chart<span class="w"> </span>to<span class="w"> </span>monthly<span class="w"> </span>aggregation.
+</span></code></pre></div>
+<h2 id="start-from-a-metric-or-your-own-sql">Start from a Metric or Your Own SQL<a class="headerlink" href="#start-from-a-metric-or-your-own-sql" title="Permanent link">&para;</a></h2>
+<p><code>gen_visual_report</code> accepts two equally valid starting points:</p>
 <ul>
-<li><strong>Built-in</strong> — 列出 <code>SYS_SUB_AGENTS</code> 中的系统 subagent。任意行按 <code>Enter</code> 把该 agent 设为当前会话默认；按 <code>e</code> 打开单字段表单覆写 <code>max_turns</code>（落盘到 <code>agent.agentic_nodes.&lt;name&gt;</code>）。<code>model</code> 不在 UI 中暴露——模型选择由全局 <code>/model</code> 负责，如果确实需要按节点指定 model 请直接编辑 <code>agent.yml</code>。</li>
-<li><strong>Custom</strong> — 列出 <code>agent.yml</code> 的 <code>agent.agentic_nodes</code> 下自定义 subagent。<code>Enter</code> 设为当前 agent，<code>e</code> 打开向导修改，<code>a</code> 启动向导新建，<code>d d</code>（两次）删除。</li>
+<li>
+<p><strong>From metrics</strong> — reference an existing metric with <code>@Metrics &lt;subject&gt;.&lt;group&gt;.&lt;metric&gt;</code> (three segments — subject tree path + metric name). The agent will pull its definition, dimensions, and time windows from your semantic layer. Best when your project already has a curated metric registry (see <a href="../gen_metrics/">Generate Metrics</a> for how to create them).
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/gen_visual_report<span class="w"> </span>Build<span class="w"> </span>a<span class="w"> </span>Q4<span class="w"> </span><span class="m">2025</span><span class="w"> </span>report<span class="w"> </span>around<span class="w"> </span>@Metrics<span class="w"> </span>revenue.daily.dau<span class="w"> </span>and<span class="w"> </span>@Metrics<span class="w"> </span>conversion.weekly.signup_rate,<span class="w"> </span>broken<span class="w"> </span>down<span class="w"> </span>by<span class="w"> </span>region.
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>From SQL</strong> — paste the SQL you want the report built on. The agent treats your query as the data source, executes it, and assembles the narrative + charts around the result. Best for one-off analyses or when the metric you need doesn't exist yet.
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>/gen_visual_report<span class="w"> </span>Build<span class="w"> </span>a<span class="w"> </span>churn<span class="w"> </span>report<span class="w"> </span>using<span class="w"> </span>this<span class="w"> </span>SQL:
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span>SELECT<span class="w"> </span>signup_month,<span class="w"> </span>tenure_bucket,<span class="w"> </span>churned_users
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>FROM<span class="w"> </span>mart.churn_monthly
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span>WHERE<span class="w"> </span>signup_month<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span><span class="s1">&#39;2025-07-01&#39;</span>
+</span></code></pre></div></p>
+</li>
 </ul>
-<p>原来的 <code>/subagent add|list|remove|update</code> 文本子命令已全部移除，所有操作都在 TUI 内完成。</p>
-<p><code>/agent &lt;name&gt;</code> 仍保留为不启动 TUI 的快捷路径，直接把默认 agent 切到 <code>&lt;name&gt;</code>。</p>
-<h2 id="_2">向导会生成什么<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>向导会写入两部分内容：</p>
-<ol>
-<li><code>agent.agentic_nodes</code> 下的新配置项</li>
-<li>一个名为 <code>{agent_name}_system_{prompt_version}.j2</code> 的提示词模板文件</li>
-</ol>
-<p>当前向导支持两类自定义节点：</p>
+<p>You can also mix the two — point at a metric for the headline KPI and supply ad-hoc SQL for a specific drilldown.</p>
+<h2 id="how-a-report-gets-built">How a Report Gets Built<a class="headerlink" href="#how-a-report-gets-built" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>graph LR
+    A[Your question] --&gt; B[Discover relevant&lt;br/&gt;metrics &amp; tables]
+    B --&gt; C[Run SQL queries&lt;br/&gt;and save results]
+    C --&gt; D[Compose the&lt;br/&gt;narrative + charts]
+    D --&gt; E[Open in your browser]</code></pre>
+<p>The agent reads your question, looks up the metrics and tables that are most relevant, runs the SQL it needs, then composes the executive summary, KPI cards, charts, tables, and recommendations into a single HTML report. You can re-invoke <code>gen_visual_report</code> later to edit the same report in place.</p>
+<h2 id="edit-section-by-section">Edit Section by Section<a class="headerlink" href="#edit-section-by-section" title="Permanent link">&para;</a></h2>
+<p>Every report is built out of independent modules — KPI banner, individual charts, data tables, recommendations block, footer. You can iterate on <strong>just one</strong> without touching anything else:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>/gen_visual_report<span class="w"> </span>Swap<span class="w"> </span>the<span class="w"> </span>revenue<span class="w"> </span>trend<span class="w"> </span>chart<span class="w"> </span><span class="k">in</span><span class="w"> </span>q4_2025_revenue_analysis<span class="w"> </span>to<span class="w"> </span>monthly<span class="w"> </span>aggregation
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>/gen_visual_report<span class="w"> </span>Add<span class="w"> </span>a<span class="w"> </span>YoY<span class="w"> </span>column<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>regional<span class="w"> </span>breakdown<span class="w"> </span>table
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>/gen_visual_report<span class="w"> </span>Drop<span class="w"> </span>the<span class="w"> </span>recommendations<span class="w"> </span>section,<span class="w"> </span>it<span class="err">&#39;</span>s<span class="w"> </span>not<span class="w"> </span>needed<span class="w"> </span><span class="k">for</span><span class="w"> </span>this<span class="w"> </span>audience
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>/gen_visual_report<span class="w"> </span>Update<span class="w"> </span>the<span class="w"> </span>executive<span class="w"> </span>summary<span class="w"> </span>to<span class="w"> </span>emphasize<span class="w"> </span>the<span class="w"> </span>H2<span class="w"> </span>turnaround
+</span></code></pre></div>
+<p>Each call is a surgical change. The agent locates the affected module, edits it, re-runs only the queries that changed, and leaves everything else alone — so the rest of the layout, narrative, and figures stay exactly as you reviewed them. This makes the report cheap to iterate on: refine a wording, swap a chart type, add a column, or remove a section in a single back-and-forth, without ever rewriting the whole thing.</p>
+<h2 id="what-the-agent-has-access-to">What the Agent Has Access To<a class="headerlink" href="#what-the-agent-has-access-to" title="Permanent link">&para;</a></h2>
+<p>To build the report, <code>gen_visual_report</code> uses everything that's already wired into your project:</p>
 <ul>
-<li><code>gen_sql</code>（默认）</li>
-<li><code>gen_report</code></li>
+<li><strong>Your semantic layer</strong> — defined metrics and dimensions take precedence over ad-hoc SQL whenever they fit the question.</li>
+<li><strong>Your databases</strong> — the agent reads schema, samples values, and runs the queries against your configured datasources.</li>
+<li><strong>Your knowledge base</strong> — curated reference SQL and business glossary entries are consulted before the agent writes anything from scratch.</li>
+<li><strong>Previous reports</strong> — when you ask the agent to use an existing report as inspiration, it can read that report's data and components.</li>
 </ul>
-<p>如果你希望创建更高级的 alias，例如 <code>explore</code>、<code>gen_table</code>、<code>gen_skill</code>、<code>gen_dashboard</code>、<code>scheduler</code>，需要手工编辑 <code>agent.yml</code>。</p>
-<h2 id="_3">向导字段<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="1">第 1 步：基础信息<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>system_prompt</code>：subagent 名称，也是配置键名</li>
-<li><code>node_class</code>：<code>gen_sql</code> 或 <code>gen_report</code></li>
-<li><code>agent_description</code>：简短描述，会出现在预览和 task-tool 描述里</li>
-</ul>
-<h3 id="2-tools-mcp">第 2 步：Tools 与 MCP<a class="headerlink" href="#2-tools-mcp" title="Permanent link">&para;</a></h3>
-<p>必须至少选择一个原生工具或一个 MCP 工具。</p>
-<ul>
-<li>原生工具会存成逗号分隔的类别或方法模式，例如 <code>db_tools</code>、<code>semantic_tools.*</code>、<code>context_search_tools.list_subject_tree</code></li>
-<li>MCP 选择会存成逗号分隔的 server 或 <code>server.tool</code> 条目</li>
-</ul>
-<h3 id="3">第 3 步：范围化上下文<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<p>向导当前支持以下范围字段：</p>
-<ul>
-<li><code>tables</code></li>
-<li><code>metrics</code></li>
-<li><code>sqls</code></li>
-</ul>
-<p>保存时，向导还会把当前数据库写入 <code>scoped_context.datasource</code>。</p>
-<h3 id="4-rules">第 4 步：Rules<a class="headerlink" href="#4-rules" title="Permanent link">&para;</a></h3>
-<p>Rules 会以字符串列表形式保存在 <code>rules</code> 中，并追加到最终系统提示词里。</p>
-<h2 id="tui">TUI 操作说明<a class="headerlink" href="#tui" title="Permanent link">&para;</a></h2>
-<p>用 <code>/agent</code>（落在 Built-in Tab）或 <code>/subagent</code>（落在 Custom Tab）打开管理界面。</p>
-<p>列表视图快捷键：</p>
+<p>You don't call any of this yourself — just write the prompt.</p>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p><code>gen_visual_report</code> works out of the box; no configuration is required. The settings below are optional overrides in <code>agent.yml</code>:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">agent</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">agentic_nodes</span><span class="p">:</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">gen_visual_report</span><span class="p">:</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">      </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">claude</span><span class="w">              </span><span class="c1"># Optional: defaults to the configured model</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">      </span><span class="nt">max_turns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w">              </span><span class="c1"># Optional: defaults to 30</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">      </span><span class="nt">report_dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/report_dist</span><span class="w"> </span><span class="c1"># Optional: local renderer assets for offline HTML compilation</span>
+</span></code></pre></div>
 <table>
 <thead>
 <tr>
-<th>按键</th>
-<th>动作</th>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>↑ ↓ / PageUp / PageDown</td>
-<td>上下移动</td>
+<td><code>model</code></td>
+<td>No</td>
+<td>LLM model to use</td>
+<td>Configured default</td>
 </tr>
 <tr>
-<td><code>Tab</code> 或 ← →</td>
-<td>切换 Built-in ↔ Custom</td>
+<td><code>max_turns</code></td>
+<td>No</td>
+<td>Maximum agent iterations before the run stops</td>
+<td>30</td>
 </tr>
 <tr>
-<td><code>Enter</code></td>
-<td>将高亮行设为当前 agent（Custom Tab 尾部的 <code>+ Add agent…</code> 行则进入向导新建态）</td>
-</tr>
-<tr>
-<td><code>e</code></td>
-<td>Built-in：打开 model / max_turns 覆写表单；Custom：对高亮项启动向导</td>
-</tr>
-<tr>
-<td><code>a</code></td>
-<td>（Custom）启动向导创建新的自定义 subagent</td>
-</tr>
-<tr>
-<td>连按两次 <code>d</code></td>
-<td>（Custom）删除高亮行（第一次预警、第二次确认）</td>
-</tr>
-<tr>
-<td><code>Esc</code> / <code>Ctrl+C</code></td>
-<td>取消</td>
+<td><code>report_dist</code></td>
+<td>No</td>
+<td>Local directory with pre-built renderer assets. When set, the compiled report references these local files instead of loading from a CDN — useful for offline / air-gapped use.</td>
+<td>Empty (CDN mode)</td>
 </tr>
 </tbody>
 </table>
-<p>Built-in 编辑表单快捷键：</p>
-<table>
-<thead>
-<tr>
-<th>按键</th>
-<th>动作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>输入整数</td>
-<td>直接在输入框编辑 <code>max_turns</code></td>
-</tr>
-<tr>
-<td><code>Enter</code> / <code>Ctrl+S</code></td>
-<td>保存覆写</td>
-</tr>
-<tr>
-<td><code>Esc</code></td>
-<td>返回 agent 列表</td>
-</tr>
-</tbody>
-</table>
-<p>覆写只会把 <code>max_turns</code> 写入 <code>agent.agentic_nodes.&lt;name&gt;</code>，同一节点下的 <code>scoped_context</code>、<code>rules</code>、<code>tools</code> 以及 YAML 中手工写入的 <code>model</code> 覆写都会被保留。清空输入（留空 <code>max_turns</code>）会移除覆写；若该节点下没有其他字段，整个节点配置项也会从 YAML 中删除。</p>
-<h2 id="_4">配置示例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>生成后的配置通常类似这样：</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">agent</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">agentic_nodes</span><span class="p">:</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">finance_report</span><span class="p">:</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nt">system_prompt</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">finance_report</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="nt">node_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gen_report</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="nt">prompt_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0&quot;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="nt">prompt_language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nt">agent_description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;财务分析助手&quot;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="nt">tools</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">semantic_tools.*, db_tools.*, context_search_tools.list_subject_tree</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">mcp</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">rules</span><span class="p">:</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">优先复用已有财务指标，再决定是否编写新 SQL</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="nt">scoped_context</span><span class="p">:</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="nt">datasource</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">finance</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="nt">tables</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mart.finance_daily</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="nt">metrics</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">finance.revenue.daily_revenue</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="nt">sqls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">finance.revenue.region_rollup</span>
-</span></code></pre></div>
-<h2 id="scoped-context">Scoped Context 的当前语义<a class="headerlink" href="#scoped-context" title="Permanent link">&para;</a></h2>
-<p>当前代码已经不再为每个 subagent 构建单独的 scoped knowledge-base 目录。</p>
-<p>现在的行为是：</p>
+<p><code>report_dist</code> can also come from the <code>--report-dist</code> CLI flag.</p>
+<h2 id="tips-for-better-prompts">Tips for Better Prompts<a class="headerlink" href="#tips-for-better-prompts" title="Permanent link">&para;</a></h2>
+<p>You'll get a sharper report when your prompt includes:</p>
 <ul>
-<li>范围信息保存在 <code>agentic_nodes.&lt;name&gt;.scoped_context</code></li>
-<li>Datus 在查询时对共享的全局存储施加过滤</li>
-<li>数据库工具也可能根据当前 subagent 缩小可见表范围</li>
+<li><strong>The question</strong> — <em>"explain merchant churn"</em>, <em>"compare Q4 revenue YoY"</em>.</li>
+<li><strong>The time window</strong> — <em>"Q4 2025"</em>, <em>"last 90 days"</em>, <em>"2025 H2"</em>.</li>
+<li><strong>The scope</strong> — region, segment, product line, or team.</li>
+<li><strong>The breakdowns you want</strong> — <em>"by region"</em>, <em>"by tenure bucket"</em>, <em>"monthly trend"</em>.</li>
 </ul>
-<p>这意味着：</p>
-<ul>
-<li>当前 CLI 没有 <code>/subagent bootstrap</code> 子命令</li>
-<li><code>scoped_kb_path</code> 已废弃，新保存的配置不会持久化该字段</li>
-<li>全局知识仍然需要通过 <code>datus-agent bootstrap-kb</code> 单独构建</li>
-</ul>
-<h2 id="_5">高级手工配置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>向导覆盖的是最常见的 <code>gen_sql</code> 和 <code>gen_report</code> 场景。更高级的配置请直接编辑 <code>agent.yml</code>。</p>
-<p>例如：</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">agent</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">agentic_nodes</span><span class="p">:</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">sales_dashboard</span><span class="p">:</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">node_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gen_dashboard</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">claude</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">bi_platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">superset</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="nt">max_turns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nt">etl_scheduler</span><span class="p">:</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">      </span><span class="nt">node_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scheduler</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">claude</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">      </span><span class="nt">max_turns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
-</span></code></pre></div>
-<p>支持的节点类别以及运行时行为，见 <a href="../introduction/">Subagent 指南</a> 和 <a href="../builtin_subagents/">内置 subagent</a>。</p>
+<p>If you skip any of these the agent will guess from your project's metrics and ask only when intent is genuinely ambiguous.</p>
 
 
 
@@ -3950,33 +3820,33 @@
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../builtin_subagents/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 内置 subagent">
+          <a href="../gen_job/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Data Pipeline (ETL + Migration)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                上一页
+                Previous
               </span>
               <div class="md-ellipsis">
-                内置 subagent
+                Data Pipeline (ETL + Migration)
               </div>
             </div>
           </a>
         
         
           
-          <a href="../gen_dashboard/" class="md-footer__link md-footer__link--next" aria-label="下一页: 生成 Dashboard">
+          <a href="../../web_chatbot/introduction/" class="md-footer__link md-footer__link--next" aria-label="Next: Chatbot">
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                下一页
+                Next
               </span>
               <div class="md-ellipsis">
-                生成 Dashboard
+                Chatbot
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -4066,10 +3936,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tracking", "navigation.indexes", "content.code.copy", "content.code.select", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tracking", "navigation.indexes", "content.code.copy", "content.code.select", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
