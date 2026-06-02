@@ -25,6 +25,47 @@ X-Datus-User-Id: alice
 Datasource isolation is controlled separately by the `--datasource` CLI flag (or `DATUS_DATASOURCE` env var) and selects
 which datasource from `agent.yml` is used to load databases and knowledge.
 
+### Optional RBAC Login Provider
+
+Deployments that need username/password login and role-based datasource
+scoping can configure the built-in RBAC auth provider. It issues JWT bearer
+tokens from `POST /api/v1/auth/login`; subsequent v1 API requests must send
+`Authorization: Bearer <token>`. Each role maps to datasource allowlists, which
+reuse the existing `allowed_databases`, `allowed_schemas`, and
+`allowed_tables` enforcement in datasource connectors.
+
+```yaml
+agent:
+  api:
+    auth_provider:
+      class: datus.api.auth.rbac_provider.RbacAuthProvider
+      kwargs:
+        jwt:
+          secret_key: ${DATUS_RBAC_JWT_SECRET}
+          expiration_hours: 8
+        users:
+          alice:
+            password_hash: pbkdf2_sha256$...
+            roles: [analyst]
+        roles:
+          analyst:
+            datasources:
+              finance:
+                allowed_schemas: [mart]
+                allowed_tables:
+                  - mart.finance_daily
+                  - mart.finance_budget
+```
+
+Generate password hashes with:
+
+```bash
+uv run python -c "from datus.api.auth import RbacAuthProvider; print(RbacAuthProvider.hash_password('replace-me'))"
+```
+
+For non-interactive secret management, a user entry may use
+`password_env: ENV_VAR_NAME` instead of `password_hash`.
+
 ## Response envelope
 
 Almost every JSON response is wrapped in a generic `Result[T]` envelope:

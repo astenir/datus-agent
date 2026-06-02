@@ -29,11 +29,25 @@ class _NotAnAuth:
         pass
 
 
+class _DatasourceAwareAuth:
+    """AuthProvider implementation that asks loader for datasource injection."""
+
+    def __init__(self, datasource: str):
+        self.datasource = datasource
+
+    async def authenticate(self, request):  # pragma: no cover - not exercised here
+        return None
+
+    def on_evict(self, callback) -> None:  # pragma: no cover
+        return None
+
+
 @pytest.fixture
 def fake_module():
     mod_name = "_datus_test_fake_auth_mod"
     mod = types.ModuleType(mod_name)
     mod.DummyAuth = _DummyAuth
+    mod.DatasourceAwareAuth = _DatasourceAwareAuth
     mod.NotAnAuth = _NotAnAuth
     sys.modules[mod_name] = mod
     yield mod_name
@@ -68,6 +82,13 @@ def test_load_custom_colon_separator(fake_module):
     cfg = {"auth_provider": {"class": f"{fake_module}:DummyAuth"}}
     provider = load_auth_provider(cfg, datasource="ns")
     assert isinstance(provider, _DummyAuth)
+
+
+def test_load_custom_injects_datasource_when_constructor_accepts_it(fake_module):
+    cfg = {"auth_provider": {"class": f"{fake_module}:DatasourceAwareAuth"}}
+    provider = load_auth_provider(cfg, datasource="finance")
+    assert isinstance(provider, _DatasourceAwareAuth)
+    assert provider.datasource == "finance"
 
 
 def test_invalid_class_path():

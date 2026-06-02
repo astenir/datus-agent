@@ -100,5 +100,13 @@ def get_app_context(request: Request) -> AppContext:
     return ctx
 
 
+def get_auth_provider() -> AuthProvider:
+    """Return the initialized auth provider for auth-specific routes."""
+    if _auth_provider is None:
+        raise RuntimeError("Auth provider not initialized. Call init_deps() in lifespan.")
+    return _auth_provider
+
+
 ServiceDep = Annotated[DatusService, Depends(get_datus_service)]
 AppContextDep = Annotated[AppContext, Depends(get_app_context)]
+AuthProviderDep = Annotated[AuthProvider, Depends(get_auth_provider)]

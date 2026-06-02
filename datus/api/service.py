@@ -465,6 +465,7 @@ def create_app(agent_args: argparse.Namespace) -> FastAPI:
 
     # Register new API v1 routes from plugin system (with lazy imports)
     _route_modules = [
+        ("datus.api.routes.auth_routes", "auth"),
         ("datus.api.routes.chat_routes", "chat"),
         ("datus.api.routes.cli_routes", "cli"),
         ("datus.api.routes.database_routes", "database"),

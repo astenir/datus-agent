@@ -6,6 +6,7 @@ provider is configured.
 """
 
 import importlib
+import inspect
 from typing import Any, Dict, Optional
 
 from datus.api.auth.no_auth_provider import NoAuthProvider
@@ -57,7 +58,13 @@ def load_auth_provider(api_config: Optional[Dict[str, Any]], datasource: str) ->
             message=f"Auth provider class {class_name!r} not found in module {module_name!r}",
         ) from e
 
-    kwargs = spec.get("kwargs") or {}
+    kwargs = dict(spec.get("kwargs") or {})
+    try:
+        signature = inspect.signature(cls)
+        if "datasource" in signature.parameters and "datasource" not in kwargs:
+            kwargs["datasource"] = datasource
+    except (TypeError, ValueError):
+        pass
     try:
         instance = cls(**kwargs)
     except Exception as e:

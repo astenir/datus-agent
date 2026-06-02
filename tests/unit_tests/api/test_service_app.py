@@ -49,6 +49,13 @@ class TestCreateApp:
         has_api_routes = any("/api/" in p for p in route_paths)
         assert has_api_routes
 
+    def test_create_app_registers_v1_auth_login_route(self):
+        """create_app exposes the RBAC login endpoint with v1 routes."""
+        args = argparse.Namespace(config="", datasource="default", output_dir="./output", log_level="INFO")
+        app = create_app(args)
+        route_paths = {route.path for route in app.routes}
+        assert "/api/v1/auth/login" in route_paths
+
 
 class TestDatusAPIServiceInit:
     """Tests for DatusAPIService initialization."""
