@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="zh" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -8,35 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://docs.datus.ai/dev/API/introduction/">
+        <link rel="canonical" href="https://docs.datus.ai/dev/zh/API/frontend_contract/">
       
       
-        <link rel="prev" href="../../workflow/api/">
-      
-      
-        <link rel="next" href="../deployment/">
       
       
         
-          <link rel="alternate" href="./" hreflang="en">
+          <link rel="alternate" href="../../../API/frontend_contract/" hreflang="en">
         
-          <link rel="alternate" href="../../zh/API/introduction/" hreflang="zh">
+          <link rel="alternate" href="./" hreflang="zh">
         
       
       
-      <link rel="icon" href="../../assets/logo-light.png">
+      <link rel="icon" href="../../../assets/logo-light.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Introduction - Datus Docs</title>
+        <title>Frontend API Contract - Datus Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,9 +45,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,8 +72,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-introduction" class="md-skip">
-          Skip to content
+        <a href="#frontend-api-contract" class="md-skip">
+          跳转至
         </a>
       
     </div>
@@ -93,10 +89,10 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Datus Docs" class="md-header__button md-logo" aria-label="Datus Docs" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../" title="Datus Docs" class="md-header__button md-logo" aria-label="Datus Docs" data-md-component="logo">
       
-  <img src="../../assets/logo-light.png" alt="logo">
+  <img src="../../../assets/logo-light.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              Frontend API Contract
             
           </span>
         </div>
@@ -163,20 +159,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Select language">
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="./" hreflang="en" class="md-select__link">
+            <a href="../../../API/frontend_contract/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="../../zh/API/introduction/" hreflang="zh" class="md-select__link">
+            <a href="./" hreflang="zh" class="md-select__link">
               中文
             </a>
           </li>
@@ -197,16 +193,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="查找">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -217,7 +213,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            正在初始化搜索引擎
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -229,7 +225,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/Datus-ai/Datus-agent" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/Datus-ai/Datus-agent" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -250,7 +246,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -258,19 +254,17 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../.." class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
           
   
   
     
   
-  Home
+  首页
 
         </a>
       </li>
@@ -290,7 +284,7 @@
   
     
   
-  Release Notes
+  发布说明
 
       </a>
     </li>
@@ -317,18 +311,18 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Datus Docs" class="md-nav__button md-logo" aria-label="Datus Docs" data-md-component="logo">
+    <a href="../../" title="Datus Docs" class="md-nav__button md-logo" aria-label="Datus Docs" data-md-component="logo">
       
-  <img src="../../assets/logo-light.png" alt="logo">
+  <img src="../../../assets/logo-light.png" alt="logo">
 
     </a>
     Datus Docs
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/Datus-ai/Datus-agent" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/Datus-ai/Datus-agent" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -345,8 +339,6 @@
       
   
   
-    
-  
   
   
     
@@ -392,28 +384,25 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
     
   
-    Home
+    首页
   
 
     
@@ -424,18 +413,18 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Home
+    首页
   
 
           </label>
@@ -481,7 +470,7 @@
   <span class="md-ellipsis">
     
   
-    Getting Started
+    入门指南
   
 
     
@@ -497,7 +486,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Getting Started
+    入门指南
   
 
           </label>
@@ -517,7 +506,7 @@
   <span class="md-ellipsis">
     
   
-    Quickstart
+    快速开始
   
 
     
@@ -545,7 +534,7 @@
   <span class="md-ellipsis">
     
   
-    Data Engineering Quickstart
+    数据工程快速开始
   
 
     
@@ -573,7 +562,7 @@
   <span class="md-ellipsis">
     
   
-    Contextual Data Engineering
+    上下文数据工程
   
 
     
@@ -673,7 +662,7 @@
   <span class="md-ellipsis">
     
   
-    CLI
+    命令行
   
 
     
@@ -689,7 +678,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    CLI
+    命令行
   
 
           </label>
@@ -709,7 +698,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction
+    介绍
   
 
     
@@ -737,7 +726,7 @@
   <span class="md-ellipsis">
     
   
-    Chat Command
+    聊天命令
   
 
     
@@ -765,7 +754,7 @@
   <span class="md-ellipsis">
     
   
-    Context Command
+    上下文命令
   
 
     
@@ -793,7 +782,7 @@
   <span class="md-ellipsis">
     
   
-    Execution Command
+    执行命令
   
 
     
@@ -821,7 +810,7 @@
   <span class="md-ellipsis">
     
   
-    MCP Extensions
+    MCP 扩展
   
 
     
@@ -849,7 +838,7 @@
   <span class="md-ellipsis">
     
   
-    SQL Execution
+    SQL 执行
   
 
     
@@ -877,7 +866,7 @@
   <span class="md-ellipsis">
     
   
-    Skill Command
+    技能命令
   
 
     
@@ -905,7 +894,7 @@
   <span class="md-ellipsis">
     
   
-    Reference
+    参考
   
 
     
@@ -933,7 +922,7 @@
   <span class="md-ellipsis">
     
   
-    Plan Mode
+    计划模式
   
 
     
@@ -961,7 +950,7 @@
   <span class="md-ellipsis">
     
   
-    Other Commands
+    其他命令
   
 
     
@@ -1075,7 +1064,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction
+    介绍
   
 
     
@@ -1103,7 +1092,7 @@
   <span class="md-ellipsis">
     
   
-    Built-in subagents
+    内置 subagent
   
 
     
@@ -1131,7 +1120,7 @@
   <span class="md-ellipsis">
     
   
-    Customized subagents
+    自定义 subagent
   
 
     
@@ -1159,7 +1148,7 @@
   <span class="md-ellipsis">
     
   
-    Generate Dashboard
+    生成 Dashboard
   
 
     
@@ -1187,7 +1176,7 @@
   <span class="md-ellipsis">
     
   
-    Generate Metrics
+    生成指标
   
 
     
@@ -1215,7 +1204,7 @@
   <span class="md-ellipsis">
     
   
-    Ask Metrics
+    指标问答
   
 
     
@@ -1243,7 +1232,7 @@
   <span class="md-ellipsis">
     
   
-    Generate Semantic Model
+    生成语义模型
   
 
     
@@ -1271,7 +1260,7 @@
   <span class="md-ellipsis">
     
   
-    Scheduler
+    调度器
   
 
     
@@ -1503,7 +1492,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction
+    介绍
   
 
     
@@ -1559,7 +1548,7 @@
   <span class="md-ellipsis">
     
   
-    Built-in Skills
+    内置 Skills
   
 
     
@@ -1575,7 +1564,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Built-in Skills
+    内置 Skills
   
 
           </label>
@@ -1595,7 +1584,7 @@
   <span class="md-ellipsis">
     
   
-    Init
+    初始化
   
 
     
@@ -1623,7 +1612,7 @@
   <span class="md-ellipsis">
     
   
-    Build KB
+    构建知识库
   
 
     
@@ -1651,7 +1640,7 @@
   <span class="md-ellipsis">
     
   
-    Storage Classify
+    存储分类
   
 
     
@@ -1679,7 +1668,7 @@
   <span class="md-ellipsis">
     
   
-    Extract Knowledge
+    知识提取
   
 
     
@@ -1707,7 +1696,7 @@
   <span class="md-ellipsis">
     
   
-    Memory Organization
+    记忆整理
   
 
     
@@ -1735,7 +1724,7 @@
   <span class="md-ellipsis">
     
   
-    Session Summarize
+    会话总结
   
 
     
@@ -1779,7 +1768,7 @@
   <span class="md-ellipsis">
     
   
-    Chatbot
+    chatbot
   
 
     
@@ -1829,7 +1818,7 @@
   <span class="md-ellipsis">
     
   
-    IM Gateway
+    IM 网关
   
 
     
@@ -1845,7 +1834,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    IM Gateway
+    IM 网关
   
 
           </label>
@@ -1865,7 +1854,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction
+    介绍
   
 
     
@@ -1921,7 +1910,7 @@
   <span class="md-ellipsis">
     
   
-    Feishu
+    飞书
   
 
     
@@ -1987,7 +1976,7 @@
   <span class="md-ellipsis">
     
   
-    Knowledge Base
+    知识库
   
 
     
@@ -2003,7 +1992,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Knowledge Base
+    知识库
   
 
           </label>
@@ -2023,7 +2012,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction
+    介绍
   
 
     
@@ -2051,7 +2040,7 @@
   <span class="md-ellipsis">
     
   
-    Platform Documentation
+    平台文档
   
 
     
@@ -2079,7 +2068,7 @@
   <span class="md-ellipsis">
     
   
-    Metadata
+    元数据
   
 
     
@@ -2107,7 +2096,7 @@
   <span class="md-ellipsis">
     
   
-    Semantic Models
+    语义模型
   
 
     
@@ -2135,7 +2124,7 @@
   <span class="md-ellipsis">
     
   
-    Metrics
+    指标
   
 
     
@@ -2191,7 +2180,7 @@
   <span class="md-ellipsis">
     
   
-    Reference Template
+    SQL模板
   
 
     
@@ -2251,7 +2240,7 @@
   <span class="md-ellipsis">
     
   
-    Workflow
+    工作流
   
 
     
@@ -2267,7 +2256,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Workflow
+    工作流
   
 
           </label>
@@ -2287,7 +2276,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction
+    介绍
   
 
     
@@ -2315,7 +2304,7 @@
   <span class="md-ellipsis">
     
   
-    Nodes
+    节点
   
 
     
@@ -2343,7 +2332,7 @@
   <span class="md-ellipsis">
     
   
-    Orchestration
+    编排
   
 
     
@@ -2397,10 +2386,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -2421,11 +2408,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_10" >
         
           
           <label class="md-nav__link" for="__nav_1_10" id="__nav_1_10_label" tabindex="0">
@@ -2446,7 +2433,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2461,44 +2448,17 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introduction
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Introduction
+    介绍
   
 
     
@@ -2507,81 +2467,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#authentication-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Authentication model
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-envelope" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Response envelope
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#global-url-prefix" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Global URL prefix
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next steps
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2601,7 +2486,7 @@
   <span class="md-ellipsis">
     
   
-    Deployment
+    部署
   
 
     
@@ -2657,7 +2542,7 @@
   <span class="md-ellipsis">
     
   
-    Knowledge Base API
+    知识库 API
   
 
     
@@ -2755,7 +2640,7 @@
   <span class="md-ellipsis">
     
   
-    Configuration
+    配置
   
 
     
@@ -2771,7 +2656,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Configuration
+    配置
   
 
           </label>
@@ -2791,7 +2676,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction
+    介绍
   
 
     
@@ -2847,7 +2732,7 @@
   <span class="md-ellipsis">
     
   
-    Context Compaction
+    上下文压缩
   
 
     
@@ -2875,7 +2760,7 @@
   <span class="md-ellipsis">
     
   
-    Workflow
+    工作流
   
 
     
@@ -2903,7 +2788,7 @@
   <span class="md-ellipsis">
     
   
-    Benchmark
+    基准测试
   
 
     
@@ -2983,7 +2868,7 @@
   <span class="md-ellipsis">
     
   
-    Services
+    服务
   
 
     
@@ -2999,7 +2884,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Services
+    服务
   
 
           </label>
@@ -3047,7 +2932,7 @@
   <span class="md-ellipsis">
     
   
-    Semantic Layer
+    语义层
   
 
     
@@ -3075,7 +2960,7 @@
   <span class="md-ellipsis">
     
   
-    BI Platforms
+    BI 平台
   
 
     
@@ -3103,7 +2988,7 @@
   <span class="md-ellipsis">
     
   
-    Schedulers
+    调度器
   
 
     
@@ -3167,7 +3052,7 @@
   <span class="md-ellipsis">
     
   
-    Nodes
+    节点
   
 
     
@@ -3227,7 +3112,7 @@
   <span class="md-ellipsis">
     
   
-    Adapters
+    适配器
   
 
     
@@ -3243,7 +3128,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Adapters
+    适配器
   
 
           </label>
@@ -3263,7 +3148,7 @@
   <span class="md-ellipsis">
     
   
-    Database Adapters
+    数据库适配器
   
 
     
@@ -3313,7 +3198,7 @@
   <span class="md-ellipsis">
     
   
-    Semantic Adapters
+    语义层适配器
   
 
     
@@ -3329,7 +3214,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Semantic Adapters
+    语义层适配器
   
 
           </label>
@@ -3349,7 +3234,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    概览
   
 
     
@@ -3377,7 +3262,7 @@
   <span class="md-ellipsis">
     
   
-    MetricFlow Semantic Adapter
+    MetricFlow 语义适配器
   
 
     
@@ -3405,7 +3290,7 @@
   <span class="md-ellipsis">
     
   
-    OSI Semantic Adapter
+    OSI 语义适配器
   
 
     
@@ -3441,7 +3326,7 @@
   <span class="md-ellipsis">
     
   
-    BI Adapters
+    BI 适配器
   
 
     
@@ -3469,7 +3354,7 @@
   <span class="md-ellipsis">
     
   
-    Scheduler Adapters
+    Scheduler 适配器
   
 
     
@@ -3523,7 +3408,7 @@
   <span class="md-ellipsis">
     
   
-    Benchmark
+    基准测试
   
 
     
@@ -3539,7 +3424,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Benchmark
+    基准测试
   
 
           </label>
@@ -3559,7 +3444,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction
+    介绍
   
 
     
@@ -3617,7 +3502,7 @@
   <span class="md-ellipsis">
     
   
-    Integration
+    集成
   
 
     
@@ -3633,7 +3518,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Integration
+    集成
   
 
           </label>
@@ -3681,7 +3566,7 @@
   <span class="md-ellipsis">
     
   
-    Validation
+    校验
   
 
     
@@ -3709,7 +3594,7 @@
   <span class="md-ellipsis">
     
   
-    Auto Memory
+    自动记忆
   
 
     
@@ -3858,7 +3743,7 @@
   <span class="md-ellipsis">
     
   
-    Develop
+    开发
   
 
     
@@ -3880,7 +3765,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Develop
+    开发
   
 
           </label>
@@ -3902,7 +3787,7 @@
   <span class="md-ellipsis">
     
   
-    Observability
+    可观测性
   
 
     
@@ -3938,7 +3823,7 @@
   <span class="md-ellipsis">
     
   
-    VSCode Extension
+    VSCode 插件
   
 
     
@@ -3973,7 +3858,7 @@
   <span class="md-ellipsis">
     
   
-    Release Notes
+    发布说明
   
 
     
@@ -3999,7 +3884,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
   
@@ -4008,15 +3893,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#authentication-model" class="md-nav__link">
+  <a href="#source-of-truth" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Authentication model
+        Source Of Truth
       
     </span>
   </a>
@@ -4024,10 +3909,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#response-envelope" class="md-nav__link">
+  <a href="#json-response-envelope" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Response envelope
+        JSON Response Envelope
       
     </span>
   </a>
@@ -4035,10 +3920,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#global-url-prefix" class="md-nav__link">
+  <a href="#request-context-headers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Global URL prefix
+        Request Context Headers
       
     </span>
   </a>
@@ -4046,10 +3931,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#streaming-endpoints" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Troubleshooting
+        Streaming Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Streaming Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chat-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat Stream
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-base-streams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Knowledge Base Streams
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend-type-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend Type Strategy
       
     </span>
   </a>
@@ -4057,10 +3981,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
+  <a href="#high-use-frontend-endpoints" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next steps
+        High-Use Frontend Endpoints
       
     </span>
   </a>
@@ -4084,7 +4008,7 @@
 
 
   
-    <a href="https://github.com/Datus-ai/Datus-agent/edit/main/docs/API/introduction.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/Datus-ai/Datus-agent/edit/main/docs/API/frontend_contract.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -4092,105 +4016,111 @@
   
 
 
-<h1 id="api-introduction">API Introduction<a class="headerlink" href="#api-introduction" title="Permanent link">&para;</a></h1>
-<p>The Datus REST API exposes the agentic chat loop, knowledge-base explorer, database catalog, and semantic-model
-management as HTTP endpoints. It is started via the <code>datus-api</code> command.</p>
-<p>The HTTP service shares the same configuration, knowledge base, and agent capabilities as the <code>datus</code> CLI and the
-<code>datus-mcp</code> MCP server — three entry points backed by one engine.</p>
-<table>
-<thead>
-<tr>
-<th>Entry point</th>
-<th>Best for</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>CLI</strong> (<code>datus</code>)</td>
-<td>Local interactive development</td>
-</tr>
-<tr>
-<td><strong>MCP</strong> (<code>datus-mcp</code>)</td>
-<td>Embedding tools in another agent</td>
-</tr>
-<tr>
-<td><strong>REST API</strong> (<code>datus-api</code>)</td>
-<td>Web frontends, services, automation</td>
-</tr>
-</tbody>
-</table>
-<h2 id="authentication-model">Authentication model<a class="headerlink" href="#authentication-model" title="Permanent link">&para;</a></h2>
-<p>The open-source build ships a header-based identification scheme. There is no token; the caller identifies itself
-by sending a <code>X-Datus-User-Id</code> header whose value matches <code>^[A-Za-z0-9_-]+$</code>. When omitted, requests run under a
-default unscoped session; when present, the user id is used to isolate chat sessions and tool state per user.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>X-Datus-User-Id: alice
+<h1 id="frontend-api-contract">Frontend API Contract<a class="headerlink" href="#frontend-api-contract" title="Permanent link">&para;</a></h1>
+<p>This document records the API contract expected by web frontends.</p>
+<h2 id="source-of-truth">Source Of Truth<a class="headerlink" href="#source-of-truth" title="Permanent link">&para;</a></h2>
+<p>Use the running FastAPI service as the machine-readable contract:</p>
+<ul>
+<li>Swagger UI: <code>GET /docs</code></li>
+<li>OpenAPI schema: <code>GET /openapi.json</code></li>
+<li>Health check: <code>GET /health</code></li>
+</ul>
+<p>Generate frontend TypeScript types from <code>/openapi.json</code> for ordinary JSON endpoints.</p>
+<p>Example:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>http://127.0.0.1:8000/openapi.json<span class="w"> </span>-o<span class="w"> </span>openapi.json
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>npx<span class="w"> </span>openapi-typescript<span class="w"> </span>openapi.json<span class="w"> </span>-o<span class="w"> </span>src/types/openapi.d.ts
 </span></code></pre></div>
-<p>SQL policies use a separate request principal. When <code>agent.sql_policy.enabled</code> is <code>true</code>, send business
-scope fields in <code>X-Datus-Principal</code> as a JSON object, for example <code>{"market_code":"MKT300"}</code>. <code>X-Datus-User-Id</code>
-does not populate SQL policy principal fields. See <a href="../../configuration/sql_policy/">SQL Policy</a>.
-Do not include <code>user_id</code> in <code>X-Datus-Principal</code>; that field is reserved for <code>X-Datus-User-Id</code> and will be rejected.</p>
-<p>Datasource isolation is controlled separately by the <code>--datasource</code> CLI flag (or <code>DATUS_DATASOURCE</code> env var) and selects
-which datasource from <code>agent.yml</code> is used to load databases and knowledge.</p>
-<h2 id="response-envelope">Response envelope<a class="headerlink" href="#response-envelope" title="Permanent link">&para;</a></h2>
-<p>Almost every JSON response is wrapped in a generic <code>Result[T]</code> envelope:</p>
+<h2 id="json-response-envelope">JSON Response Envelope<a class="headerlink" href="#json-response-envelope" title="Permanent link">&para;</a></h2>
+<p>Most JSON endpoints under <code>/api/v1</code> return:</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;errorCode&quot;</span><span class="p">:</span><span class="w">    </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;errorCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;errorMessage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
 </span></code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>success</code></td>
-<td>bool</td>
-<td><code>true</code> on success, <code>false</code> otherwise</td>
-</tr>
-<tr>
-<td><code>data</code></td>
-<td>object</td>
-<td>Endpoint-specific payload, <code>null</code> on error</td>
-</tr>
-<tr>
-<td><code>errorCode</code></td>
-<td>string</td>
-<td>Stable machine-readable error code</td>
-</tr>
-<tr>
-<td><code>errorMessage</code></td>
-<td>string</td>
-<td>Human-readable error description</td>
-</tr>
-</tbody>
-</table>
-<p>Streaming endpoints (<code>/chat/stream</code>, <code>/chat/resume</code>) return <code>text/event-stream</code> instead of <code>Result</code>. See
-<a href="../chat/">Chat</a> for the SSE event grammar.</p>
-<h2 id="global-url-prefix">Global URL prefix<a class="headerlink" href="#global-url-prefix" title="Permanent link">&para;</a></h2>
-<p>All v1 endpoints live under <code>/api/v1</code>. Health check (<code>/health</code>) and the OpenAPI/Swagger UI (<code>/docs</code>, <code>/openapi.json</code>)
-sit at the application root.</p>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<p>Approaches for diagnosing a misbehaving server:</p>
+<p>Frontend clients should unwrap <code>data</code> only when <code>success=true</code>. When <code>success=false</code>, use <code>errorCode</code>
+for control flow and <code>errorMessage</code> for display.</p>
+<p>Some authentication, authorization, validation, and legacy errors may still be emitted by FastAPI as:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AUTH_REQUIRED&quot;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Frontend error handling should support both shapes.</p>
+<h2 id="request-context-headers">Request Context Headers<a class="headerlink" href="#request-context-headers" title="Permanent link">&para;</a></h2>
+<p>Open-source development can identify a caller with:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>X-Datus-User-Id: alice
+</span></code></pre></div>
+<p>SQL policy principal fields are separate from user identity:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>X-Datus-Principal: {&quot;market_code&quot;:&quot;MKT300&quot;}
+</span></code></pre></div>
+<p>Do not place <code>user_id</code> inside <code>X-Datus-Principal</code>; that field is reserved for <code>X-Datus-User-Id</code>.</p>
+<p>Enterprise deployments may replace this with a Bearer-token or signed-header auth provider. In those modes,
+the browser should not spoof trusted gateway headers directly.</p>
+<h2 id="streaming-endpoints">Streaming Endpoints<a class="headerlink" href="#streaming-endpoints" title="Permanent link">&para;</a></h2>
+<p>Streaming endpoints return <code>text/event-stream</code> and are not represented as a normal <code>Result[T]</code> envelope.</p>
+<p>Frontend code should use a <code>fetch()</code> + <code>ReadableStream</code> SSE parser for POST streams. Native <code>EventSource</code>
+is not enough for <code>POST /api/v1/chat/stream</code>.</p>
+<h3 id="chat-stream">Chat Stream<a class="headerlink" href="#chat-stream" title="Permanent link">&para;</a></h3>
+<p>Endpoints:</p>
 <ul>
-<li><strong>Hung request</strong> — a request that never returns even though <code>GET /health</code> still responds is almost always a
-  parked coroutine, not a blocked event loop. Send <code>SIGUSR1</code> to the server (<code>kill -USR1 &lt;pid&gt;</code>) to dump every
-  live async task and the innermost frame each is suspended on. See
-  <a href="../debugging/#sigusr1-task-dump">Debugging — SIGUSR1 task dump</a>.</li>
+<li><code>POST /api/v1/chat/stream</code></li>
+<li><code>POST /api/v1/chat/resume</code></li>
+<li><code>POST /api/v1/chat/feedback</code></li>
 </ul>
-<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>Reference: <code>docs/API/chat.md</code>.</p>
+<p>Expected frame shape:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>id: &lt;sequential int&gt;
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>event: &lt;session|message|error|ping|end&gt;
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>data: &lt;JSON payload&gt;
+</span></code></pre></div>
+<p>Clients must handle at least:</p>
 <ul>
-<li><a href="../deployment/">Deployment</a> — install and launch the API server</li>
-<li><a href="../frontend_contract/">Frontend Contract</a> — OpenAPI typing, SSE handling, and frontend error-shape rules</li>
-<li><a href="../chat/">Chat</a> — chat endpoints and SSE streaming</li>
-<li><a href="../knowledge_base/">Knowledge Base</a> — KB bootstrap and platform doc endpoints with SSE</li>
-<li><a href="../debugging/">Debugging</a> — diagnose hung requests with the SIGUSR1 async task dump</li>
+<li><code>session</code>: save <code>session_id</code></li>
+<li><code>message</code>: apply <code>createMessage</code>, <code>appendMessage</code>, or <code>updateMessage</code></li>
+<li><code>error</code>: show a terminal stream error</li>
+<li><code>ping</code>: keepalive, usually ignored</li>
+<li><code>end</code>: mark the run complete</li>
+</ul>
+<h3 id="knowledge-base-streams">Knowledge Base Streams<a class="headerlink" href="#knowledge-base-streams" title="Permanent link">&para;</a></h3>
+<p>Endpoints:</p>
+<ul>
+<li><code>POST /api/v1/kb/bootstrap</code></li>
+<li><code>POST /api/v1/kb/bootstrap-docs</code></li>
+</ul>
+<p>Reference: <code>docs/API/knowledge_base.md</code>.</p>
+<p>The <code>event</code> field is the bootstrap stage, and <code>data</code> contains the stage payload.</p>
+<h2 id="frontend-type-strategy">Frontend Type Strategy<a class="headerlink" href="#frontend-type-strategy" title="Permanent link">&para;</a></h2>
+<p>Recommended split:</p>
+<ul>
+<li>Generate ordinary JSON types from <code>/openapi.json</code>.</li>
+<li>Handwrite TypeScript types for chat and KB SSE event payloads.</li>
+<li>Keep all request helpers under a single API layer, for example <code>src/lib/api/**</code>.</li>
+<li>Do not call <code>fetch()</code> directly from Vue components.</li>
+</ul>
+<p>Suggested frontend scripts:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;api:schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;curl http://127.0.0.1:8000/openapi.json -o openapi.json&quot;</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&quot;api:types&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openapi-typescript openapi.json -o src/types/openapi.d.ts&quot;</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">&quot;api:sync&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npm run api:schema &amp;&amp; npm run api:types&quot;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="high-use-frontend-endpoints">High-Use Frontend Endpoints<a class="headerlink" href="#high-use-frontend-endpoints" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>GET /api/v1/models</code></li>
+<li><code>GET /api/v1/config/agent</code></li>
+<li><code>GET /api/v1/agent/list</code></li>
+<li><code>GET /api/v1/agent</code></li>
+<li><code>GET /api/v1/agent/use_tools</code></li>
+<li><code>GET /api/v1/catalog/list</code></li>
+<li><code>GET /api/v1/chat/sessions</code></li>
+<li><code>GET /api/v1/chat/history?session_id=...</code></li>
+<li><code>POST /api/v1/chat/stream</code></li>
+<li><code>POST /api/v1/chat/stop</code></li>
+<li><code>POST /api/v1/chat/insert</code></li>
+<li><code>POST /api/v1/chat/user_interaction</code></li>
 </ul>
 
 
@@ -4216,44 +4146,6 @@ sit at the application root.</p>
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../../workflow/api/" class="md-footer__link md-footer__link--prev" aria-label="Previous: API">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                API
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../deployment/" class="md-footer__link md-footer__link--next" aria-label="Next: Deployment">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Deployment
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -4334,12 +4226,12 @@ sit at the application root.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tracking", "navigation.indexes", "content.code.copy", "content.code.select", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tracking", "navigation.indexes", "content.code.copy", "content.code.select", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../javascripts/analytics.js"></script>
+        <script src="../../../javascripts/analytics.js"></script>
       
     
   </body>

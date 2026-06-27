@@ -36,6 +36,13 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/API/deployment/"/>
     </url>
     <url>
+        <loc>https://docs.datus.ai/dev/API/frontend_contract/</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/dev/API/frontend_contract/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/devzh/API/frontend_contract/"/>
+    </url>
+    <url>
         <loc>https://docs.datus.ai/dev/API/introduction/</loc>
         <lastmod>2026-06-27</lastmod>
         <changefreq>daily</changefreq>
@@ -622,6 +629,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/API/deployment/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devAPI/deployment/"/>
+    </url>
+    <url>
+        <loc>https://docs.datus.ai/dev/zh/API/frontend_contract/</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://docs.datus.ai/dev/zh/API/frontend_contract/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.datus.ai/devAPI/frontend_contract/"/>
     </url>
     <url>
         <loc>https://docs.datus.ai/dev/zh/API/introduction/</loc>
